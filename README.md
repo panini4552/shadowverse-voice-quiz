@@ -1,1 +1,0 @@
-# shadowverse-voice-quiz

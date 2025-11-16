@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shadowverse ボイス当てクイズ</title>
+<link rel="stylesheet" href="style.css" />
+<script defer src="data.js"></script>
+<script defer src="main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Shadowverse ボイス当てクイズ</h1>
+
+    <div class="controls">
+      <label>出題範囲：</label>
+      <select id="pack-select">
+        <option value="all">全パック</option>
+        <option value="Classic">Classic</option>
+        <!-- 将来ここにパックを追加 -->
+      </select>
+
+      <label>レアリティ：</label>
+      <select id="rarity-select">
+        <option value="all">全て</option>
+        <option value="Bronze">ブロンズ</option>
+        <option value="Silver">シルバー</option>
+        <option value="Gold">ゴールド</option>
+        <option value="Legendary">レジェンド</option>
+      </select>
+
+      <label>クラス：</label>
+      <select id="class-select">
+        <option value="all">全クラス（ランダム）</option>
+        <option value="エルフ">エルフ</option>
+        <option value="ロイヤル">ロイヤル</option>
+        <option value="ドラゴン">ドラゴン</option>
+        <option value="ウィッチ">ウィッチ</option>
+        <option value="ネクロマンサー">ネクロマンサー</option>
+        <option value="ヴァンパイア">ヴァンパイア</option>
+        <option value="ビショップ">ビショップ</option>
+        <option value="ネメシス">ネメシス</option>
+      </select>
+
+      <button id="start-btn" class="btn">クイズ開始</button>
+    </div>
+
+    <hr>
+
+    <div id="quiz-area" style="display:none;">
+      <div class="voice-controls">
+        <div class="voice-buttons">
+          <button class="btn" data-type="fanfare">ファンファーレ</button>
+          <button class="btn" data-type="attack">攻撃</button>
+          <button class="btn" data-type="destroy">破壊</button>
+          <button class="btn" data-type="evolve">進化</button>
+        </div>
+
+        <div class="volume">
+          <label>音量</label>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9"/>
+        </div>
+      </div>
+
+      <div class="answer-area">
+        <input id="answer-input" type="text" placeholder="カード名を入力（ひらがな・カナ・漢字可）" />
+        <button id="submit-btn" class="btn">送信</button>
+      </div>
+
+      <div id="result" class="result"></div>
+
+      <div class="status">
+        <div>現在の連続正解: <span id="streak">0</span></div>
+        <div>表示中のカード: <span id="current-card-id">-</span></div>
+      </div>
+    </div>
+
+    <audio id="audio" preload="auto"></audio>
+    <footer>
+      <small>プロトタイプ版 — 著作権に注意して運用してください。</small>
+    </footer>
+  </div>
+</body>
+</html>

@@ -2,33 +2,19 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Shadowverse ボイス当てクイズ（乙姫版）</title>
-<style>
-  body {
-    font-family: sans-serif;
-    padding: 20px;
-    background: #fafafa;
-  }
-  .btn {
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: none;
-    background: #4b7bec;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-  }
-  .btn:hover { opacity: 0.9; }
-</style>
+<title>Shadowverse ボイス当てクイズ</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="data.js"></script>
+<script defer src="main.js"></script>
 </head>
-<body>
 
+<body>
 <h2>Shadowverse ボイス当てクイズ</h2>
 
-<!-- ①リーダー選択 -->
+<!-- クラス選択 -->
 <select id="leader-select">
   <option value="">リーダーを選択</option>
+  <option value="random">【ランダム】全クラスから出題</option>
   <option value="エルフ">エルフ</option>
   <option value="ロイヤル">ロイヤル</option>
   <option value="ウィッチ">ウィッチ</option>
@@ -42,7 +28,7 @@
 
 <hr>
 
-<!-- ②ボイス再生ボタン（4種）-->
+<!-- 4種類のボイスボタン -->
 <div id="voice-buttons" style="display:none;">
   <button class="btn" onclick="playVoice('fanfare')">ファンファーレ</button>
   <button class="btn" onclick="playVoice('attack')">攻撃</button>
@@ -52,49 +38,97 @@
 
 <audio id="voice"></audio>
 
-<!-- ③回答フォーム -->
+<!-- 回答フォーム -->
 <div id="answer-area" style="display:none; margin-top:20px;">
-  <input type="text" id="answer-input" placeholder="カード名を入力（例：海底都市王・乙姫）" />
+  <input type="text" id="answer-input" placeholder="カード名を入力">
   <button class="btn" onclick="checkAnswer()">送信</button>
 </div>
 
-<!-- ④結果表示 -->
 <h3 id="result"></h3>
 
-<script>
-// ★ データ部分（今回は乙姫のみ登録）
-let cards = [
+</body>
+</html>
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #4b7bec;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.btn:hover { opacity: 0.9; }
+// data.js — カードデータ一覧（ここだけ編集すればOK）
+
+const cards = [
   {
+    id: "otohime",
     name: "海底都市王・乙姫",
     leader: "ロイヤル",
+    pack: "Basic",
+    rarity: "Legendary",
     voices: {
-      fanfare: "otohime_fanfare.mp3",
-      attack: "otohime_attack.mp3",
-      destroy: "otohime_destroy.mp3",
-      evolve: "otohime_evolve.mp3"
+      fanfare: "voices/otohime_fanfare.mp3",
+      attack: "voices/otohime_attack.mp3",
+      destroy: "voices/otohime_destroy.mp3",
+      evolve: "voices/otohime_evolve.mp3"
     }
-  }
-];
+  },
 
+  // ここにカードを22枚追加する
+  // 例：
+  /*
+  {
+    id: "arisa",
+    name: "森の巫女・アリサ",
+    leader: "エルフ",
+    pack: "Basic",
+    rarity: "Legendary",
+    voices: {
+      fanfare: "voices/arisa_fanfare.mp3",
+      attack: "voices/arisa_attack.mp3",
+      destroy: "voices/arisa_destroy.mp3",
+      evolve: "voices/arisa_evolve.mp3"
+    }
+  },
+  */
+];
 let currentCard = null;
 
 function startQuiz() {
   const leader = document.getElementById("leader-select").value;
+
   if (!leader) {
     alert("リーダーを選択してください");
     return;
   }
 
-  // リーダーで絞り込み
-  const filtered = cards.filter(c => c.leader === leader);
+  let filtered;
+
+  if (leader === "random") {
+    // 全カードからランダム
+    filtered = cards;
+  } else {
+    // クラスで絞り込み
+    filtered = cards.filter(c => c.leader === leader);
+  }
 
   if (filtered.length === 0) {
-    alert("このリーダーのカードデータがありません");
+    alert("この条件に一致するカードがありません");
     return;
   }
 
-  // 今は1枚（乙姫）のみ
-  currentCard = filtered[0];
+  // ランダム抽選
+  currentCard = filtered[Math.floor(Math.random() * filtered.length)];
 
   // ボタン表示
   document.getElementById("voice-buttons").style.display = "block";
@@ -112,13 +146,9 @@ function checkAnswer() {
   const input = document.getElementById("answer-input").value.trim();
   const result = document.getElementById("result");
 
-  if (input === currentCard.name || input === "乙姫") {
+  if (input === currentCard.name || input.includes(currentCard.name.split("・")[1])) {
     result.innerText = "正解！ 🎉";
   } else {
-    result.innerText = `不正解！ 正解は：${currentCard.name}`;
+    result.innerText = `不正解！ 正解：${currentCard.name}`;
   }
 }
-</script>
-
-</body>
-</html>

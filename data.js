@@ -30,7 +30,7 @@ const cards = [
   },
   {
     id: "soul_dealer",                     
-    name: ""ソウルディーラー",            
+    name: "ソウルディーラー",            
     reading: ["ソウルディーラー", "そうるでぃーらー"],     
     class: "ヴァンパイア",                 
     rarity: "Legendary",            

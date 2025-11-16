@@ -1,11 +1,11 @@
 // main.js
-// 全体のロジック。data.js に定義された `cards` を参照します。
+// data.js に定義された `cards` を使用
 
-let pool = [];          // 出題候補プール
+let pool = [];
 let currentCard = null;
 let streak = 0;
 
-// DOM取得をまとめたヘルパ
+// DOMヘルパ
 const q = {
   packSelect: () => document.getElementById("pack-select"),
   raritySelect: () => document.getElementById("rarity-select"),
@@ -22,12 +22,12 @@ const q = {
 };
 
 function init() {
-  // ボタンイベント
   q.startBtn().addEventListener("click", startQuiz);
   q.submitBtn().addEventListener("click", checkAnswer);
-  q.volume().addEventListener("input", e => { q.audio().volume = e.target.value; });
+  q.volume().addEventListener("input", e => {
+    q.audio().volume = e.target.value;
+  });
 
-  // 4種の音声ボタン
   document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const type = btn.getAttribute("data-type");
@@ -35,12 +35,10 @@ function init() {
     });
   });
 
-  // Enterで送信
   q.answerIn().addEventListener("keydown", e => {
     if (e.key === "Enter") checkAnswer();
   });
 
-  // 初期音量
   q.audio().volume = q.volume().value;
 }
 
@@ -56,7 +54,7 @@ function startQuiz() {
   });
 
   if (!pool.length) {
-    alert("選択条件に合うカードがありません。条件を見直してください。");
+    alert("選択条件に合うカードがありません");
     return;
   }
 
@@ -66,71 +64,77 @@ function startQuiz() {
 
 function nextQuestion() {
   currentCard = pool[Math.floor(Math.random() * pool.length)];
-  q.currentCardIdEl().innerText = currentCard.id;
+
+  // 答えを隠す
+  q.currentCardIdEl().innerText = "";
+
   q.result().innerText = "";
   q.answerIn().value = "";
 }
 
 function playVoice(type) {
   if (!currentCard) {
-    alert("まず『クイズ開始』してください");
+    alert("まず『クイズ開始』を押してください");
     return;
   }
-
   const src = currentCard.voices[type];
   if (!src) {
-    alert("その種別の音声がありません");
+    alert("この種類のボイスはありません");
     return;
   }
-
   q.audio().src = src;
   q.audio().play();
 }
 
-// ひらがな正規化
+// ▼▼▼▼ 正規化（ひらがな・カタカナ対応） ▼▼▼▼
 function toHira(str) {
   if (!str) return "";
-  // Normalize width
+
   let s = str.normalize("NFKC");
 
-  // Katakana → Hiragana
-  s = s.replace(/[\u30A1-\u30F6]/g, ch =>
+  // カタカナ → ひらがな
+  s = s.replace(/[\u30A1-\u30FA]/g, ch =>
     String.fromCharCode(ch.charCodeAt(0) - 0x60)
   );
 
-  // 不要記号削除
+  // 漢字・ひらがな以外を削除
   s = s.replace(/[^ぁ-ん一-龥]/g, "");
 
   return s;
 }
+// ▲▲▲▲ 正規化ここまで ▲▲▲▲
 
+
+// ▼▼▼ 完全修正版の回答判定 ▼▼▼
 function isCorrect(userInput, card) {
-  const user = toHira(userInput);
+  const userH = toHira(userInput);     // ひらがな化
+  const cardNameH = toHira(card.name); // カード名をひらがな化
 
-  // 読みチェック
+  if (!userH) return false;
+
+  // 読み（reading）の完全一致（ひらがな）
   if (Array.isArray(card.reading)) {
     for (const r of card.reading) {
-      if (!r) continue;
-
       const rr = toHira(r);
-      if (user === rr) return true;
-      if (user && rr && user.includes(rr)) return true;
-      if (rr && rr.includes(user)) return true;
+      if (userH === rr) return true;
     }
   }
 
-  // 漢字完全一致
-  if (card.name && userInput === card.name) return true;
+  // カード名（漢字）の完全一致（そのまま）
+  if (userInput === card.name) return true;
 
-  // 一部一致（例：乙姫 → 海底都市王・乙姫 OK）
-  if (card.name && card.name.includes(userInput)) return true;
+  // カード名の「ひらがな化」が一致 → カタカナ名も正解！
+  // 例：「ケルベロス」→「けるべろす」
+  if (userH === cardNameH) return true;
 
   return false;
 }
+// ▲▲▲ 回答判定ここまで ▲▲▲
+
 
 function checkAnswer() {
   if (!currentCard) {
-    alert("問題がセットされていません。開始してください");
+    alert("問題がセットされていません");
     return;
   }
 
@@ -152,7 +156,6 @@ function checkAnswer() {
 
   q.streakEl().innerText = streak;
 
-  // 自動で次へ
   setTimeout(nextQuestion, 1200);
 }
 

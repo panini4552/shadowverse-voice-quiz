@@ -5,6 +5,7 @@ let pool = [];          // 出題候補プール
 let currentCard = null;
 let streak = 0;
 
+// DOM取得をまとめたヘルパ
 const q = {
   packSelect: () => document.getElementById("pack-select"),
   raritySelect: () => document.getElementById("rarity-select"),
@@ -22,10 +23,11 @@ const q = {
 
 function init() {
   // ボタンイベント
-  q().startBtn().addEventListener("click", startQuiz);
-  q().submitBtn().addEventListener("click", checkAnswer);
-  q().volume().addEventListener("input", e => { q().audio().volume = e.target.value; });
-  // 4種の再生ボタン
+  q.startBtn().addEventListener("click", startQuiz);
+  q.submitBtn().addEventListener("click", checkAnswer);
+  q.volume().addEventListener("input", e => { q.audio().volume = e.target.value; });
+
+  // 4種の音声ボタン
   document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const type = btn.getAttribute("data-type");
@@ -34,18 +36,18 @@ function init() {
   });
 
   // Enterで送信
-  q().answerIn().addEventListener("keydown", e => {
+  q.answerIn().addEventListener("keydown", e => {
     if (e.key === "Enter") checkAnswer();
   });
 
-  // 初ボリューム
-  q().audio().volume = q().volume().value;
+  // 初期音量
+  q.audio().volume = q.volume().value;
 }
 
 function startQuiz() {
-  const pack = q().packSelect().value;
-  const rarity = q().raritySelect().value;
-  const cls = q().classSelect().value;
+  const pack = q.packSelect().value;
+  const rarity = q.raritySelect().value;
+  const cls = q.classSelect().value;
 
   pool = cards.filter(card => {
     return (pack === "all" || card.pack === pack) &&
@@ -58,65 +60,87 @@ function startQuiz() {
     return;
   }
 
-  // show quiz
-  q().quizArea().style.display = "block";
+  q.quizArea().style.display = "block";
   nextQuestion();
 }
 
 function nextQuestion() {
-  // pick random
   currentCard = pool[Math.floor(Math.random() * pool.length)];
-  q().currentCardIdEl().innerText = currentCard.id;
-  q().result().innerText = "";
-  q().answerIn().value = "";
+  q.currentCardIdEl().innerText = currentCard.id;
+  q.result().innerText = "";
+  q.answerIn().value = "";
 }
 
 function playVoice(type) {
-  if (!currentCard) return alert("まず『クイズ開始』してください");
+  if (!currentCard) {
+    alert("まず『クイズ開始』してください");
+    return;
+  }
+
   const src = currentCard.voices[type];
-  if (!src) return alert("その種別の音声がありません");
-  q().audio().src = src;
-  q().audio().play();
+  if (!src) {
+    alert("その種別の音声がありません");
+    return;
+  }
+
+  q.audio().src = src;
+  q.audio().play();
 }
 
-// convert input to normalized hiragana for comparison
+// ひらがな正規化
 function toHira(str) {
   if (!str) return "";
-  // Normalize width and compose
+  // Normalize width
   let s = str.normalize("NFKC");
-  // convert Katakana -> Hiragana by codepoint subtraction
-  // handle fullwidth katakana range
-  s = s.replace(/[\u30A1-\u30F6]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60));
-  // lowercase ASCII fullwidth to ASCII etc already handled by NFKC
-  // remove punctuation and spaces
-  s = s.replace(/[^ぁ-ん一-龥\u3000-\u303F\u3040-\u309F]/g, ""); // keep hiragana & kanji (kanji left intentionally)
+
+  // Katakana → Hiragana
+  s = s.replace(/[\u30A1-\u30F6]/g, ch =>
+    String.fromCharCode(ch.charCodeAt(0) - 0x60)
+  );
+
+  // 不要記号削除
+  s = s.replace(/[^ぁ-ん一-龥]/g, "");
+
   return s;
 }
 
 function isCorrect(userInput, card) {
   const user = toHira(userInput);
-  // Check readings array (normalize each reading)
+
+  // 読みチェック
   if (Array.isArray(card.reading)) {
     for (const r of card.reading) {
       if (!r) continue;
+
       const rr = toHira(r);
-      if (user === rr) return true;          // exact match
-      if (user && rr && user.includes(rr)) return true; // user includes reading
-      if (rr && user.includes(rr)) return true;
+      if (user === rr) return true;
+      if (user && rr && user.includes(rr)) return true;
+      if (rr && rr.includes(user)) return true;
     }
   }
-  // fallback: compare with name (漢字含む) - allow user to input kanji directly
+
+  // 漢字完全一致
   if (card.name && userInput === card.name) return true;
-  // partial match: allow entering short forms (e.g., 入力に '乙姫' が入っていたらOK)
-  if (card.name && userInput.includes(card.name)) return true;
+
+  // 一部一致（例：乙姫 → 海底都市王・乙姫 OK）
+  if (card.name && card.name.includes(userInput)) return true;
+
   return false;
 }
 
 function checkAnswer() {
-  if (!currentCard) return alert("問題がセットされていません。開始してください");
-  const input = q().answerIn().value.trim();
-  const res = q().result();
-  if (!input) { alert("解答を入力してください"); return; }
+  if (!currentCard) {
+    alert("問題がセットされていません。開始してください");
+    return;
+  }
+
+  const input = q.answerIn().value.trim();
+  const res = q.result();
+
+  if (!input) {
+    alert("解答を入力してください");
+    return;
+  }
 
   if (isCorrect(input, currentCard)) {
     streak++;
@@ -125,10 +149,11 @@ function checkAnswer() {
     streak = 0;
     res.innerText = `不正解… 正解: ${currentCard.name}`;
   }
-  q().streakEl().innerText = streak;
-  // 自動で次問に進む（1.5s後）
+
+  q.streakEl().innerText = streak;
+
+  // 自動で次へ
   setTimeout(nextQuestion, 1200);
 }
 
-// 初期化
 document.addEventListener("DOMContentLoaded", init);

@@ -40,7 +40,7 @@
 
 <!-- 回答フォーム -->
 <div id="answer-area" style="display:none; margin-top:20px;">
-  <input type="text" id="answer-input" placeholder="カード名を入力">
+  <input type="text" id="answer-input" placeholder="カード名を入力（ひらがなOK）">
   <button class="btn" onclick="checkAnswer()">送信</button>
 </div>
 
@@ -67,12 +67,14 @@ body {
 }
 
 .btn:hover { opacity: 0.9; }
-// data.js — カードデータ一覧（ここだけ編集すればOK）
+
+// data.js — カードデータ一覧（ここを増やすだけ）
 
 const cards = [
   {
     id: "otohime",
     name: "海底都市王・乙姫",
+    answer: "おとひめ",        // ← 判定用ひらがな
     leader: "ロイヤル",
     pack: "Basic",
     rarity: "Legendary",
@@ -84,26 +86,32 @@ const cards = [
     }
   },
 
-  // ここにカードを22枚追加する
-  // 例：
-  /*
-  {
-    id: "arisa",
-    name: "森の巫女・アリサ",
-    leader: "エルフ",
-    pack: "Basic",
-    rarity: "Legendary",
-    voices: {
-      fanfare: "voices/arisa_fanfare.mp3",
-      attack: "voices/arisa_attack.mp3",
-      destroy: "voices/arisa_destroy.mp3",
-      evolve: "voices/arisa_evolve.mp3"
-    }
-  },
-  */
+  // ここに 22枚追加
 ];
 let currentCard = null;
 
+/* ------------------------
+   ひらがな・カタカナ正規化
+------------------------- */
+function normalizeKana(str) {
+  if (!str) return "";
+
+  // 半角カナ → 全角カナ
+  str = str.replace(/[\uff66-\uff9d]/g, c =>
+    String.fromCharCode(c.charCodeAt(0) + 0x60)
+  );
+
+  // 全角カナ → ひらがな
+  str = str.replace(/[\u30a1-\u30f6]/g, c =>
+    String.fromCharCode(c.charCodeAt(0) - 0x60)
+  );
+
+  return str.trim();
+}
+
+/* ------------------------
+      クイズ開始
+------------------------- */
 function startQuiz() {
   const leader = document.getElementById("leader-select").value;
 
@@ -115,10 +123,8 @@ function startQuiz() {
   let filtered;
 
   if (leader === "random") {
-    // 全カードからランダム
     filtered = cards;
   } else {
-    // クラスで絞り込み
     filtered = cards.filter(c => c.leader === leader);
   }
 
@@ -127,28 +133,36 @@ function startQuiz() {
     return;
   }
 
-  // ランダム抽選
   currentCard = filtered[Math.floor(Math.random() * filtered.length)];
 
-  // ボタン表示
   document.getElementById("voice-buttons").style.display = "block";
   document.getElementById("answer-area").style.display = "block";
   document.getElementById("result").innerText = "";
 }
 
+/* ------------------------
+      ボイス再生
+------------------------- */
 function playVoice(type) {
   const audio = document.getElementById("voice");
   audio.src = currentCard.voices[type];
   audio.play();
 }
 
+/* ------------------------
+      回答チェック
+------------------------- */
 function checkAnswer() {
   const input = document.getElementById("answer-input").value.trim();
   const result = document.getElementById("result");
 
-  if (input === currentCard.name || input.includes(currentCard.name.split("・")[1])) {
+  // 入力をひらがなに正規化
+  const userAns = normalizeKana(input);
+  const correct = normalizeKana(currentCard.answer);
+
+  if (userAns === correct) {
     result.innerText = "正解！ 🎉";
   } else {
-    result.innerText = `不正解！ 正解：${currentCard.name}`;
+    result.innerText = `不正解！ 正解：${currentCard.name}（読み：${currentCard.answer}）`;
   }
 }

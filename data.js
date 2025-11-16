@@ -39,7 +39,7 @@ const cards = [
       fanfare: "voices/Classic/Legendary/soul_dealer/soul_dealer_fanfare.mp3",
       attack:  "voices/Classic/Legendary/soul_dealer/soul_dealer_attack.mp3",
       evolve:  "voices/Classic/Legendary/soul_dealer/soul_dealer_evolve.mp3",
-      destroy:   "voices/Classic/Legendary/soul_dealer/soul_dealer_destroy.mp3"
+      destroy: "voices/Classic/Legendary/soul_dealer/soul_dealer_destroy.mp3"
     }
   },
   {

@@ -53,7 +53,7 @@ const cards = [
       fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_attack.mp3",
       evolve:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_evolve.mp3",
-      death:   "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_death.mp3"
+      death:   "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_destroy.mp3"
     }
   },
   {

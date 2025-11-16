@@ -14,6 +14,20 @@ const cards = [
       evolve:  "voices/Classic/Legendary/otohime/otohime_evolve.mp3"
     }
   },
+    {
+    id: "Queen_Vampire",                     
+    name: "クイーンヴァンパイア",            
+    reading: ["クイーンヴァンパイア", "くいーんヴぁんぱいあ"],     
+    class: "ヴァンパイア",                 
+    rarity: "Legendary",            
+    pack: "Classic",                
+    voices: {
+      fanfare: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_evolve.mp3",
+      death:   "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_death.mp3"
+    }
+  },
   {
     id: "Dark_Dragoon_Forte",
     name: "ダークドラグーン・フォルテ",

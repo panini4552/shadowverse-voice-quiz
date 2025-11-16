@@ -14,7 +14,7 @@ const cards = [
       evolve:  "voices/Classic/Legendary/otohime/otohime_evolve.mp3"
     }
   },
-    {
+  {
     id: "Queen_Vampire",                     
     name: "クイーンヴァンパイア",            
     reading: ["クイーンヴァンパイア", "くいーんヴぁんぱいあ"],     
@@ -26,6 +26,34 @@ const cards = [
       attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
       evolve:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_evolve.mp3",
       death:   "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_death.mp3"
+    }
+  },
+  {
+    id: "souldealer",                     
+    name: ""ソウルディーラー,            
+    reading: ["ソウルディーラー", "そうるでぃーらー"],     
+    class: "ヴァンパイア",                 
+    rarity: "Legendary",            
+    pack: "Classic",                
+    voices: {
+      fanfare: "voices/Classic/Legendary/souldealer/souldealer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/souldealer/souldealer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/souldealer/souldealer_evolve.mp3",
+      death:   "voices/Classic/Legendary/souldealer/souldealer_death.mp3"
+    }
+  },
+  {
+    id: "Beast Dominator",                     
+    name: ""ビーストドミネーター,            
+    reading: ["ビーストドミネーター", "びーすとどみねーたー"],     
+    class: "ヴァンパイア",                 
+    rarity: "Legendary",            
+    pack: "Classic",                
+    voices: {
+      fanfare: "voices/Classic/Legendary/Beast Dominator/Beast Dominator_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Beast Dominator/Beast Dominator_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Beast Dominator/Beast Dominator_evolve.mp3",
+      death:   "voices/Classic/Legendary/Beast Dominator/Beast Dominator_death.mp3"
     }
   },
   {

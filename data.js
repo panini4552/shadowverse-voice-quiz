@@ -29,17 +29,17 @@ const cards = [
     }
   },
   {
-    id: "souldealer",                     
+    id: "soul dealer",                     
     name: ""ソウルディーラー,            
     reading: ["ソウルディーラー", "そうるでぃーらー"],     
     class: "ヴァンパイア",                 
     rarity: "Legendary",            
     pack: "Classic",                
     voices: {
-      fanfare: "voices/Classic/Legendary/souldealer/souldealer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/souldealer/souldealer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/souldealer/souldealer_evolve.mp3",
-      death:   "voices/Classic/Legendary/souldealer/souldealer_death.mp3"
+      fanfare: "voices/Classic/Legendary/soul dealer/soul dealer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/soul dealer/soul dealer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/soul dealer/soul dealer_evolve.mp3",
+      death:   "voices/Classic/Legendary/soul dealer/soul dealer_death.mp3"
     }
   },
   {

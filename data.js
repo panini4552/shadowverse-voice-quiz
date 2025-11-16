@@ -29,31 +29,31 @@ const cards = [
     }
   },
   {
-    id: "soul dealer",                     
-    name: ""ソウルディーラー,            
+    id: "soul_dealer",                     
+    name: ""ソウルディーラー",            
     reading: ["ソウルディーラー", "そうるでぃーらー"],     
     class: "ヴァンパイア",                 
     rarity: "Legendary",            
     pack: "Classic",                
     voices: {
-      fanfare: "voices/Classic/Legendary/soul dealer/soul dealer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/soul dealer/soul dealer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/soul dealer/soul dealer_evolve.mp3",
-      death:   "voices/Classic/Legendary/soul dealer/soul dealer_death.mp3"
+      fanfare: "voices/Classic/Legendary/soul_dealer/soul dealer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/soul_dealer/soul dealer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/soul_dealer/soul dealer_evolve.mp3",
+      death:   "voices/Classic/Legendary/soul_dealer/soul dealer_death.mp3"
     }
   },
   {
     id: "Beast Dominator",                     
-    name: ""ビーストドミネーター,            
+    name: "ビーストドミネーター",            
     reading: ["ビーストドミネーター", "びーすとどみねーたー"],     
     class: "ヴァンパイア",                 
     rarity: "Legendary",            
     pack: "Classic",                
     voices: {
-      fanfare: "voices/Classic/Legendary/Beast Dominator/Beast Dominator_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Beast Dominator/Beast Dominator_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Beast Dominator/Beast Dominator_evolve.mp3",
-      death:   "voices/Classic/Legendary/Beast Dominator/Beast Dominator_death.mp3"
+      fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_evolve.mp3",
+      death:   "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_death.mp3"
     }
   },
   {

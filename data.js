@@ -43,7 +43,7 @@ const cards = [
     }
   },
   {
-    id: "Beast Dominator",                     
+    id: "Beast_Dominator",                     
     name: "ビーストドミネーター",            
     reading: ["ビーストドミネーター", "びーすとどみねーたー"],     
     class: "ヴァンパイア",                 

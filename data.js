@@ -25,7 +25,7 @@ const cards = [
       fanfare: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
       evolve:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_evolve.mp3",
-      death:   "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_death.mp3"
+      death:   "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_destroy.mp3"
     }
   },
   {
@@ -39,7 +39,7 @@ const cards = [
       fanfare: "voices/Classic/Legendary/soul_dealer/soul_dealer_fanfare.mp3",
       attack:  "voices/Classic/Legendary/soul_dealer/soul_dealer_attack.mp3",
       evolve:  "voices/Classic/Legendary/soul_dealer/soul_dealer_evolve.mp3",
-      death:   "voices/Classic/Legendary/soul_dealer/soul_dealer_death.mp3"
+      death:   "voices/Classic/Legendary/soul_dealer/soul_dealer_destroy.mp3"
     }
   },
   {

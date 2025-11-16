@@ -25,7 +25,7 @@ const cards = [
       fanfare: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
       evolve:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_evolve.mp3",
-      destroy:   "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_destroy.mp3"
+      destroy: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_destroy.mp3"
     }
   },
   {

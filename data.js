@@ -15,23 +15,23 @@ const cards = [
     }
   },
   {
-    id: "fenrir",
-    name: "フェンリル",
-    reading: ["ふぇんりる", "フェンリル"],
+    id: "Dark_Dragoon_Forte",
+    name: "ダークドラグーン・フォルテ",
+    reading: ["ふぉるて", "フォルテ","ダークドラグーンフォルテ"],
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
     voices: {
-      fanfare: "voices/Classic/Legendary/fenrir/fanfare.mp3",
-      attack:  "voices/Classic/Legendary/fenrir/attack.mp3",
-      destroy: "voices/Classic/Legendary/fenrir/destroy.mp3",
-      evolve:  "voices/Classic/Legendary/fenrir/evolve.mp3"
+      fanfare: "voices/Classic/Legendary/Dark_Dragoon_Forte/fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Dark_Dragoon_Forte/attack.mp3",
+      destroy: "voices/Classic/Legendary/Dark_Dragoon_Forte/destroy.mp3",
+      evolve:  "voices/Classic/Legendary/Dark_Dragoon_Forte/evolve.mp3"
     }
   },
   {
     id: "cerberus",
     name: "ケルベロス",
-    reading: ["けるべろす", "ケルベロス"],
+    reading: ["けるべろす", "ケルベロス","ケル"],
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",

@@ -36,10 +36,10 @@ const cards = [
     rarity: "Legendary",            
     pack: "Classic",                
     voices: {
-      fanfare: "voices/Classic/Legendary/soul_dealer/soul dealer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/soul_dealer/soul dealer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/soul_dealer/soul dealer_evolve.mp3",
-      death:   "voices/Classic/Legendary/soul_dealer/soul dealer_death.mp3"
+      fanfare: "voices/Classic/Legendary/soul_dealer/soul_dealer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/soul_dealer/soul_dealer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/soul_dealer/soul_dealer_evolve.mp3",
+      death:   "voices/Classic/Legendary/soul_dealer/soul_dealer_death.mp3"
     }
   },
   {
@@ -50,10 +50,10 @@ const cards = [
     rarity: "Legendary",            
     pack: "Classic",                
     voices: {
-      fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_evolve.mp3",
-      death:   "voices/Classic/Legendary/Beast_Dominator/Beast Dominator_death.mp3"
+      fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_evolve.mp3",
+      death:   "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_death.mp3"
     }
   },
   {

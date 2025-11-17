@@ -298,7 +298,21 @@ const cards = [
       destroy: "voices/Classic/Legendary/Gabriel/Gabriel_destroy.mp3"
     }
   },  <!-- ⭐ここにカンマが必要 -->
-
+  {
+    id: "Lucifer",
+    name: "ルシフェル",
+    reading: ["るしふぇる", "ルシフェル"],
+    class: "ニュートラル",
+    rarity: "Legendary",
+    pack: "Classic",
+    folder: "voices/Classic/Legendary/Lucifer",
+    voices: {
+      fanfare: "voices/Classic/Legendary/Gabriel/Lucifer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Gabriel/Lucifer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Gabriel/Lucifer_evolve.mp3",
+      destroy: "voices/Classic/Legendary/Gabriel/Lucifer_destroy.mp3"
+    }
+  }, 
   {
     id: "Prince_of_Darkness",
     name: "サタン",

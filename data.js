@@ -32,20 +32,20 @@ const cards = [
     }
   },
   {
-    id: "Rose_Queen",
-    name: "ローズクイーン",
-    reading: ["ろーずくいーん", "ローズクイーン"],
-    class: "エルフ",
-    rarity: "Legendary",
-    pack: "Classic",
-    folder: "voices/Classic/Legendary/Rose_Queen,
-    voices: {
-      fanfare: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_destroy.mp3"
-    }
-  },
+  id: "Rose_Queen",
+  name: "ローズクイーン",
+  reading: ["ろーずくいーん", "ローズクイーン"],
+  class: "エルフ",
+  rarity: "Legendary",
+  pack: "Classic",
+  folder: "voices/Classic/Legendary/Rose_Queen",
+  voices: {
+    fanfare: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_fanfare.mp3",
+    attack:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_attack.mp3",
+    evolve:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_evolve.mp3",
+    destroy: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_destroy.mp3"
+  }
+  }, 
 
   // === ロイヤル ===
   {

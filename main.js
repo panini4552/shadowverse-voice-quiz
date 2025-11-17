@@ -24,6 +24,7 @@ const q = {
 function init() {
   q.startBtn().addEventListener("click", startQuiz);
   q.submitBtn().addEventListener("click", checkAnswer);
+
   q.volume().addEventListener("input", e => {
     q.audio().volume = e.target.value;
   });
@@ -65,71 +66,83 @@ function startQuiz() {
 function nextQuestion() {
   currentCard = pool[Math.floor(Math.random() * pool.length)];
 
-  // 答えを隠す
   q.currentCardIdEl().innerText = "";
-
   q.result().innerText = "";
   q.answerIn().value = "";
+
+  // 既存の音声停止
+  stopAudio();
 }
 
+// === 音声停止処理 ===
+function stopAudio() {
+  const audio = q.audio();
+  audio.pause();
+  audio.currentTime = 0;
+}
+
+// === 音声再生（②・⑤・⑥完全修正） ===
 function playVoice(type) {
   if (!currentCard) {
     alert("まず『クイズ開始』を押してください");
     return;
   }
-  const src = currentCard.voices[type];
+
+  const src = currentCard.voices?.[type];
+
   if (!src) {
     alert("この種類のボイスはありません");
     return;
   }
-  q.audio().src = src;
-  q.audio().play();
+
+  const audio = q.audio();
+
+  // 先に停止
+  stopAudio();
+
+  // ソースをセット
+  audio.src = src;
+
+  // load → play の順で確実に再生
+  audio.load();
+  audio.play().catch(() => {
+    console.warn("自動再生に失敗しました（ユーザ操作が必要な場合あり）");
+  });
 }
 
-// ▼▼▼▼ 正規化（ひらがな・カタカナ対応） ▼▼▼▼
-function toHira(str) {
-  if (!str) return "";
 
-  let s = str.normalize("NFKC");
+// ▼▼▼ 入力正規化（③完全対応） ▼▼▼
 
-  // カタカナ → ひらがな
-  s = s.replace(/[\u30A1-\u30FA]/g, ch =>
-    String.fromCharCode(ch.charCodeAt(0) - 0x60)
+// 全角 → 半角
+function toHalfWidth(str) {
+  return str.replace(/[！-～]/g, s =>
+    String.fromCharCode(s.charCodeAt(0) - 0xFEE0)
+  ).replace(/　/g, " ");
+}
+
+// カタカナ → ひらがな
+function kataToHira(str) {
+  return str.replace(/[\u30a1-\u30f6]/g, s =>
+    String.fromCharCode(s.charCodeAt(0) - 0x60)
   );
-
-  // 漢字・ひらがな以外を削除
-  s = s.replace(/[^ぁ-ん一-龥]/g, "");
-
-  return s;
 }
-// ▲▲▲▲ 正規化ここまで ▲▲▲▲
 
+// 入力を正規化
+function normalize(str) {
+  if (!str) return "";
+  str = str.trim();
+  str = toHalfWidth(str);
+  str = kataToHira(str);
+  return str.toLowerCase();
+}
 
-// ▼▼▼ 完全修正版の回答判定 ▼▼▼
+// === 正解判定（③修正版） ===
 function isCorrect(userInput, card) {
-  const userH = toHira(userInput);     // ひらがな化
-  const cardNameH = toHira(card.name); // カード名をひらがな化
-
-  if (!userH) return false;
-
-  // 読み（reading）の完全一致（ひらがな）
-  if (Array.isArray(card.reading)) {
-    for (const r of card.reading) {
-      const rr = toHira(r);
-      if (userH === rr) return true;
-    }
-  }
-
-  // カード名（漢字）の完全一致（そのまま）
-  if (userInput === card.name) return true;
-
-  // カード名の「ひらがな化」が一致 → カタカナ名も正解！
-  // 例：「ケルベロス」→「けるべろす」
-  if (userH === cardNameH) return true;
-
-  return false;
+  const user = normalize(userInput);
+  const readings = card.reading.map(r => normalize(r));
+  return readings.includes(user);
 }
-// ▲▲▲ 回答判定ここまで ▲▲▲
+// ▲▲▲ 入力正規化ここまで ▲▲▲
 
 
 function checkAnswer() {

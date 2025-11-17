@@ -13,37 +13,41 @@
   <div class="container">
     <h1>Shadowverse ボイス当てクイズ</h1>
 
-    <!-- ▼設定エリア -->
+    <!-- ▼設定エリア（ボタン式フィルター） -->
     <div class="controls">
-      <div>
+
+      <!-- パック -->
+      <div class="filter-group">
         <label>出題範囲（複数可）</label>
-        <select id="pack-select" multiple size="4">
-          <option value="Classic">Classic</option>
-        </select>
+        <div id="pack-filter" class="filter-box">
+          <div class="filter-item" data-value="Classic">Classic</div>
+        </div>
       </div>
 
-      <div>
+      <!-- レアリティ -->
+      <div class="filter-group">
         <label>レアリティ（複数可）</label>
-        <select id="rarity-select" multiple size="5">
-          <option value="Bronze">ブロンズ</option>
-          <option value="Silver">シルバー</option>
-          <option value="Gold">ゴールド</option>
-          <option value="Legendary">レジェンド</option>
-        </select>
+        <div id="rarity-filter" class="filter-box">
+          <div class="filter-item" data-value="Bronze">ブロンズ</div>
+          <div class="filter-item" data-value="Silver">シルバー</div>
+          <div class="filter-item" data-value="Gold">ゴールド</div>
+          <div class="filter-item" data-value="Legendary">レジェンド</div>
+        </div>
       </div>
 
-      <div>
+      <!-- クラス -->
+      <div class="filter-group">
         <label>クラス（複数可）</label>
-        <select id="class-select" multiple size="8">
-          <option value="エルフ">エルフ</option>
-          <option value="ロイヤル">ロイヤル</option>
-          <option value="ドラゴン">ドラゴン</option>
-          <option value="ウィッチ">ウィッチ</option>
-          <option value="ネクロマンサー">ネクロマンサー</option>
-          <option value="ヴァンパイア">ヴァンパイア</option>
-          <option value="ビショップ">ビショップ</option>
-          <option value="ネメシス">ネメシス</option>
-        </select>
+        <div id="class-filter" class="filter-box">
+          <div class="filter-item" data-value="エルフ">エルフ</div>
+          <div class="filter-item" data-value="ロイヤル">ロイヤル</div>
+          <div class="filter-item" data-value="ドラゴン">ドラゴン</div>
+          <div class="filter-item" data-value="ウィッチ">ウィッチ</div>
+          <div class="filter-item" data-value="ネクロマンサー">ネクロマンサー</div>
+          <div class="filter-item" data-value="ヴァンパイア">ヴァンパイア</div>
+          <div class="filter-item" data-value="ビショップ">ビショップ</div>
+          <div class="filter-item" data-value="ネメシス">ネメシス</div>
+        </div>
       </div>
 
       <button id="start-btn" class="btn">クイズ開始</button>
@@ -53,6 +57,8 @@
 
     <!-- ▼クイズエリア -->
     <div id="quiz-area" style="display:none;">
+
+      <!-- ボイス -->
       <div class="voice-buttons">
         <button class="btn" data-type="fanfare">ファンファーレ</button>
         <button class="btn" data-type="attack">攻撃</button>
@@ -72,12 +78,10 @@
 
       <div id="result" class="result"></div>
 
-      <!-- ▼カード画像 -->
+      <!-- ▼画像 -->
       <div id="image-wrapper" style="margin-top:10px;">
         <img id="resultImage" style="max-width:260px; display:none;">
-        <div id="imagePlaceholder" style="display:none; color:#555;">
-          画像準備中…
-        </div>
+        <div id="imagePlaceholder" style="display:none; color:#555;">画像準備中…</div>
       </div>
 
       <button id="next-btn" class="btn" style="display:none; margin-top:10px;">次の問題へ</button>
@@ -87,10 +91,10 @@
         <div>現在の連続正解: <span id="streak">0</span></div>
         <a id="share-x" href="#" target="_blank" class="btn" style="display:none;">Xで共有</a>
       </div>
+
     </div>
 
     <audio id="audio" preload="auto"></audio>
-
   </div>
 </body>
 </html>

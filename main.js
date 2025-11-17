@@ -155,3 +155,27 @@ document.getElementById("submit-btn").onclick = () => {
    次の問題
 ================================ */
 document.getElementById("next-btn").onclick = nextQuestion;
+// ▼ フィルタートグル操作（複数選択）
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("toggle-btn")) {
+        e.target.classList.toggle("selected");
+        updateFilters();  // ← フィルター反映処理（ユーザーの環境に合わせて）
+    }
+});
+function getSelectedFilters(groupClass) {
+    return [...document.querySelectorAll(`.${groupClass} .toggle-btn.selected`)]
+        .map(btn => btn.dataset.value);
+}
+
+function updateFilters() {
+    const selectedClasses = getSelectedFilters("filter-class");
+    const selectedRarities = getSelectedFilters("filter-rarity");
+    const selectedPacks = getSelectedFilters("filter-pack");
+
+    console.log("クラス:", selectedClasses);
+    console.log("レアリティ:", selectedRarities);
+    console.log("パック:", selectedPacks);
+
+    // ★ ここでフィルター結果を使い、カードの検索処理を更新する
+}
+

@@ -38,7 +38,7 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/"Rose_Queen",
+    folder: "voices/Classic/Legendary/Rose_Queen,
     voices: {
       fanfare: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_attack.mp3",

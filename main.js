@@ -14,25 +14,25 @@ function normalize(str) {
 }
 
 /* ================================
-   filter-item の ON/OFF
+   toggle-btn の ON/OFF（複数選択）
 ================================ */
-document.querySelectorAll(".filter-item").forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("selected");
-    });
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("toggle-btn")) {
+        e.target.classList.toggle("selected");
+    }
 });
 
 /* ================================
-   選択された filter-item を取得
+   選択された toggle-btn を取得
 ================================ */
-function getSelectedFilter(selector) {
-    const list = [...document.querySelectorAll(`${selector} .filter-item.selected`)]
-        .map(el => el.dataset.value);
+function getSelectedFilters(groupClass) {
+    const list = [...document.querySelectorAll(`.${groupClass} .toggle-btn.selected`)]
+        .map(btn => btn.dataset.value);
 
-    // 何も選ばれていない → そのグループの全カードを許可
+    // 何も選ばれていなければ「全て許可」
     if (list.length === 0) {
-        return [...document.querySelectorAll(`${selector} .filter-item`)]
-            .map(el => el.dataset.value);
+        return [...document.querySelectorAll(`.${groupClass} .toggle-btn`)]
+            .map(btn => btn.dataset.value);
     }
     return list;
 }
@@ -78,9 +78,10 @@ function nextQuestion() {
    クイズ開始
 ================================ */
 document.getElementById("start-btn").onclick = () => {
-    const packs = getSelectedFilter("#pack-filter");
-    const rarities = getSelectedFilter("#rarity-filter");
-    const classes = getSelectedFilter("#class-filter");
+
+    const packs = getSelectedFilters("filter-pack");
+    const rarities = getSelectedFilters("filter-rarity");
+    const classes = getSelectedFilters("filter-class");
 
     filteredCards = cards.filter(c =>
         packs.includes(c.pack) &&
@@ -155,27 +156,3 @@ document.getElementById("submit-btn").onclick = () => {
    次の問題
 ================================ */
 document.getElementById("next-btn").onclick = nextQuestion;
-// ▼ フィルタートグル操作（複数選択）
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("toggle-btn")) {
-        e.target.classList.toggle("selected");
-        updateFilters();  // ← フィルター反映処理（ユーザーの環境に合わせて）
-    }
-});
-function getSelectedFilters(groupClass) {
-    return [...document.querySelectorAll(`.${groupClass} .toggle-btn.selected`)]
-        .map(btn => btn.dataset.value);
-}
-
-function updateFilters() {
-    const selectedClasses = getSelectedFilters("filter-class");
-    const selectedRarities = getSelectedFilters("filter-rarity");
-    const selectedPacks = getSelectedFilters("filter-pack");
-
-    console.log("クラス:", selectedClasses);
-    console.log("レアリティ:", selectedRarities);
-    console.log("パック:", selectedPacks);
-
-    // ★ ここでフィルター結果を使い、カードの検索処理を更新する
-}
-

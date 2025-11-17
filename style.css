@@ -58,3 +58,31 @@ input[type="text"]{
 .status{ margin-top:12px; display:flex; gap:18px; align-items:center; }
 
 footer{ margin-top:18px; color:#666; font-size:12px; }
+/* ▼ クリック式トグルボタン（複数選択フィルター用） */
+.toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.toggle-btn {
+  padding: 6px 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f3f3f3;
+  user-select: none;
+  font-size: 14px;
+  transition: 0.15s;
+}
+
+.toggle-btn:hover {
+  background: #e6e6e6;
+}
+
+.toggle-btn.selected {
+  background: #555;
+  color: #fff;
+  border-color: #333;
+}

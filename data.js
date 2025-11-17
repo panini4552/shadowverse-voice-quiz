@@ -23,6 +23,7 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Fairy_Princess",
     voices: {
       fanfare: "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_attack.mp3",
@@ -37,6 +38,7 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/"Rose_Queen",
     voices: {
       fanfare: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_attack.mp3",
@@ -53,6 +55,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Aurelia",
     voices: {
       fanfare: "voices/Classic/Legendary/Aurelia/Aurelia_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Aurelia/Aurelia_attack.mp3",
@@ -67,6 +70,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Tsubaki",
     voices: {
       fanfare: "voices/Classic/Legendary/Tsubaki/Tsubaki_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Tsubaki/Tsubaki_attack.mp3",
@@ -81,6 +85,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/otohime",
     voices: {
       fanfare: "voices/Classic/Legendary/otohime/otohime_fanfare.mp3",
       attack:  "voices/Classic/Legendary/otohime/otohime_attack.mp3",
@@ -97,6 +102,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Zirnitra",
     voices: {
       fanfare: "voices/Classic/Legendary/Zirnitra/Zirnitra_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Zirnitra/Zirnitra_attack.mp3",
@@ -111,6 +117,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Fafnir",
     voices: {
       fanfare: "voices/Classic/Legendary/Fafnir/Fafnir_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Fafnir/Fafnir_attack.mp3",
@@ -125,6 +132,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Dark_Dragoon_Forte",
     voices: {
       fanfare: "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_attack.mp3",
@@ -141,6 +149,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Arch_Summoner_Erasmus",
     voices: {
       fanfare: "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_attack.mp3",
@@ -155,6 +164,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/merlin",
     voices: {
       fanfare: "voices/Classic/Legendary/merlin/merlin_fanfare.mp3",
       attack:  "voices/Classic/Legendary/merlin/merlin_attack.mp3",
@@ -169,6 +179,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Mythril_Golem",
     voices: {
       fanfare: "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_attack.mp3",
@@ -185,6 +196,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Pluto",
     voices: {
       fanfare: "voices/Classic/Legendary/Pluto/Pluto_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Pluto/Pluto_attack.mp3",
@@ -199,6 +211,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Lord_Atomy",
     voices: {
       fanfare: "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_attack.mp3",
@@ -213,6 +226,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/cerberus",
     voices: {
       fanfare: "voices/Classic/Legendary/cerberus/cerberus_fanfare.mp3",
       attack:  "voices/Classic/Legendary/cerberus/cerberus_attack.mp3",
@@ -229,6 +243,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Queen_Vampire",
     voices: {
       fanfare: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
@@ -243,6 +258,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/soul_dealer",
     voices: {
       fanfare: "voices/Classic/Legendary/soul_dealer/soul_dealer_fanfare.mp3",
       attack:  "voices/Classic/Legendary/soul_dealer/soul_dealer_attack.mp3",
@@ -257,6 +273,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Beast_Dominator",
     voices: {
       fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_attack.mp3",
@@ -273,6 +290,7 @@ const cards = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Gabriel",
     voices: {
       fanfare: "voices/Classic/Legendary/Gabriel/Gabriel_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Gabriel/Gabriel_attack.mp3",
@@ -288,6 +306,7 @@ const cards = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "voices/Classic/Legendary/Prince_of_Darkness",
     voices: {
       fanfare: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_attack.mp3",

@@ -104,31 +104,28 @@ document.getElementById("start-btn").onclick = () => {
 /* ================================
    音声再生（voices を直接使用）
 ================================ */
+/* ================================
+   音声再生（voices のフルパスを使用）
+================================ */
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.onclick = () => {
         if (!currentCard) return;
 
         const type = btn.dataset.type;  // fanfare / attack / evolve / destroy
+
         const audio = document.getElementById("audio");
         audio.volume = document.getElementById("volume").value;
 
-        const path = currentCard.voices?.[type];
+        // 🔥 data.js に書いてある voices[type] のフルパスを使用
+        const src = currentCard.voices[type];
+        audio.src = src;
 
-        console.log("再生パス:", path);
-
-        // voices が未定義ならエラー表示
-        if (!path) {
-            alert("このカードの音声データが見つかりません。\ndata.js の voices を確認してください。");
-            return;
-        }
-
-        audio.src = path;
         audio.play().catch(err => {
-            console.error("音声再生失敗:", err, path);
-            alert("音声を再生できませんでした。\nコンソールを確認してください。");
+            console.error("音声再生失敗:", err, src);
         });
     };
 });
+
 
 
 /* ================================

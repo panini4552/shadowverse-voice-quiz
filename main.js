@@ -56,9 +56,9 @@ function nextQuestion() {
 
 // ■開始ボタン
 document.getElementById("start-btn").onclick = () => {
-    const packs = getSelectedValues(document.getElementById("pack-select"));
-    const rarities = getSelectedValues(document.getElementById("rarity-select"));
-    const classes = getSelectedValues(document.getElementById("class-select"));
+    const packs = getSelectedToggle("#pack-group");
+    const rarities = getSelectedToggle("#rarity-group");
+    const classes = getSelectedToggle("#class-group");
 
     filteredCards = cards.filter(c =>
         packs.includes(c.pack) &&
@@ -72,9 +72,9 @@ document.getElementById("start-btn").onclick = () => {
     }
 
     document.getElementById("quiz-area").style.display = "block";
-
     nextQuestion();
 };
+
 
 // ■音声再生ボタン
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
@@ -131,3 +131,14 @@ document.getElementById("submit-btn").onclick = () => {
 document.getElementById("next-btn").onclick = () => {
     nextQuestion();
 };
+// ■トグルボタン（クリックで選択 / 非選択）
+document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("selected");
+    });
+});
+// ■トグルボタンから選択値を取得
+function getSelectedToggle(groupSelector) {
+    return [...document.querySelectorAll(`${groupSelector} .toggle-btn.selected`)]
+        .map(btn => btn.dataset.value);
+}

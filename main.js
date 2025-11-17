@@ -3,7 +3,7 @@ let currentCard = null;
 let streak = 0;
 
 /* ================================
-   文字正規化（全角/半角 & ひらがな→カタカナ）
+   文字正規化
 ================================ */
 function normalize(str) {
     if (!str) return "";
@@ -14,7 +14,7 @@ function normalize(str) {
 }
 
 /* ================================
-   filter-item の選択状態を ON/OFF
+   filter-item の ON/OFF
 ================================ */
 document.querySelectorAll(".filter-item").forEach(item => {
     item.addEventListener("click", () => {
@@ -23,15 +23,22 @@ document.querySelectorAll(".filter-item").forEach(item => {
 });
 
 /* ================================
-   選択された filter-item の値を配列で取得
+   選択された filter-item を取得
 ================================ */
 function getSelectedFilter(selector) {
-    return [...document.querySelectorAll(`${selector} .filter-item.selected`)]
+    const list = [...document.querySelectorAll(`${selector} .filter-item.selected`)]
         .map(el => el.dataset.value);
+
+    // 何も選ばれていない → そのグループの全カードを許可
+    if (list.length === 0) {
+        return [...document.querySelectorAll(`${selector} .filter-item`)]
+            .map(el => el.dataset.value);
+    }
+    return list;
 }
 
 /* ================================
-   カード画像表示（無ければ準備中）
+   画像表示（なければ「準備中」）
 ================================ */
 function showCardImage(card) {
     const imgEl = document.getElementById("resultImage");
@@ -40,8 +47,7 @@ function showCardImage(card) {
     imgEl.style.display = "none";
     placeholder.style.display = "none";
 
-    const folder = card.folder;
-    const imgPath = `${folder}/${card.id}.png`;
+    const imgPath = `${card.folder}/${card.id}.png`;
 
     fetch(imgPath, { method: "HEAD" })
         .then(res => {
@@ -49,10 +55,10 @@ function showCardImage(card) {
                 imgEl.src = imgPath;
                 imgEl.style.display = "block";
             } else {
-                placeholder.style.display = "block";
+                placeholder.style.display = "flex";
             }
         })
-        .catch(() => placeholder.style.display = "block");
+        .catch(() => placeholder.style.display = "flex");
 }
 
 /* ================================
@@ -63,6 +69,7 @@ function nextQuestion() {
     document.getElementById("next-btn").style.display = "none";
     document.getElementById("resultImage").style.display = "none";
     document.getElementById("imagePlaceholder").style.display = "none";
+    document.getElementById("answer-input").value = "";
 
     currentCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
 }
@@ -87,7 +94,6 @@ document.getElementById("start-btn").onclick = () => {
     }
 
     document.getElementById("quiz-area").style.display = "block";
-
     nextQuestion();
 };
 
@@ -96,7 +102,9 @@ document.getElementById("start-btn").onclick = () => {
 ================================ */
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.onclick = () => {
+        if (!currentCard) return;
         const type = btn.dataset.type;
+
         const audio = document.getElementById("audio");
         audio.volume = document.getElementById("volume").value;
         audio.src = `${currentCard.folder}/${currentCard.id}_${type}.mp3`;
@@ -108,6 +116,8 @@ document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
    回答チェック
 ================================ */
 document.getElementById("submit-btn").onclick = () => {
+    if (!currentCard) return;
+
     const input = normalize(document.getElementById("answer-input").value);
     const readings = currentCard.reading.map(r => normalize(r));
     const correct = readings.some(r => r === input);
@@ -135,6 +145,7 @@ document.getElementById("submit-btn").onclick = () => {
         document.getElementById("streak").textContent = "0";
 
         showCardImage(currentCard);
+        document.getElementById("share-x").style.display = "none";
     }
 
     document.getElementById("next-btn").style.display = "inline-block";
@@ -143,6 +154,4 @@ document.getElementById("submit-btn").onclick = () => {
 /* ================================
    次の問題
 ================================ */
-document.getElementById("next-btn").onclick = () => {
-    nextQuestion();
-};
+document.getElementById("next-btn").onclick = nextQuestion;

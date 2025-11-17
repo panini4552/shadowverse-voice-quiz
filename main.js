@@ -109,18 +109,27 @@ document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
         if (!currentCard) return;
 
         const type = btn.dataset.type;  // fanfare / attack / evolve / destroy
-
         const audio = document.getElementById("audio");
         audio.volume = document.getElementById("volume").value;
 
-        // 🔥 voices から直接パスを読む
-        audio.src = currentCard.voices[type];
+        const path = currentCard.voices?.[type];
 
+        console.log("再生パス:", path);
+
+        // voices が未定義ならエラー表示
+        if (!path) {
+            alert("このカードの音声データが見つかりません。\ndata.js の voices を確認してください。");
+            return;
+        }
+
+        audio.src = path;
         audio.play().catch(err => {
-            console.error("音声再生失敗:", err, audio.src);
+            console.error("音声再生失敗:", err, path);
+            alert("音声を再生できませんでした。\nコンソールを確認してください。");
         });
     };
 });
+
 
 /* ================================
    回答チェック

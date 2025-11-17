@@ -2,22 +2,37 @@ let filteredCards = [];
 let currentCard = null;
 let streak = 0;
 
-// ■正規化：ひらがな・カタカナ・全角/半角を統一
+/* ================================
+   文字正規化（全角/半角 & ひらがな→カタカナ）
+================================ */
 function normalize(str) {
     if (!str) return "";
-
     return str
         .toLowerCase()
         .normalize("NFKC")
-        .replace(/[ぁ-ん]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60)); // ひらがな→カタカナ
+        .replace(/[ぁ-ん]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60));
 }
 
-// ■複数選択値の取得
-function getSelectedValues(selectEl) {
-    return [...selectEl.selectedOptions].map(o => o.value);
+/* ================================
+   filter-item の選択状態を ON/OFF
+================================ */
+document.querySelectorAll(".filter-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("selected");
+    });
+});
+
+/* ================================
+   選択された filter-item の値を配列で取得
+================================ */
+function getSelectedFilter(selector) {
+    return [...document.querySelectorAll(`${selector} .filter-item.selected`)]
+        .map(el => el.dataset.value);
 }
 
-// ■カード画像表示（無ければ準備中）
+/* ================================
+   カード画像表示（無ければ準備中）
+================================ */
 function showCardImage(card) {
     const imgEl = document.getElementById("resultImage");
     const placeholder = document.getElementById("imagePlaceholder");
@@ -25,7 +40,6 @@ function showCardImage(card) {
     imgEl.style.display = "none";
     placeholder.style.display = "none";
 
-    // 音声フォルダと同じ場所に cardName.png がある前提
     const folder = card.folder;
     const imgPath = `${folder}/${card.id}.png`;
 
@@ -41,24 +55,25 @@ function showCardImage(card) {
         .catch(() => placeholder.style.display = "block");
 }
 
-// ■次の問題を出す
+/* ================================
+   次の問題
+================================ */
 function nextQuestion() {
     document.getElementById("result").textContent = "";
     document.getElementById("next-btn").style.display = "none";
     document.getElementById("resultImage").style.display = "none";
     document.getElementById("imagePlaceholder").style.display = "none";
 
-    const rand = Math.random();
-    currentCard = filteredCards[Math.floor(rand * filteredCards.length)];
-
-    document.getElementById("current-card-id").textContent = currentCard.id;
+    currentCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
 }
 
-// ■開始ボタン
+/* ================================
+   クイズ開始
+================================ */
 document.getElementById("start-btn").onclick = () => {
-    const packs = getSelectedToggle("#pack-group");
-    const rarities = getSelectedToggle("#rarity-group");
-    const classes = getSelectedToggle("#class-group");
+    const packs = getSelectedFilter("#pack-filter");
+    const rarities = getSelectedFilter("#rarity-filter");
+    const classes = getSelectedFilter("#class-filter");
 
     filteredCards = cards.filter(c =>
         packs.includes(c.pack) &&
@@ -72,11 +87,13 @@ document.getElementById("start-btn").onclick = () => {
     }
 
     document.getElementById("quiz-area").style.display = "block";
+
     nextQuestion();
 };
 
-
-// ■音声再生ボタン
+/* ================================
+   音声再生
+================================ */
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.onclick = () => {
         const type = btn.dataset.type;
@@ -87,10 +104,11 @@ document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     };
 });
 
-// ■回答
+/* ================================
+   回答チェック
+================================ */
 document.getElementById("submit-btn").onclick = () => {
     const input = normalize(document.getElementById("answer-input").value);
-
     const readings = currentCard.reading.map(r => normalize(r));
     const correct = readings.some(r => r === input);
 
@@ -103,42 +121,28 @@ document.getElementById("submit-btn").onclick = () => {
         streak++;
         document.getElementById("streak").textContent = streak;
 
-        // 画像表示
         showCardImage(currentCard);
 
-        // X共有リンク
-        const shareUrl =
+        document.getElementById("share-x").href =
             `https://twitter.com/intent/tweet?text=Shadowverseボイスクイズで${streak}問連続正解しました！`;
-        document.getElementById("share-x").href = shareUrl;
         document.getElementById("share-x").style.display = "inline-block";
-
-        document.getElementById("next-btn").style.display = "inline-block";
 
     } else {
         resultEl.textContent = `不正解… 正解：${currentCard.name}`;
         resultEl.style.color = "red";
+
         streak = 0;
         document.getElementById("streak").textContent = "0";
 
-        // 画像表示
         showCardImage(currentCard);
-
-        document.getElementById("next-btn").style.display = "inline-block";
     }
+
+    document.getElementById("next-btn").style.display = "inline-block";
 };
 
-// ■次の問題へ
+/* ================================
+   次の問題
+================================ */
 document.getElementById("next-btn").onclick = () => {
     nextQuestion();
 };
-// ■トグルボタン（クリックで選択 / 非選択）
-document.querySelectorAll(".toggle-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        btn.classList.toggle("selected");
-    });
-});
-// ■トグルボタンから選択値を取得
-function getSelectedToggle(groupSelector) {
-    return [...document.querySelectorAll(`${groupSelector} .toggle-btn.selected`)]
-        .map(btn => btn.dataset.value);
-}

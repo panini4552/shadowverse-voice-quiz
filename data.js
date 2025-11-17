@@ -8,6 +8,7 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
+    folder: "images/Classic/Legendary/Gabriel",
     voices: {
       fanfare: "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_fanfare.mp3",
       attack:  "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_attack.mp3",

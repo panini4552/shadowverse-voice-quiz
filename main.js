@@ -1,175 +1,133 @@
-// main.js
-// data.js に定義された `cards` を使用
-
-let pool = [];
+let filteredCards = [];
 let currentCard = null;
 let streak = 0;
 
-// DOMヘルパ
-const q = {
-  packSelect: () => document.getElementById("pack-select"),
-  raritySelect: () => document.getElementById("rarity-select"),
-  classSelect: () => document.getElementById("class-select"),
-  startBtn: () => document.getElementById("start-btn"),
-  quizArea: () => document.getElementById("quiz-area"),
-  audio: () => document.getElementById("audio"),
-  volume: () => document.getElementById("volume"),
-  answerIn: () => document.getElementById("answer-input"),
-  submitBtn: () => document.getElementById("submit-btn"),
-  result: () => document.getElementById("result"),
-  streakEl: () => document.getElementById("streak"),
-  currentCardIdEl: () => document.getElementById("current-card-id")
+// ■正規化：ひらがな・カタカナ・全角/半角を統一
+function normalize(str) {
+    if (!str) return "";
+
+    return str
+        .toLowerCase()
+        .normalize("NFKC")
+        .replace(/[ぁ-ん]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60)); // ひらがな→カタカナ
+}
+
+// ■複数選択値の取得
+function getSelectedValues(selectEl) {
+    return [...selectEl.selectedOptions].map(o => o.value);
+}
+
+// ■カード画像表示（無ければ準備中）
+function showCardImage(card) {
+    const imgEl = document.getElementById("resultImage");
+    const placeholder = document.getElementById("imagePlaceholder");
+
+    imgEl.style.display = "none";
+    placeholder.style.display = "none";
+
+    // 音声フォルダと同じ場所に cardName.png がある前提
+    const folder = card.folder;
+    const imgPath = `${folder}/${card.id}.png`;
+
+    fetch(imgPath, { method: "HEAD" })
+        .then(res => {
+            if (res.ok) {
+                imgEl.src = imgPath;
+                imgEl.style.display = "block";
+            } else {
+                placeholder.style.display = "block";
+            }
+        })
+        .catch(() => placeholder.style.display = "block");
+}
+
+// ■次の問題を出す
+function nextQuestion() {
+    document.getElementById("result").textContent = "";
+    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("resultImage").style.display = "none";
+    document.getElementById("imagePlaceholder").style.display = "none";
+
+    const rand = Math.random();
+    currentCard = filteredCards[Math.floor(rand * filteredCards.length)];
+
+    document.getElementById("current-card-id").textContent = currentCard.id;
+}
+
+// ■開始ボタン
+document.getElementById("start-btn").onclick = () => {
+    const packs = getSelectedValues(document.getElementById("pack-select"));
+    const rarities = getSelectedValues(document.getElementById("rarity-select"));
+    const classes = getSelectedValues(document.getElementById("class-select"));
+
+    filteredCards = cards.filter(c =>
+        packs.includes(c.pack) &&
+        rarities.includes(c.rarity) &&
+        classes.includes(c.class)
+    );
+
+    if (filteredCards.length === 0) {
+        alert("条件に一致するカードがありません");
+        return;
+    }
+
+    document.getElementById("quiz-area").style.display = "block";
+
+    nextQuestion();
 };
 
-function init() {
-  q.startBtn().addEventListener("click", startQuiz);
-  q.submitBtn().addEventListener("click", checkAnswer);
+// ■音声再生ボタン
+document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
+    btn.onclick = () => {
+        const type = btn.dataset.type;
+        const audio = document.getElementById("audio");
+        audio.volume = document.getElementById("volume").value;
+        audio.src = `${currentCard.folder}/${currentCard.id}_${type}.mp3`;
+        audio.play();
+    };
+});
 
-  q.volume().addEventListener("input", e => {
-    q.audio().volume = e.target.value;
-  });
+// ■回答
+document.getElementById("submit-btn").onclick = () => {
+    const input = normalize(document.getElementById("answer-input").value);
 
-  document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const type = btn.getAttribute("data-type");
-      playVoice(type);
-    });
-  });
+    const readings = currentCard.reading.map(r => normalize(r));
+    const correct = readings.some(r => r === input);
 
-  q.answerIn().addEventListener("keydown", e => {
-    if (e.key === "Enter") checkAnswer();
-  });
+    const resultEl = document.getElementById("result");
 
-  q.audio().volume = q.volume().value;
-}
+    if (correct) {
+        resultEl.textContent = "正解！";
+        resultEl.style.color = "green";
 
-function startQuiz() {
-  const pack = q.packSelect().value;
-  const rarity = q.raritySelect().value;
-  const cls = q.classSelect().value;
+        streak++;
+        document.getElementById("streak").textContent = streak;
 
-  pool = cards.filter(card => {
-    return (pack === "all" || card.pack === pack) &&
-           (rarity === "all" || card.rarity === rarity) &&
-           (cls === "all" || card.class === cls);
-  });
+        // 画像表示
+        showCardImage(currentCard);
 
-  if (!pool.length) {
-    alert("選択条件に合うカードがありません");
-    return;
-  }
+        // X共有リンク
+        const shareUrl =
+            `https://twitter.com/intent/tweet?text=Shadowverseボイスクイズで${streak}問連続正解しました！`;
+        document.getElementById("share-x").href = shareUrl;
+        document.getElementById("share-x").style.display = "inline-block";
 
-  q.quizArea().style.display = "block";
-  nextQuestion();
-}
+        document.getElementById("next-btn").style.display = "inline-block";
 
-function nextQuestion() {
-  currentCard = pool[Math.floor(Math.random() * pool.length)];
+    } else {
+        resultEl.textContent = `不正解… 正解：${currentCard.name}`;
+        resultEl.style.color = "red";
+        streak = 0;
+        document.getElementById("streak").textContent = "0";
 
-  q.currentCardIdEl().innerText = "";
-  q.result().innerText = "";
-  q.answerIn().value = "";
+        // 画像表示
+        showCardImage(currentCard);
 
-  // 既存の音声停止
-  stopAudio();
-}
+        document.getElementById("next-btn").style.display = "inline-block";
+    }
+};
 
-// === 音声停止処理 ===
-function stopAudio() {
-  const audio = q.audio();
-  audio.pause();
-  audio.currentTime = 0;
-}
-
-// === 音声再生（②・⑤・⑥完全修正） ===
-function playVoice(type) {
-  if (!currentCard) {
-    alert("まず『クイズ開始』を押してください");
-    return;
-  }
-
-  const src = currentCard.voices?.[type];
-
-  if (!src) {
-    alert("この種類のボイスはありません");
-    return;
-  }
-
-  const audio = q.audio();
-
-  // 先に停止
-  stopAudio();
-
-  // ソースをセット
-  audio.src = src;
-
-  // load → play の順で確実に再生
-  audio.load();
-  audio.play().catch(() => {
-    console.warn("自動再生に失敗しました（ユーザ操作が必要な場合あり）");
-  });
-}
-
-
-// ▼▼▼ 入力正規化（③完全対応） ▼▼▼
-
-// 全角 → 半角
-function toHalfWidth(str) {
-  return str.replace(/[！-～]/g, s =>
-    String.fromCharCode(s.charCodeAt(0) - 0xFEE0)
-  ).replace(/　/g, " ");
-}
-
-// カタカナ → ひらがな
-function kataToHira(str) {
-  return str.replace(/[\u30a1-\u30f6]/g, s =>
-    String.fromCharCode(s.charCodeAt(0) - 0x60)
-  );
-}
-
-// 入力を正規化
-function normalize(str) {
-  if (!str) return "";
-  str = str.trim();
-  str = toHalfWidth(str);
-  str = kataToHira(str);
-  return str.toLowerCase();
-}
-
-// === 正解判定（③修正版） ===
-function isCorrect(userInput, card) {
-  const user = normalize(userInput);
-  const readings = card.reading.map(r => normalize(r));
-  return readings.includes(user);
-}
-// ▲▲▲ 入力正規化ここまで ▲▲▲
-
-
-function checkAnswer() {
-  if (!currentCard) {
-    alert("問題がセットされていません");
-    return;
-  }
-
-  const input = q.answerIn().value.trim();
-  const res = q.result();
-
-  if (!input) {
-    alert("解答を入力してください");
-    return;
-  }
-
-  if (isCorrect(input, currentCard)) {
-    streak++;
-    res.innerText = "正解！ 🎉";
-  } else {
-    streak = 0;
-    res.innerText = `不正解… 正解: ${currentCard.name}`;
-  }
-
-  q.streakEl().innerText = streak;
-
-  setTimeout(nextQuestion, 1200);
-}
-
-document.addEventListener("DOMContentLoaded", init);
+// ■次の問題へ
+document.getElementById("next-btn").onclick = () => {
+    nextQuestion();
+};

@@ -8,58 +8,61 @@
 <script defer src="data.js"></script>
 <script defer src="main.js"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Shadowverse ボイス当てクイズ</h1>
 
+    <!-- ▼設定エリア -->
     <div class="controls">
-      <label>出題範囲：</label>
-      <select id="pack-select">
-        <option value="all">全パック</option>
-        <option value="Classic">Classic</option>
-        <!-- 将来ここにパックを追加 -->
-      </select>
+      <div>
+        <label>出題範囲（複数可）</label>
+        <select id="pack-select" multiple size="4">
+          <option value="Classic">Classic</option>
+        </select>
+      </div>
 
-      <label>レアリティ：</label>
-      <select id="rarity-select">
-        <option value="all">全て</option>
-        <option value="Bronze">ブロンズ</option>
-        <option value="Silver">シルバー</option>
-        <option value="Gold">ゴールド</option>
-        <option value="Legendary">レジェンド</option>
-      </select>
+      <div>
+        <label>レアリティ（複数可）</label>
+        <select id="rarity-select" multiple size="5">
+          <option value="Bronze">ブロンズ</option>
+          <option value="Silver">シルバー</option>
+          <option value="Gold">ゴールド</option>
+          <option value="Legendary">レジェンド</option>
+        </select>
+      </div>
 
-      <label>クラス：</label>
-      <select id="class-select">
-        <option value="all">全クラス（ランダム）</option>
-        <option value="エルフ">エルフ</option>
-        <option value="ロイヤル">ロイヤル</option>
-        <option value="ドラゴン">ドラゴン</option>
-        <option value="ウィッチ">ウィッチ</option>
-        <option value="ネクロマンサー">ネクロマンサー</option>
-        <option value="ヴァンパイア">ヴァンパイア</option>
-        <option value="ビショップ">ビショップ</option>
-        <option value="ネメシス">ネメシス</option>
-      </select>
+      <div>
+        <label>クラス（複数可）</label>
+        <select id="class-select" multiple size="8">
+          <option value="エルフ">エルフ</option>
+          <option value="ロイヤル">ロイヤル</option>
+          <option value="ドラゴン">ドラゴン</option>
+          <option value="ウィッチ">ウィッチ</option>
+          <option value="ネクロマンサー">ネクロマンサー</option>
+          <option value="ヴァンパイア">ヴァンパイア</option>
+          <option value="ビショップ">ビショップ</option>
+          <option value="ネメシス">ネメシス</option>
+        </select>
+      </div>
 
       <button id="start-btn" class="btn">クイズ開始</button>
     </div>
 
     <hr>
 
+    <!-- ▼クイズエリア -->
     <div id="quiz-area" style="display:none;">
-      <div class="voice-controls">
-        <div class="voice-buttons">
-          <button class="btn" data-type="fanfare">ファンファーレ</button>
-          <button class="btn" data-type="attack">攻撃</button>
-          <button class="btn" data-type="destroy">破壊</button>
-          <button class="btn" data-type="evolve">進化</button>
-        </div>
+      <div class="voice-buttons">
+        <button class="btn" data-type="fanfare">ファンファーレ</button>
+        <button class="btn" data-type="attack">攻撃</button>
+        <button class="btn" data-type="destroy">破壊</button>
+        <button class="btn" data-type="evolve">進化</button>
+      </div>
 
-        <div class="volume">
-          <label>音量</label>
-          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9"/>
-        </div>
+      <div class="volume">
+        <label>音量</label>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9"/>
       </div>
 
       <div class="answer-area">
@@ -69,16 +72,25 @@
 
       <div id="result" class="result"></div>
 
+      <!-- ▼カード画像 -->
+      <div id="image-wrapper" style="margin-top:10px;">
+        <img id="resultImage" style="max-width:260px; display:none;">
+        <div id="imagePlaceholder" style="display:none; color:#555;">
+          画像準備中…
+        </div>
+      </div>
+
+      <button id="next-btn" class="btn" style="display:none; margin-top:10px;">次の問題へ</button>
+
+      <!-- ▼連続正解 & X共有 -->
       <div class="status">
         <div>現在の連続正解: <span id="streak">0</span></div>
-        <div>表示中のカード: <span id="current-card-id">-</span></div>
+        <a id="share-x" href="#" target="_blank" class="btn" style="display:none;">Xで共有</a>
       </div>
     </div>
 
     <audio id="audio" preload="auto"></audio>
-    <footer>
-      <small>プロトタイプ版 — 著作権に注意して運用してください。</small>
-    </footer>
+
   </div>
 </body>
 </html>

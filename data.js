@@ -278,7 +278,8 @@ const cards = [
       evolve:  "voices/Classic/Legendary/Gabriel/Gabriel_evolve.mp3",
       destroy: "voices/Classic/Legendary/Gabriel/Gabriel_destroy.mp3"
     }
-  },
+  },  <!-- ⭐ここにカンマが必要 -->
+
   {
     id: "Prince_of_Darkness",
     name: "サタン",
@@ -294,5 +295,6 @@ const cards = [
     }
   }
 ];
+
 
 // export not needed for browser; main.js will use global `cards`.

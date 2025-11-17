@@ -101,15 +101,24 @@ document.getElementById("start-btn").onclick = () => {
 /* ================================
    音声再生
 ================================ */
+/* ================================
+   音声再生（voices を直接使用）
+================================ */
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
     btn.onclick = () => {
         if (!currentCard) return;
-        const type = btn.dataset.type;
+
+        const type = btn.dataset.type;  // fanfare / attack / evolve / destroy
 
         const audio = document.getElementById("audio");
         audio.volume = document.getElementById("volume").value;
-        audio.src = `${currentCard.folder}/${currentCard.id}_${type}.mp3`;
-        audio.play();
+
+        // 🔥 voices から直接パスを読む
+        audio.src = currentCard.voices[type];
+
+        audio.play().catch(err => {
+            console.error("音声再生失敗:", err, audio.src);
+        });
     };
 });
 

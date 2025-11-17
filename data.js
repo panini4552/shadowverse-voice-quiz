@@ -307,10 +307,10 @@ const cards = [
     pack: "Classic",
     folder: "voices/Classic/Legendary/Lucifer",
     voices: {
-      fanfare: "voices/Classic/Legendary/Gabriel/Lucifer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Gabriel/Lucifer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Gabriel/Lucifer_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Gabriel/Lucifer_destroy.mp3"
+      fanfare: "voices/Classic/Legendary/Lucifer/Lucifer_fanfare.mp3",
+      attack:  "voices/Classic/Legendary/Lucifer/Lucifer_attack.mp3",
+      evolve:  "voices/Classic/Legendary/Lucifer/Lucifer_evolve.mp3",
+      destroy: "voices/Classic/Legendary/Lucifer/Lucifer_destroy.mp3"
     }
   }, 
   {

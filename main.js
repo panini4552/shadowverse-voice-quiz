@@ -47,7 +47,10 @@ function showCardImage(card) {
     imgEl.style.display = "none";
     placeholder.style.display = "none";
 
-    const imgPath = `${card.folder}/${card.id}.png`;
+    // ← folder の前後のスペースを除去
+    const folder = card.folder.trim();
+
+    const imgPath = `${folder}/${card.id}.png`;
 
     fetch(imgPath, { method: "HEAD" })
         .then(res => {
@@ -60,6 +63,7 @@ function showCardImage(card) {
         })
         .catch(() => placeholder.style.display = "flex");
 }
+
 
 /* ================================
    次の問題
@@ -108,25 +112,20 @@ document.getElementById("start-btn").onclick = () => {
    音声再生（voices のフルパスを使用）
 ================================ */
 document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
-    btn.onclick = () => {
-        if (!currentCard) return;
+btn.onclick = () => {
+    if (!currentCard) return;
 
-        const type = btn.dataset.type;  // fanfare / attack / evolve / destroy
+    const type = btn.dataset.type;
 
-        const audio = document.getElementById("audio");
-        audio.volume = document.getElementById("volume").value;
+    const audio = document.getElementById("audio");
+    audio.volume = document.getElementById("volume").value;
 
-        // 🔥 data.js に書いてある voices[type] のフルパスを使用
-        const src = currentCard.voices[type];
-        audio.src = src;
+    // ← voices[type] にスペースがある場合でも OK
+    const src = currentCard.voices[type].trim();
 
-        audio.play().catch(err => {
-            console.error("音声再生失敗:", err, src);
-        });
-    };
-});
-
-
+    audio.src = src;
+    audio.play().catch(err => console.error("音声再生失敗:", err, src));
+};
 
 /* ================================
    回答チェック

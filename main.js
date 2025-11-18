@@ -81,8 +81,6 @@ function collectSelectedArray(groupKey) {
     return selectedBtns.map(b => b.dataset.value);
 }
 
-}
-
 /* ================================
    toggle の一元化（.toggle-btn を .active 切替）
 ================================ */

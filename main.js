@@ -439,16 +439,14 @@ function updateProgressUI() {
    初期化
 ================================ */
 window.addEventListener("load", () => {
-    // global cards from data.js
-    cards = window.cards || window.SV_DATA || [];
+    // data.js の cards はそのまま利用できるので上書き不要
 
-    // ensure toggle-btn has click behavior if JS didn't handle delegation for some reason (defensive)
-    document.querySelectorAll(".toggle-btn").forEach(btn => {
-        // don't add duplicated listeners — rely on delegation above
-        // but ensure initial aria/role if desired
-    });
-
-    // hide quiz area initially
+    // 必要ならここで初期表示を調整
     const quizArea = document.getElementById("quiz-area");
-    if (quizArea) quizArea.style.display = "none";
+    if (quizArea) {
+        quizArea.style.display = "none";
+    }
+
+    // toggle-btn の初期化は main.js のイベント委譲で全て対応済み
 });
+

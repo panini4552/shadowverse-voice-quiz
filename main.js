@@ -1,13 +1,16 @@
 /* ============================================
-   Shadowverse ボイス当てクイズ（ZIP対応版）
+   Shadowverse ボイス当てクイズ + フィルター対応版
 ============================================ */
 
+/* ====== 変数 ====== */
 let cards = [];             // data.js 読み込み
+let filteredCards = [];     // フィルタ後
 let currentCard = null;
 let streak = 0;
 
 // ZIP キャッシュ
 const zipCache = {};
+
 
 /* ======================================
    ZIP 読み込み（初回のみ）
@@ -35,8 +38,7 @@ async function extractCardAssets(card) {
         others: []
     };
 
-    const name = card.id;  // "Ancient_Elf"
-
+    const name = card.id;
     const files = Object.keys(zip.files);
 
     for (const fileName of files) {
@@ -68,7 +70,6 @@ async function extractCardAssets(card) {
                 continue;
             }
 
-            // その他ボイス（カード名_〜.mp3）
             if (lower.startsWith(name.toLowerCase() + "_")) {
                 const blob = await zip.files[fileName].async("blob");
                 assets.others.push({
@@ -76,7 +77,6 @@ async function extractCardAssets(card) {
                     url: URL.createObjectURL(blob)
                 });
             }
-
         }
     }
 
@@ -111,7 +111,6 @@ async function playVoice(card, type) {
 
         case "other":
             if (assets.others.length === 0) return;
-            // ランダム再生
             const pick = assets.others[Math.floor(Math.random() * assets.others.length)];
             url = pick.url;
             break;
@@ -124,7 +123,63 @@ async function playVoice(card, type) {
 }
 
 /* ======================================
-   クイズ機能（従来通り）
+   フィルター処理
+====================================== */
+function applyFilters() {
+    const classBtn = document.querySelector(".filter-btn.active[data-class]");
+    const rarityBtn = document.querySelector(".filter-btn.active[data-rarity]");
+    const envBtn = document.querySelector(".filter-btn.active[data-env]");
+
+    const classFilter = classBtn ? classBtn.dataset.class : null;
+    const rarityFilter = rarityBtn ? rarityBtn.dataset.rarity : null;
+    const envFilter = envBtn ? true : false;
+
+    filteredCards = cards.filter(card => {
+        if (classFilter && card.class !== classFilter) return false;
+        if (rarityFilter && card.rarity !== rarityFilter) return false;
+
+        // environment フィルター
+        if (envFilter && !card.environment) return false;
+
+        return true;
+    });
+
+    // 空なら全カード
+    if (filteredCards.length === 0) {
+        filteredCards = cards.slice();
+    }
+
+    nextQuestion();
+}
+
+/* ======================================
+   フィルターボタンのクリック制御
+====================================== */
+function setupFilterButtons() {
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            // environment は ON/OFF
+            if (btn.dataset.env !== undefined) {
+                btn.classList.toggle("active");
+                applyFilters();
+                return;
+            }
+
+            // class / rarity は排他
+            const type = btn.dataset.class ? "class" : "rarity";
+            const selector = `[data-${type}]`;
+
+            document.querySelectorAll(selector).forEach(b => b.classList.remove("active"));
+
+            btn.classList.add("active");
+            applyFilters();
+        });
+    });
+}
+
+/* ======================================
+   クイズ部分
 ====================================== */
 
 function startQuiz() {
@@ -133,7 +188,9 @@ function startQuiz() {
 }
 
 function nextQuestion() {
-    currentCard = cards[Math.floor(Math.random() * cards.length)];
+    if (filteredCards.length === 0) filteredCards = cards.slice();
+
+    currentCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
     showCard(currentCard);
 
     document.getElementById("status").textContent =
@@ -158,5 +215,9 @@ function answer(cardId) {
    初期化
 ====================================== */
 window.onload = () => {
-    cards = window.SV_DATA; // data.js から読み込み
+    cards = window.SV_DATA; // data.js 読み込み
+    filteredCards = cards.slice();
+
+    setupFilterButtons();
+    startQuiz();
 };

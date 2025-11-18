@@ -4,7 +4,6 @@
    - data.js の cards 配列を利用
 ============================================ */
 
-let cards = []; // data.js から読み込まれる想定
 let remainingCards = [];
 let totalQuestions = 0;
 let currentIndex = 0;

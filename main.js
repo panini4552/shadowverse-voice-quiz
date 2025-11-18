@@ -1,185 +1,162 @@
-/* ================================
-   必須ライブラリ（JSZip）
-   <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
-================================ */
-let filteredCards = [];
+/* ============================================
+   Shadowverse ボイス当てクイズ（ZIP対応版）
+============================================ */
+
+let cards = [];             // data.js 読み込み
 let currentCard = null;
 let streak = 0;
 
-function normalize(str) {
-    if (!str) return "";
-    return str
-        .toLowerCase()
-        .normalize("NFKC")
-        .replace(/[ぁ-ん]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60));
+// ZIP キャッシュ
+const zipCache = {};
+
+/* ======================================
+   ZIP 読み込み（初回のみ）
+====================================== */
+async function loadZip(card) {
+    if (zipCache[card.id]) return zipCache[card.id];
+
+    const zip = await JSZip.loadAsync(await fetch(card.zip).then(r => r.arrayBuffer()));
+    zipCache[card.id] = zip;
+    return zip;
 }
 
-/* ZIPから画像と音声を読み取る */
-async function loadZipAssets(card) {
-    const zipPath = `voices/${card.pack}/${card.rarity}/${card.id}/${card.id}.zip`;
-
-    const response = await fetch(zipPath);
-    if (!response.ok) {
-        console.error("ZIPが読み込めません:", zipPath);
-        return null;
-    }
-
-    const arrayBuffer = await response.arrayBuffer();
-    const zip = await JSZip.loadAsync(arrayBuffer);
+/* ======================================
+   ZIP内のファイルを自動検出
+====================================== */
+async function extractCardAssets(card) {
+    const zip = await loadZip(card);
 
     const assets = {
         image: null,
-        voices: {
-            fanfare: null,
-            attack: null,
-            destroy: null,
-            evolve: null,
-            others: [] // その他ボイス
-        }
+        fanfare: null,
+        attack: null,
+        evolve: null,
+        destroy: null,
+        others: []
     };
+
+    const name = card.id;  // "Ancient_Elf"
 
     const files = Object.keys(zip.files);
 
-    for (const filename of files) {
-        const lower = filename.toLowerCase();
+    for (const fileName of files) {
+        const lower = fileName.toLowerCase();
 
-        // 画像（png）
-        if (lower.endsWith(".png") && !assets.image) {
-            const blob = await zip.files[filename].async("blob");
-            assets.image = URL.createObjectURL(blob);
+        /* ---------- 画像 ---------- */
+        if (lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".webp")) {
+            assets.image = await zip.files[fileName].async("blob");
+            continue;
         }
 
-        // ボイス（mp3）
-        if (lower.endsWith(".mp3")) {
-            const blob = await zip.files[filename].async("blob");
-            const url = URL.createObjectURL(blob);
+        /* ---------- ボイス ---------- */
+        if (lower.endsWith(".mp3") || lower.endsWith(".ogg") || lower.endsWith(".wav")) {
 
-            if (lower.includes("fanfare")) assets.voices.fanfare = url;
-            else if (lower.includes("attack")) assets.voices.attack = url;
-            else if (lower.includes("destroy")) assets.voices.destroy = url;
-            else if (lower.includes("evolve")) assets.voices.evolve = url;
-            else assets.voices.others.push(url); // その他ボイス
+            if (lower.includes(name.toLowerCase() + "_fanfare")) {
+                assets.fanfare = URL.createObjectURL(await zip.files[fileName].async("blob"));
+                continue;
+            }
+            if (lower.includes(name.toLowerCase() + "_attack")) {
+                assets.attack = URL.createObjectURL(await zip.files[fileName].async("blob"));
+                continue;
+            }
+            if (lower.includes(name.toLowerCase() + "_evolve")) {
+                assets.evolve = URL.createObjectURL(await zip.files[fileName].async("blob"));
+                continue;
+            }
+            if (lower.includes(name.toLowerCase() + "_destroy")) {
+                assets.destroy = URL.createObjectURL(await zip.files[fileName].async("blob"));
+                continue;
+            }
+
+            // その他ボイス（カード名_〜.mp3）
+            if (lower.startsWith(name.toLowerCase() + "_")) {
+                const blob = await zip.files[fileName].async("blob");
+                assets.others.push({
+                    name: fileName.replace(name + "_", "").replace(/\.(mp3|ogg|wav)$/i, ""),
+                    url: URL.createObjectURL(blob)
+                });
+            }
+
         }
     }
 
     return assets;
 }
 
-/* ▼ クイズ開始 */
-document.getElementById("start-btn").addEventListener("click", () => {
-    const packs = getSelectedValues("pack-filter");
-    const rarities = getSelectedValues("rarity-filter");
-    const classes = getSelectedValues("class-filter");
+/* ======================================
+   カード画像の表示
+====================================== */
+async function showCard(card) {
+    const assets = await extractCardAssets(card);
 
-    filteredCards = cards.filter(c =>
-        packs.includes(c.pack) &&
-        rarities.includes(c.rarity) &&
-        classes.includes(c.class)
-    );
+    if (assets.image) {
+        const url = URL.createObjectURL(assets.image);
+        document.getElementById("cardImage").src = url;
+    }
+}
 
-    if (filteredCards.length === 0) {
-        alert("条件に一致するカードがありません");
-        return;
+/* ======================================
+   ボイス再生
+====================================== */
+async function playVoice(card, type) {
+    const assets = await extractCardAssets(card);
+
+    let url = null;
+
+    switch (type) {
+        case "fanfare": url = assets.fanfare; break;
+        case "attack":  url = assets.attack; break;
+        case "evolve":  url = assets.evolve; break;
+        case "destroy": url = assets.destroy; break;
+
+        case "other":
+            if (assets.others.length === 0) return;
+            // ランダム再生
+            const pick = assets.others[Math.floor(Math.random() * assets.others.length)];
+            url = pick.url;
+            break;
     }
 
+    if (!url) return;
+
+    const audio = new Audio(url);
+    audio.play();
+}
+
+/* ======================================
+   クイズ機能（従来通り）
+====================================== */
+
+function startQuiz() {
     streak = 0;
-    document.getElementById("streak").textContent = streak;
-    document.getElementById("quiz-area").style.display = "block";
-
     nextQuestion();
-});
-
-/* 値取得 */
-function getSelectedValues(id) {
-    return [...document.querySelectorAll(`#${id} .toggle-btn.selected`)]
-        .map(btn => btn.dataset.value);
 }
 
-/* ▼ 次の問題 */
-async function nextQuestion() {
-    currentCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
+function nextQuestion() {
+    currentCard = cards[Math.floor(Math.random() * cards.length)];
+    showCard(currentCard);
 
-    const assets = await loadZipAssets(currentCard);
-    if (!assets) {
-        console.warn("ZIPロード失敗。次の問題を出します");
-        return nextQuestion();
-    }
-
-    // 画像
-    const img = document.getElementById("resultImage");
-    img.style.display = assets.image ? "block" : "none";
-    img.src = assets.image;
-
-    document.getElementById("imagePlaceholder").style.display =
-        assets.image ? "none" : "flex";
-
-    // ボイスボタンにURL登録
-    document.querySelectorAll(".voice-buttons .btn").forEach(btn => {
-        const type = btn.dataset.type;
-        btn.dataset.url = assets.voices[type] || "";
-    });
-
-    // その他ボイスボタン生成
-    setupOtherVoices(assets.voices.others);
-
-    document.getElementById("result").textContent = "";
-    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("status").textContent =
+        `現在: ${streak} 連続正解中`;
 }
 
-/* ▼ その他ボイスボタンを生成 */
-function setupOtherVoices(list) {
-    const container = document.querySelector(".voice-buttons");
-
-    // 既存のその他ボタンを削除
-    document.querySelectorAll(".other-voice-btn").forEach(e => e.remove());
-
-    list.forEach(url => {
-        const btn = document.createElement("button");
-        btn.className = "btn other-voice-btn";
-        btn.textContent = "その他";
-        btn.dataset.url = url;
-
-        container.appendChild(btn);
-    });
-}
-
-/* ▼ ボイス再生 */
-document.addEventListener("click", e => {
-    if (e.target.matches(".voice-buttons .btn")) {
-        const url = e.target.dataset.url;
-        if (!url) return;
-
-        const audio = document.getElementById("audio");
-        audio.volume = document.getElementById("volume").value;
-        audio.src = url;
-        audio.play();
-    }
-});
-
-/* ▼ 回答チェック */
-document.getElementById("submit-btn").addEventListener("click", () => {
-    const input = normalize(document.getElementById("answer-input").value);
-    const names = currentCard.reading.map(r => normalize(r));
-
-    if (names.includes(input)) {
-        document.getElementById("result").textContent = "正解！";
+function answer(cardId) {
+    if (cardId === currentCard.id) {
         streak++;
-        document.getElementById("streak").textContent = streak;
+        document.getElementById("status").textContent =
+            `正解！ 現在 ${streak} 連続正解中`;
+        nextQuestion();
     } else {
-        document.getElementById("result").textContent = "不正解… (" + currentCard.name + ")";
+        document.getElementById("status").textContent =
+            `不正解… 連続正解は ${streak} で終了`;
         streak = 0;
-        document.getElementById("streak").textContent = streak;
+        nextQuestion();
     }
+}
 
-    document.getElementById("next-btn").style.display = "inline-block";
-});
-
-/* ▼ 次ボタン */
-document.getElementById("next-btn").addEventListener("click", nextQuestion);
-
-/* ▼ トグルボタン */
-document.addEventListener("click", e => {
-    if (e.target.classList.contains("toggle-btn")) {
-        e.target.classList.toggle("selected");
-    }
-});
+/* ======================================
+   初期化
+====================================== */
+window.onload = () => {
+    cards = window.SV_DATA; // data.js から読み込み
+};

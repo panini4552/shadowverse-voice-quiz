@@ -1,78 +1,152 @@
 /* ===============================
-   フィルター UI 全体
+   全体レイアウト
 =============================== */
-.filter-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 15px 0;
-    padding: 12px;
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+}
+
+.container {
+    max-width: 720px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===============================
+   ボタン共通デザイン
+=============================== */
+.btn {
+    padding: 8px 14px;
+    background: #4caf50;
+    border: 1px solid #3b8d3f;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #43a047;
+}
+
+/* 全選択 / 全解除 */
+.select-all-btn {
+    background: #2196f3;
+    border-color: #0d7cd3;
+}
+
+.select-all-btn:hover {
+    background: #1e88e5;
+}
+
+/* ===============================
+   各フィルターブロック
+=============================== */
+.filter-group {
     background: #f4f4f4;
+    padding: 12px;
+    margin-bottom: 15px;
     border-radius: 8px;
     border: 1px solid #ccc;
 }
 
-/* ボタンの基本デザイン */
-.filter-btn {
-    padding: 6px 14px;
-    border-radius: 6px;
+.filter-group label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* ヘッダ（全選択ボタン配置） */
+.filter-header {
+    margin-bottom: 8px;
+}
+
+/* トグルボタン（JSが .active を付け外し） */
+.toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 6px 12px;
+    background: #fff;
     border: 1px solid #888;
-    background: white;
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.2s;
     user-select: none;
 }
 
-.filter-btn:hover {
+.toggle-btn:hover {
     background: #eee;
 }
 
-/* 選択状態 */
-.filter-btn.active {
+.toggle-btn.active {
     background: #4caf50;
-    color: white;
+    color: #fff;
     border-color: #3b8d3f;
 }
 
 /* ===============================
-   environment（環境入り）専用の色
+   特別色：environment（環境入りカード）
 =============================== */
-.filter-btn.environment {
+.toggle-btn[data-value="environment"] {
     border-color: #0077cc;
 }
 
-.filter-btn.environment.active {
+.toggle-btn[data-value="environment"].active {
     background: #0077cc;
-    color: white;
+    color: #fff;
 }
 
 /* ===============================
-   チェックボックス風トグル
+   クイズエリア
 =============================== */
-.toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+
+.voice-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.toggle-btn input {
-    width: 18px;
-    height: 18px;
+#answer-input {
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #888;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* ===============================
-   カード画像
+   画像表示
 =============================== */
-#cardImage {
-    width: 300px;
-    height: auto;
+#resultImage {
+    max-width: 260px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-/* ステータス表示 */
-#status {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
+#imagePlaceholder {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===============================
+   状態表示
+=============================== */
+.status {
+    font-size: 14px;
+    color: #333;
 }

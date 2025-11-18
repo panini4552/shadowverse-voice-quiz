@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Shadowverse ボイス当てクイズ</title>
 <link rel="stylesheet" href="style.css" />
+<!-- JSZip（CDN） -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+
 <script defer src="data.js"></script>
 <script defer src="main.js"></script>
 </head>
@@ -19,6 +22,9 @@
       <!-- パック -->
       <div class="filter-group">
         <label>出題範囲（複数可）</label>
+        <div class="filter-header">
+          <button class="select-all-btn btn" data-target="filter-pack">全選択</button>
+        </div>
         <div id="pack-filter" class="toggle-group filter-pack">
           <div class="toggle-btn" data-value="Classic">Classic</div>
         </div>
@@ -27,6 +33,9 @@
       <!-- レアリティ -->
       <div class="filter-group">
         <label>レアリティ（複数可）</label>
+        <div class="filter-header">
+          <button class="select-all-btn btn" data-target="filter-rarity">全選択</button>
+        </div>
         <div id="rarity-filter" class="toggle-group filter-rarity">
           <div class="toggle-btn" data-value="Bronze">ブロンズ</div>
           <div class="toggle-btn" data-value="Silver">シルバー</div>
@@ -38,6 +47,9 @@
       <!-- クラス -->
       <div class="filter-group">
         <label>クラス（複数可）</label>
+        <div class="filter-header">
+          <button class="select-all-btn btn" data-target="filter-class">全選択</button>
+        </div>
         <div id="class-filter" class="toggle-group filter-class">
           <div class="toggle-btn" data-value="ニュートラル">ニュートラル</div>
           <div class="toggle-btn" data-value="エルフ">エルフ</div>
@@ -48,6 +60,21 @@
           <div class="toggle-btn" data-value="ヴァンパイア">ヴァンパイア</div>
           <div class="toggle-btn" data-value="ビショップ">ビショップ</div>
           <div class="toggle-btn" data-value="ネメシス">ネメシス</div>
+        </div>
+      </div>
+
+      <!-- タグ（追加フィルタ） -->
+      <div class="filter-group">
+        <label>タグ（鳴き声 等、複数可・デフォルトOFF）</label>
+        <div class="filter-header">
+          <button class="select-all-btn btn" data-target="filter-tags">全選択</button>
+        </div>
+        <div id="tag-filter" class="toggle-group filter-tags">
+          <div class="toggle-btn" data-value="dragon">ドラゴン（鳴き声）</div>
+          <div class="toggle-btn" data-value="creature">生き物（ドラゴン以外）</div>
+          <div class="toggle-btn" data-value="zombie">ゾンビ（うめき声）</div>
+          <div class="toggle-btn" data-value="inorganic">無機物（機械等）</div>
+          <div class="toggle-btn" data-value="environment">環境にいたカード</div>
         </div>
       </div>
 
@@ -65,14 +92,22 @@
         <button class="btn" data-type="attack">攻撃</button>
         <button class="btn" data-type="destroy">破壊</button>
         <button class="btn" data-type="evolve">進化</button>
+        <button id="other-voices-toggle" class="btn" data-type="other">その他</button>
       </div>
+
+      <div id="other-voices-list" style="margin-top:8px; display:none;"></div>
 
       <div class="volume">
         <label>音量</label>
         <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9"/>
       </div>
 
-      <div class="answer-area">
+      <div class="progress" style="margin-top:8px;">
+        出題： <span id="currentIndex">0</span> / <span id="totalQuestions">0</span>
+        （残り <span id="remainingCount">0</span> 問）
+      </div>
+
+      <div class="answer-area" style="margin-top:8px;">
         <input id="answer-input" type="text" placeholder="カード名を入力（ひらがな・カナ・漢字可）" />
         <button id="submit-btn" class="btn">送信</button>
       </div>
@@ -88,7 +123,7 @@
       <button id="next-btn" class="btn" style="display:none; margin-top:10px;">次の問題へ</button>
 
       <!-- ▼連続正解 & X共有 -->
-      <div class="status">
+      <div class="status" style="margin-top:8px;">
         <div>現在の連続正解: <span id="streak">0</span></div>
         <a id="share-x" href="#" target="_blank" class="btn" style="display:none;">Xで共有</a>
       </div>

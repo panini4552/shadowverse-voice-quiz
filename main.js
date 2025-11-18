@@ -72,11 +72,15 @@ function collectSelectedArray(groupKey) {
     const group = findGroup(groupKey);
     if (!group) return [];
     const selectedBtns = [...group.querySelectorAll(".toggle-btn.active")];
+    // ---- ここを変更 ----
+    // 選択ボタンが0個の場合は「フィルタ未使用（空配列）」を返す
     if (selectedBtns.length === 0) {
-        // return all values
-        return [...group.querySelectorAll(".toggle-btn")].map(b => b.dataset.value);
+        return [];
     }
+    // --------------------
     return selectedBtns.map(b => b.dataset.value);
+}
+
 }
 
 /* ================================

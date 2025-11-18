@@ -1,183 +1,78 @@
-/* ================================
-   基本カラー設定
-================================ */
-:root{
-  --accent: #4b7bec;
-  --bg: #fafafa;
+/* ===============================
+   フィルター UI 全体
+=============================== */
+.filter-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-/* ================================
-   ベース
-================================ */
-body{
-  background: var(--bg);
-  font-family: "Noto Sans JP", "Segoe UI", Roboto, sans-serif;
-  margin:0;
-  padding:20px;
-  color:#222;
+/* ボタンの基本デザイン */
+.filter-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #888;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
 }
 
-.container{
-  max-width:900px;
-  width:100%;
-  margin:0 auto;
-  background:white;
-  padding:18px;
-  border-radius:8px;
-  box-shadow:0 4px 18px rgba(0,0,0,0.06);
+.filter-btn:hover {
+    background: #eee;
 }
 
-h1{
-  margin-top:0;
-  font-size:20px;
+/* 選択状態 */
+.filter-btn.active {
+    background: #4caf50;
+    color: white;
+    border-color: #3b8d3f;
 }
 
-label{
-  font-size:14px;
-  margin-right:6px;
+/* ===============================
+   environment（環境入り）専用の色
+=============================== */
+.filter-btn.environment {
+    border-color: #0077cc;
 }
 
-/* ================================
-   入力・コントロール
-================================ */
-.controls, .voice-controls, .answer-area{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
+.filter-btn.environment.active {
+    background: #0077cc;
+    color: white;
 }
 
-input[type="text"]{
-  padding:8px;
-  border-radius:6px;
-  border:1px solid #ddd;
-  width:320px;
-}
-
-/* ================================
-   ボタン
-================================ */
-.btn{
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.15s;
-  font-size:14px;
-}
-
-.btn:hover{
-  background:#3d6fd1;
-}
-
-.voice-buttons .btn{
-  padding:10px 14px !important;
-}
-
-/* ================================
-   結果・ステータス
-================================ */
-.result{
-  margin-top:12px;
-  font-weight:700;
-  min-height:28px;
-}
-
-.status{
-  margin-top:12px;
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-
-/* ================================
-   画像エリア（画像なしの場合の表示）
-================================ */
-#resultImage {
-  max-width: 280px;
-  margin-top: 10px;
-  border-radius: 8px;
-  display: none;
-}
-
-#imagePlaceholder {
-  width: 280px;
-  height: 280px;
-  background: #e9e9e9;
-  border-radius: 8px;
-  margin-top: 10px;
-
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  color: #666;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* ================================
-   トグルボタン式フィルター
-================================ */
-.toggle-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-}
-
+/* ===============================
+   チェックボックス風トグル
+=============================== */
 .toggle-btn {
-  padding: 6px 12px;
-  border: 1px solid #999;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #f3f3f3;
-  user-select: none;
-  font-size: 14px;
-  transition: 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.toggle-btn:hover {
-  background: #e6e6e6;
+.toggle-btn input {
+    width: 18px;
+    height: 18px;
 }
 
-.toggle-btn.selected {
-  background: #555;
-  color: #fff;
-  border-color: #333;
+/* ===============================
+   カード画像
+=============================== */
+#cardImage {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-/* ================================
-   select-all ボタン（フィルターのヘッダ）
-================================ */
-.filter-header {
-  margin-bottom: 6px;
-}
-
-.select-all-btn {
-  background: #666;
-  padding: 6px 10px;
-  font-size: 13px;
-}
-
-/* ================================
-   その他ボイスリスト
-================================ */
-#other-voices-list .voice-item {
-  display:inline-block;
-  margin-right:6px;
-  margin-top:6px;
-  padding:6px 8px;
-  border-radius:6px;
-  background:#f1f1f1;
-  color:#222;
-  cursor:pointer;
-  border:1px solid #ddd;
-  font-size:13px;
-}
-
-#other-voices-list .voice-item:hover {
-  background:#e8e8e8;
+/* ステータス表示 */
+#status {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }

@@ -1,4 +1,4 @@
-// data.js — カードデータ
+// data.js — ZIP方式用カードデータ
 const cards = [
   // === エルフ ===
   {
@@ -8,13 +8,7 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Ancient_Elf",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf.zip"
   },
   {
     id: "Fairy_Princess",
@@ -23,29 +17,17 @@ const cards = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Fairy_Princess",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess.zip"
   },
   {
-  id: "Rose_Queen",
-  name: "ローズクイーン",
-  reading: ["ろーずくいーん", "ローズクイーン"],
-  class: "エルフ",
-  rarity: "Legendary",
-  pack: "Classic",
-  folder: "voices/Classic/Legendary/Rose_Queen",
-  voices: {
-    fanfare: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_fanfare.mp3",
-    attack:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_attack.mp3",
-    evolve:  "voices/Classic/Legendary/Rose_Queen/Rose_Queen_evolve.mp3",
-    destroy: "voices/Classic/Legendary/Rose_Queen/Rose_Queen_destroy.mp3"
-  }
-  }, 
+    id: "Rose_Queen",
+    name: "ローズクイーン",
+    reading: ["ろーずくいーん", "ローズクイーン"],
+    class: "エルフ",
+    rarity: "Legendary",
+    pack: "Classic",
+    zip: "voices/Classic/Legendary/Rose_Queen/Rose_Queen.zip"
+  },
 
   // === ロイヤル ===
   {
@@ -55,13 +37,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Aurelia",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Aurelia/Aurelia_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Aurelia/Aurelia_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Aurelia/Aurelia_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Aurelia/Aurelia_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Aurelia/Aurelia.zip"
   },
   {
     id: "Tsubaki",
@@ -70,13 +46,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Tsubaki",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Tsubaki/Tsubaki_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Tsubaki/Tsubaki_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Tsubaki/Tsubaki_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Tsubaki/Tsubaki_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Tsubaki/Tsubaki.zip"
   },
   {
     id: "otohime",
@@ -85,13 +55,7 @@ const cards = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/otohime",
-    voices: {
-      fanfare: "voices/Classic/Legendary/otohime/otohime_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/otohime/otohime_attack.mp3",
-      evolve:  "voices/Classic/Legendary/otohime/otohime_evolve.mp3",
-      destroy: "voices/Classic/Legendary/otohime/otohime_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/otohime/otohime.zip"
   },
 
   // === ドラゴン ===
@@ -102,13 +66,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Zirnitra",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Zirnitra/Zirnitra_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Zirnitra/Zirnitra_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Zirnitra/Zirnitra_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Zirnitra/Zirnitra_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Zirnitra/Zirnitra.zip"
   },
   {
     id: "Fafnir",
@@ -117,13 +75,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Fafnir",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Fafnir/Fafnir_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Fafnir/Fafnir_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Fafnir/Fafnir_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Fafnir/Fafnir_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Fafnir/Fafnir.zip"
   },
   {
     id: "Dark_Dragoon_Forte",
@@ -132,13 +84,7 @@ const cards = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Dark_Dragoon_Forte",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte.zip"
   },
 
   // === ウィッチ ===
@@ -149,13 +95,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Arch_Summoner_Erasmus",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus.zip"
   },
   {
     id: "merlin",
@@ -164,13 +104,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/merlin",
-    voices: {
-      fanfare: "voices/Classic/Legendary/merlin/merlin_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/merlin/merlin_attack.mp3",
-      evolve:  "voices/Classic/Legendary/merlin/merlin_evolve.mp3",
-      destroy: "voices/Classic/Legendary/merlin/merlin_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/merlin/merlin.zip"
   },
   {
     id: "Mythril_Golem",
@@ -179,13 +113,7 @@ const cards = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Mythril_Golem",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem.zip"
   },
 
   // === ネクロマンサー ===
@@ -196,13 +124,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Pluto",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Pluto/Pluto_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Pluto/Pluto_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Pluto/Pluto_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Pluto/Pluto_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Pluto/Pluto.zip"
   },
   {
     id: "Lord_Atomy",
@@ -211,13 +133,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Lord_Atomy",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy.zip"
   },
   {
     id: "cerberus",
@@ -226,13 +142,7 @@ const cards = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/cerberus",
-    voices: {
-      fanfare: "voices/Classic/Legendary/cerberus/cerberus_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/cerberus/cerberus_attack.mp3",
-      evolve:  "voices/Classic/Legendary/cerberus/cerberus_evolve.mp3",
-      destroy: "voices/Classic/Legendary/cerberus/cerberus_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/cerberus/cerberus.zip"
   },
 
   // === ヴァンパイア ===
@@ -243,13 +153,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Queen_Vampire",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire.zip"
   },
   {
     id: "soul_dealer",
@@ -258,13 +162,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/soul_dealer",
-    voices: {
-      fanfare: "voices/Classic/Legendary/soul_dealer/soul_dealer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/soul_dealer/soul_dealer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/soul_dealer/soul_dealer_evolve.mp3",
-      destroy: "voices/Classic/Legendary/soul_dealer/soul_dealer_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/soul_dealer/soul_dealer.zip"
   },
   {
     id: "Beast_Dominator",
@@ -273,13 +171,7 @@ const cards = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Beast_Dominator",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator.zip"
   },
 
   // === ニュートラル ===
@@ -290,14 +182,8 @@ const cards = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Gabriel",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Gabriel/Gabriel_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Gabriel/Gabriel_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Gabriel/Gabriel_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Gabriel/Gabriel_destroy.mp3"
-    }
-  }, 
+    zip: "voices/Classic/Legendary/Gabriel/Gabriel.zip"
+  },
   {
     id: "Lucifer",
     name: "ルシフェル",
@@ -305,14 +191,8 @@ const cards = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Lucifer",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Lucifer/Lucifer_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Lucifer/Lucifer_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Lucifer/Lucifer_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Lucifer/Lucifer_destroy.mp3"
-    }
-  }, 
+    zip: "voices/Classic/Legendary/Lucifer/Lucifer.zip"
+  },
   {
     id: "Prince_of_Darkness",
     name: "サタン",
@@ -320,15 +200,6 @@ const cards = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    folder: "voices/Classic/Legendary/Prince_of_Darkness",
-    voices: {
-      fanfare: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_fanfare.mp3",
-      attack:  "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_attack.mp3",
-      evolve:  "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_evolve.mp3",
-      destroy: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness_destroy.mp3"
-    }
+    zip: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness.zip"
   }
 ];
-
-
-// export not needed for browser; main.js will use global `cards`.

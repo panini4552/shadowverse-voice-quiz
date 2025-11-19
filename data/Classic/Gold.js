@@ -8,7 +8,7 @@ export const Classic_Gold = [
     class: "エルフ",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Rhinoceroach/Rhinoceroach.zip"
+    zip: "voices/Classic/Gold/Rhinoceroach.zip"
   },
   {
     id: "Dragonewt_Scholar",
@@ -17,7 +17,7 @@ export const Classic_Gold = [
     class: "ドラゴン",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Dragonewt_Scholar/Dragonewt_Scholar.zip"
+    zip: "voices/Classic/Gold/Dragonewt_Scholar.zip"
   },
   {
     id: "Shapeshifting_Mage",
@@ -26,7 +26,7 @@ export const Classic_Gold = [
     class: "ドラゴン",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Shapeshifting_Mage/Shapeshifting_Mage.zip"
+    zip: "voices/Classic/Gold/Shapeshifting_Mage.zip"
   },
   {
     id: "Gemstaff_Commander",
@@ -35,7 +35,7 @@ export const Classic_Gold = [
     class: "ロイヤル",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Gemstaff_Commander/Gemstaff_Commander.zip"
+    zip: "voices/Classic/Gold/Gemstaff_Commander.zip"
   },
   {
     id: "Madame_Lich",
@@ -44,7 +44,7 @@ export const Classic_Gold = [
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Madame_Lich/Madame_Lich.zip"
+    zip: "voices/Classic/Gold/Madame_Lich.zip"
   },
   {
     id: "Demon_Commander_Laura",
@@ -53,7 +53,7 @@ export const Classic_Gold = [
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Demon_Commander_Laura/Demon_Commander_Laura.zip"
+    zip: "voices/Classic/Gold/Demon_Commander_Laura.zip"
   },
   {
     id: "Urd",
@@ -62,7 +62,7 @@ export const Classic_Gold = [
     class: "ニュートラル",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Urd/Urd.zip"
+    zip: "voices/Classic/Gold/Urd.zip"
   },
   {
     id: "Petal_Fencer",
@@ -71,7 +71,7 @@ export const Classic_Gold = [
     class: "エルフ",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Petal_Fencer/Petal_Fencer.zip"
+    zip: "voices/Classic/Gold/Petal_Fencer.zip"
   },
   {
     id: "Shadowed_Assassin",
@@ -80,7 +80,7 @@ export const Classic_Gold = [
     class: "ロイヤル",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Shadowed_Assassin/Shadowed_Assassin.zip"
+    zip: "voices/Classic/Gold/Shadowed_Assassin.zip"
   },
   {
     id: "Latham,_Vanguard_Captain",
@@ -89,7 +89,7 @@ export const Classic_Gold = [
     class: "ロイヤル",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Latham,_Vanguard_Captain/Latham,_Vanguard_Captain.zip"
+    zip: "voices/Classic/Gold/Latham,_Vanguard_Captain.zip"
   },
   {
     id: "Deathmist_Dragon",
@@ -98,7 +98,7 @@ export const Classic_Gold = [
     class: "ドラゴン",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Deathmist_Dragon/Deathmist_Dragon.zip"
+    zip: "voices/Classic/Gold/Deathmist_Dragon.zip"
   },
   {
     id: "Wight_King",
@@ -107,9 +107,10 @@ export const Classic_Gold = [
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Wight_King/Wight_King.zip"
+    zip: "voices/Classic/Gold/Wight_King.zip"
   }
 ];
+
 
 
 

@@ -1,5 +1,5 @@
 // data.js — ZIP方式用カードデータ
-const cards = [
+export const Classic_Bronze = [
   // === エルフ ===
   {
     id: "Ancient_Elf",
@@ -202,4 +202,5 @@ const cards = [
     pack: "Classic",
     zip: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness.zip"
   }
+
 ];

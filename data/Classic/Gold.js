@@ -6,10 +6,11 @@ export const Classic_Gold = [
     id: "",
     name: "",
     reading: ["", ""],
-    class: "エルフ",
+    class: "",
     rarity: "Gold",
     pack: "Classic",
     zip: "voices/Classic/Gold//.zip"
   },
 ];
+
 

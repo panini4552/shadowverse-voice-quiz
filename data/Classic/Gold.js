@@ -89,7 +89,7 @@ export const Classic_Gold = [
     class: "ロイヤル",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/Latham,_Vanguard_Captain.zip"
+    zip: "voices/Classic/Gold/Latham_Vanguard_Captain.zip"
   },
   {
     id: "Deathmist_Dragon",
@@ -110,6 +110,7 @@ export const Classic_Gold = [
     zip: "voices/Classic/Gold/Wight_King.zip"
   }
 ];
+
 
 
 

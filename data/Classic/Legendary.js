@@ -8,7 +8,7 @@ export const Classic_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Ancient_Elf/Ancient_Elf.zip"
+    zip: "voices/Classic/Legendary/Ancient_Elf.zip"
   },
   {
     id: "Fairy_Princess",
@@ -17,7 +17,7 @@ export const Classic_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Fairy_Princess/Fairy_Princess.zip"
+    zip: "voices/Classic/Legendary/Fairy_Princess.zip"
   },
   {
     id: "Rose_Queen",
@@ -26,7 +26,7 @@ export const Classic_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Rose_Queen/Rose_Queen.zip"
+    zip: "voices/Classic/Legendary/Rose_Queen.zip"
   },
 
   // === ロイヤル ===
@@ -37,7 +37,7 @@ export const Classic_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Aurelia/Aurelia.zip"
+    zip: "voices/Classic/Legendary/Aurelia.zip"
   },
   {
     id: "Tsubaki",
@@ -46,7 +46,7 @@ export const Classic_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Tsubaki/Tsubaki.zip"
+    zip: "voices/Classic/Legendary/Tsubaki.zip"
   },
   {
     id: "otohime",
@@ -55,7 +55,7 @@ export const Classic_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/otohime/otohime.zip"
+    zip: "voices/Classic/Legendary/otohime.zip"
   },
 
   // === ドラゴン ===
@@ -66,7 +66,7 @@ export const Classic_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Zirnitra/Zirnitra.zip"
+    zip: "voices/Classic/Legendary/Zirnitra.zip"
   },
   {
     id: "Fafnir",
@@ -75,7 +75,7 @@ export const Classic_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Fafnir/Fafnir.zip"
+    zip: "voices/Classic/Legendary/Fafnir.zip"
   },
   {
     id: "Dark_Dragoon_Forte",
@@ -84,7 +84,7 @@ export const Classic_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Dark_Dragoon_Forte/Dark_Dragoon_Forte.zip"
+    zip: "voices/Classic/Legendary/Dark_Dragoon_Forte.zip"
   },
 
   // === ウィッチ ===
@@ -95,7 +95,7 @@ export const Classic_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Arch_Summoner_Erasmus/Arch_Summoner_Erasmus.zip"
+    zip: "voices/Classic/Legendary/Arch_Summoner_Erasmus.zip"
   },
   {
     id: "merlin",
@@ -104,7 +104,7 @@ export const Classic_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/merlin/merlin.zip"
+    zip: "voices/Classic/Legendary/merlin.zip"
   },
   {
     id: "Mythril_Golem",
@@ -113,7 +113,7 @@ export const Classic_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Mythril_Golem/Mythril_Golem.zip"
+    zip: "voices/Classic/Legendary/Mythril_Golem.zip"
   },
 
   // === ネクロマンサー ===
@@ -124,7 +124,7 @@ export const Classic_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Pluto/Pluto.zip"
+    zip: "voices/Classic/Legendary/Pluto.zip"
   },
   {
     id: "Lord_Atomy",
@@ -133,7 +133,7 @@ export const Classic_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Lord_Atomy/Lord_Atomy.zip"
+    zip: "voices/Classic/Legendary/Lord_Atomy.zip"
   },
   {
     id: "cerberus",
@@ -142,7 +142,7 @@ export const Classic_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/cerberus/cerberus.zip"
+    zip: "voices/Classic/Legendary/cerberus.zip"
   },
 
   // === ヴァンパイア ===
@@ -153,7 +153,7 @@ export const Classic_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Queen_Vampire/Queen_Vampire.zip"
+    zip: "voices/Classic/Legendary/Queen_Vampire.zip"
   },
   {
     id: "soul_dealer",
@@ -162,7 +162,7 @@ export const Classic_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/soul_dealer/soul_dealer.zip"
+    zip: "voices/Classic/Legendary/soul_dealer.zip"
   },
   {
     id: "Beast_Dominator",
@@ -171,7 +171,7 @@ export const Classic_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Beast_Dominator/Beast_Dominator.zip"
+    zip: "voices/Classic/Legendary/Beast_Dominator.zip"
   },
 
   // === ニュートラル ===
@@ -182,7 +182,7 @@ export const Classic_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Gabriel/Gabriel.zip"
+    zip: "voices/Classic/Legendary/Gabriel.zip"
   },
   {
     id: "Lucifer",
@@ -191,7 +191,7 @@ export const Classic_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Lucifer/Lucifer.zip"
+    zip: "voices/Classic/Legendary/Lucifer.zip"
   },
   {
     id: "Prince_of_Darkness",
@@ -200,8 +200,9 @@ export const Classic_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Prince_of_Darkness/Prince_of_Darkness.zip"
+    zip: "voices/Classic/Legendary/Prince_of_Darkness.zip"
   }
 
 ];
+
 

@@ -1,5 +1,6 @@
-// data.js — ZIP方式用カードデータ
-const cards = [
+// data/Classic/Bronze.js
+
+export const Classic_Bronze = [
   // === エルフ ===
   {
     id: "",
@@ -8,6 +9,6 @@ const cards = [
     class: "エルフ",
     rarity: "Gold",
     pack: "Classic",
-    zip: "voices/Classic/Gold/  /.zip"
+    zip: "voices/Classic/Gold//.zip"
   },
- ];
+];

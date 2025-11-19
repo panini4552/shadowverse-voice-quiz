@@ -1,6 +1,6 @@
-// data/Classic/Bronze.js
+// data/Classic/Gold.js
 
-export const Classic_Bronze = [
+export const Classic_Gold = [
   // === エルフ ===
   {
     id: "",
@@ -12,3 +12,4 @@ export const Classic_Bronze = [
     zip: "voices/Classic/Gold//.zip"
   },
 ];
+

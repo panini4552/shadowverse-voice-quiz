@@ -7,13 +7,13 @@
 
 <link rel="stylesheet" href="style.css" />
 
-<!-- ▼ ZIP展開ライブラリ -->
+<!-- ▼ ZIP 展開ライブラリ（先に読み込む） -->
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
 
-<!-- ▼ ゲームデータ（カード情報） -->
+<!-- ▼ ゲームデータ（module: window.cards を設定するので main.js 側で参照可能） -->
 <script type="module" defer src="data/index.js"></script>
 
-<!-- ▼ メイン処理 -->
+<!-- ▼ メイン処理（通常スクリプト） -->
 <script defer src="main.js"></script>
 </head>
 

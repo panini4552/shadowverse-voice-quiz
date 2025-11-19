@@ -1,5 +1,5 @@
 // data.js — ZIP方式用カードデータ
-export const Classic_Bronze = [
+export const Classic_Legendary = [
   // === エルフ ===
   {
     id: "Ancient_Elf",
@@ -204,3 +204,4 @@ export const Classic_Bronze = [
   }
 
 ];
+

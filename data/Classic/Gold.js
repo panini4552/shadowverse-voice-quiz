@@ -1,7 +1,6 @@
 // data/Classic/Gold.js
 
 export const Classic_Gold = [
-const cards = [
   {
     id: "Rhinoceroach",
     name: "リノセウス",
@@ -111,6 +110,7 @@ const cards = [
     zip: "voices/Classic/Gold/Wight_King/Wight_King.zip"
   }
 ];
+
 
 
 

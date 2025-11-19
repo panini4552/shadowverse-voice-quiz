@@ -1,7 +1,5 @@
 /* ============================================
-   main.js — ZIP内の画像/音声を自動読込する最終版
-   - 要: JSZip を HTML で読み込み済み
-   - data.js の cards 配列を利用
+   main.js — 安全化・整合性強化版
 ============================================ */
 
 let remainingCards = [];
@@ -35,28 +33,22 @@ function shuffleArray(arr) {
 
 /* ================================
    DOM ヘルパー（柔軟に group を探す）
-   groupKey: "filter-pack" / "pack-filter" / "#pack-filter" / ".filter-pack"
 ================================ */
 function findGroup(groupKey) {
     if (!groupKey) return null;
-    // direct id
     if (groupKey.startsWith("#")) {
         return document.getElementById(groupKey.slice(1));
     }
-    // direct class
     if (groupKey.startsWith(".")) {
         return document.querySelector(groupKey);
     }
-    // id or class as given
     let el = document.getElementById(groupKey);
     if (el) return el;
     el = document.querySelector(`.${groupKey}`);
     if (el) return el;
-    // try alternate patterns: "filter-pack" -> "pack-filter" or ".pack-filter"
     const alt = groupKey.replace(/^filter-/, "");
     el = document.getElementById(`${alt}-filter`) || document.querySelector(`.${alt}-filter`);
     if (el) return el;
-    // try adding "filter-" prefix if missing
     if (!groupKey.startsWith("filter-")) {
         el = document.getElementById(`filter-${groupKey}`) || document.querySelector(`.filter-${groupKey}`);
         if (el) return el;
@@ -65,36 +57,32 @@ function findGroup(groupKey) {
 }
 
 /* ================================
-   collectSelectedArray: groupKey を渡すと選択値配列を返す
-   - 何も選択されていない場合は group 内の全 data-value を返す（＝全選択扱い）
+   collectSelectedArray
+   - 実装: 選択された .toggle-btn.active の data-value を返す
+   - 選択が0個の場合は空配列を返す（start ボタン側で空配列は「全選択扱い」されます）
 ================================ */
 function collectSelectedArray(groupKey) {
     const group = findGroup(groupKey);
     if (!group) return [];
     const selectedBtns = [...group.querySelectorAll(".toggle-btn.active")];
-    // ---- ここを変更 ----
-    // 選択ボタンが0個の場合は「フィルタ未使用（空配列）」を返す
     if (selectedBtns.length === 0) {
         return [];
     }
-    // --------------------
     return selectedBtns.map(b => b.dataset.value);
 }
 
 /* ================================
-   toggle の一元化（.toggle-btn を .active 切替）
+   トグル系イベント（委譲）
 ================================ */
 document.addEventListener("click", (e) => {
     const t = e.target;
     if (!t || !t.classList) return;
 
-    // toggle buttons
     if (t.classList.contains("toggle-btn")) {
         t.classList.toggle("active");
         return;
     }
 
-    // select-all buttons
     if (t.classList.contains("select-all-btn")) {
         const target = t.dataset.target;
         if (!target) return;
@@ -106,15 +94,10 @@ document.addEventListener("click", (e) => {
         buttons.forEach(b => b.classList.toggle("active", !allActive));
         return;
     }
-
-    // voice-buttons (delegation handled later in specifically wired listener)
 });
 
 /* ================================
-   ZIP から資源をロードする関数
-   - card.zip を fetch -> JSZip.loadAsync -> ファイル走査して image と voices を判定
-   - 返り値: { imageUrl, voices: { fanfare, attack, evolve, destroy, other: [{name,url}] } }
-   - 失敗時は可能な限り空オブジェクトを返す
+   ZIP から資源をロードする関数（堅牢化）
 ================================ */
 async function loadCardResources(card) {
     if (!card || !card.id) return null;
@@ -125,7 +108,6 @@ async function loadCardResources(card) {
         voices: { fanfare: null, attack: null, evolve: null, destroy: null, other: [] }
     };
 
-    // zip path available?
     const zipPath = card.zip ? card.zip : null;
     if (!zipPath) {
         cardResourceCache.set(card.id, result);
@@ -142,31 +124,30 @@ async function loadCardResources(card) {
         const ab = await resp.arrayBuffer();
         const zip = await JSZip.loadAsync(ab);
 
-        // iterate files
         const fileNames = Object.keys(zip.files);
         for (const path of fileNames) {
             try {
                 const entry = zip.files[path];
                 if (entry.dir) continue;
                 const lower = path.toLowerCase();
-                // image detection: id.png/jpg/jpeg/webp
-                const idLower = card.id.toLowerCase();
+                const idLower = (card.id || "").toLowerCase();
+
+                // 画像
                 if (!result.imageUrl && (lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".jpeg") || lower.endsWith(".webp"))) {
-                    // prefer file that contains the id in name, else first image
                     if (lower.includes(idLower) || !result.imageUrl) {
                         const blob = await entry.async("blob");
                         result.imageUrl = URL.createObjectURL(blob);
-                        // don't continue here; still want to gather voices
+                        // continue to collect audio as well
                         continue;
                     }
                 }
 
-                // audio detection
+                // 音声
                 if (lower.endsWith(".mp3") || lower.endsWith(".ogg") || lower.endsWith(".wav")) {
                     const blob = await entry.async("blob");
                     const url = URL.createObjectURL(blob);
-                    const base = path.split("/").pop().toLowerCase(); // filename only
-                    // heuristics: try to detect voice type from filename
+                    const base = path.split("/").pop().toLowerCase();
+
                     if (base.includes("_attack") || base.includes("attack")) {
                         if (!result.voices.attack) result.voices.attack = url;
                     } else if (base.includes("_evolve") || base.includes("evolve")) {
@@ -174,11 +155,9 @@ async function loadCardResources(card) {
                     } else if (base.includes("_destroy") || base.includes("destroy") || base.includes("dead") || base.includes("death")) {
                         if (!result.voices.destroy) result.voices.destroy = url;
                     } else if (base.includes("_fanfare") || base.includes("play") || base.includes("fanfare")) {
-                        // "play" often corresponds to fanfare
                         if (!result.voices.fanfare) result.voices.fanfare = url;
                     } else {
-                        // if filename starts with id_, treat as other; else push as generic other
-                        const prettyName = base.replace(new RegExp(`^${card.id.toLowerCase()}_?`), "").replace(/\.(mp3|ogg|wav)$/, "");
+                        const prettyName = base.replace(new RegExp(`^${(card.id || "").toLowerCase()}_?`), "").replace(/\.(mp3|ogg|wav)$/, "");
                         result.voices.other.push({ name: prettyName || base, url });
                     }
                 }
@@ -187,18 +166,14 @@ async function loadCardResources(card) {
             }
         }
 
-        // final heuristics: if fanfare empty but there is an audio named like `${id}_play` or `${id}_01`, already handled above
-        // If some canonical types still missing, try to salvage from "other" by checking their names
         if (!result.voices.fanfare) {
             const found = result.voices.other.find(o => /play|fanfare|enter|summon|sample|01/.test(o.name));
             if (found) {
                 result.voices.fanfare = found.url;
-                // remove from other
                 result.voices.other = result.voices.other.filter(o => o !== found);
             }
         }
 
-        // cache and return
         cardResourceCache.set(card.id, result);
         return result;
 
@@ -215,6 +190,8 @@ async function loadCardResources(card) {
 function showCardImage(card) {
     const imgEl = document.getElementById("resultImage");
     const placeholder = document.getElementById("imagePlaceholder");
+    if (!imgEl || !placeholder) return;
+
     imgEl.style.display = "none";
     placeholder.style.display = "none";
 
@@ -237,6 +214,7 @@ function showCardImage(card) {
 ================================ */
 function populateOtherVoicesUI(card) {
     const listEl = document.getElementById("other-voices-list");
+    if (!listEl) return;
     listEl.innerHTML = "";
     listEl.style.display = "none";
 
@@ -249,6 +227,7 @@ function populateOtherVoicesUI(card) {
             btn.textContent = it.name || "その他";
             btn.addEventListener("click", () => {
                 const audio = document.getElementById("audio");
+                if (!audio) return;
                 audio.volume = parseFloat(document.getElementById("volume").value || 1);
                 audio.src = it.url;
                 audio.play().catch(err => console.warn("play err", err));
@@ -262,69 +241,28 @@ function populateOtherVoicesUI(card) {
 }
 
 /* ================================
-   voice-buttons の再生ハンドラ（委譲）
+   voice-buttons 再生ハンドラ（登録は DOMContentLoaded 内で）
 ================================ */
-document.querySelector(".voice-buttons").addEventListener("click", async (e) => {
-    const btn = e.target;
-    if (!btn || !btn.dataset) return;
-    const type = btn.dataset.type;
-    if (!type) return;
-    if (!currentCard) return;
-
-    const audio = document.getElementById("audio");
-    audio.volume = parseFloat(document.getElementById("volume").value || 1);
-
-    if (type === "other") {
-        const listEl = document.getElementById("other-voices-list");
-        // toggle display: if shown, hide; else build and show
-        if (listEl.style.display === "block") {
-            listEl.style.display = "none";
-        } else {
-            populateOtherVoicesUI(currentCard);
-        }
-        return;
-    }
-
-    try {
-        const res = await loadCardResources(currentCard);
-        let src = res && res.voices ? res.voices[type] : null;
-        // fallback: if type 'fanfare' but res.voices.fanfare empty, try to use first of other
-        if (!src && type === "fanfare" && res && res.voices && res.voices.other && res.voices.other.length) {
-            src = res.voices.other[0].url;
-        }
-        if (!src) {
-            console.warn("no voice for type", type, currentCard.id);
-            return;
-        }
-        audio.src = src;
-        audio.play().catch(err => console.warn("play err", err));
-    } catch (err) {
-        console.error("voice play err", err);
-    }
-});
+// 登録は初期化時に行う（下）
 
 /* ================================
    フィルタ収集 & クイズ開始
 ================================ */
-document.getElementById("start-btn").addEventListener("click", () => {
-    // collect filters (if none selected, collectSelectedArray returns all values in group)
+function startQuizHandler() {
     const packs = collectSelectedArray("filter-pack");
     const rarities = collectSelectedArray("filter-rarity");
     const classes = collectSelectedArray("filter-class");
     const tags = collectSelectedArray("filter-tags");
 
-    // filter cards: each group is OR within group, AND across groups
-    let filtered = (cards || []).filter(c => {
+    let filtered = (window.cards || []).filter(c => {
         const okPack = packs.length ? packs.includes(c.pack) : true;
         const okRarity = rarities.length ? rarities.includes(c.rarity) : true;
         const okClass = classes.length ? classes.includes(c.class) : true;
 
-        // tags: if tags group exists but card has no tags -> only match if tags selection is "all" (handled by collectSelectedArray)
         let okTag = true;
         if (tags && tags.length) {
-            // if card.tags absent -> treat as no match
             if (!c.tags || c.tags.length === 0) {
-                okTag = tags.length === 0; // but collectSelectedArray returns all when none selected so this will usually be true
+                okTag = tags.length === 0;
             } else {
                 okTag = c.tags.some(t => tags.includes(t));
             }
@@ -343,31 +281,44 @@ document.getElementById("start-btn").addEventListener("click", () => {
     streak = 0;
     currentCard = null;
 
-    document.getElementById("streak").textContent = "0";
-    document.getElementById("totalQuestions").textContent = totalQuestions;
-    document.getElementById("currentIndex").textContent = currentIndex;
-    document.getElementById("remainingCount").textContent = remainingCards.length;
+    const elStreak = document.getElementById("streak");
+    if (elStreak) elStreak.textContent = "0";
+    const elTotal = document.getElementById("totalQuestions");
+    if (elTotal) elTotal.textContent = totalQuestions;
+    const elCurrent = document.getElementById("currentIndex");
+    if (elCurrent) elCurrent.textContent = currentIndex;
+    const elRemaining = document.getElementById("remainingCount");
+    if (elRemaining) elRemaining.textContent = remainingCards.length;
 
-    document.getElementById("quiz-area").style.display = "block";
+    const quizArea = document.getElementById("quiz-area");
+    if (quizArea) quizArea.style.display = "block";
 
     nextQuestion();
-});
+}
 
 /* ================================
    次の問題
 ================================ */
 function nextQuestion() {
-    document.getElementById("result").textContent = "";
-    document.getElementById("next-btn").style.display = "none";
-    document.getElementById("resultImage").style.display = "none";
-    document.getElementById("imagePlaceholder").style.display = "none";
-    document.getElementById("answer-input").value = "";
-    document.getElementById("other-voices-list").style.display = "none";
+    const resultEl = document.getElementById("result");
+    if (resultEl) resultEl.textContent = "";
+    const nextBtn = document.getElementById("next-btn");
+    if (nextBtn) nextBtn.style.display = "none";
+    const resultImage = document.getElementById("resultImage");
+    if (resultImage) resultImage.style.display = "none";
+    const imagePlaceholder = document.getElementById("imagePlaceholder");
+    if (imagePlaceholder) imagePlaceholder.style.display = "none";
+    const answerInput = document.getElementById("answer-input");
+    if (answerInput) answerInput.value = "";
+    const otherList = document.getElementById("other-voices-list");
+    if (otherList) otherList.style.display = "none";
 
     if (!remainingCards || remainingCards.length === 0) {
-        document.getElementById("result").textContent = "全問終了しました！";
-        document.getElementById("currentIndex").textContent = totalQuestions;
-        document.getElementById("remainingCount").textContent = 0;
+        if (resultEl) resultEl.textContent = "全問終了しました！";
+        const elCurrent = document.getElementById("currentIndex");
+        if (elCurrent) elCurrent.textContent = totalQuestions;
+        const elRemaining = document.getElementById("remainingCount");
+        if (elRemaining) elRemaining.textContent = 0;
         return;
     }
 
@@ -375,9 +326,9 @@ function nextQuestion() {
     currentIndex++;
     updateProgressUI();
 
-    // preload resources (non-blocking)
+    // preload resources (非同期で安全に取得)
     loadCardResources(currentCard).then(() => {
-        // resources loaded — nothing else needed right now
+        // preload 完了（必要ならここで何かする）
     }).catch(err => {
         console.warn("preload err", err);
     });
@@ -386,12 +337,12 @@ function nextQuestion() {
 /* ================================
    回答チェック
 ================================ */
-document.getElementById("submit-btn").addEventListener("click", () => {
+function submitAnswerHandler() {
     if (!currentCard) return;
 
-    const inputRaw = document.getElementById("answer-input").value || "";
+    const inputRaw = (document.getElementById("answer-input")?.value) || "";
     const input = normalize(inputRaw.trim());
-    document.getElementById("answer-input").value = "";
+    if (document.getElementById("answer-input")) document.getElementById("answer-input").value = "";
 
     const readings = (currentCard.reading || []).map(r => normalize(r));
     const acceptedNames = [normalize(currentCard.name)].concat(readings);
@@ -399,56 +350,115 @@ document.getElementById("submit-btn").addEventListener("click", () => {
     const correct = acceptedNames.some(r => r === input);
 
     const resultEl = document.getElementById("result");
+    if (!resultEl) return;
+
     if (correct) {
         resultEl.textContent = "正解！";
         resultEl.style.color = "green";
         streak++;
         document.getElementById("streak").textContent = streak;
-        // show image
         showCardImage(currentCard);
-        // show share link (X)
-        document.getElementById("share-x").href =
-            `https://twitter.com/intent/tweet?text=Shadowverseボイスクイズで${streak}問連続正解しました！`;
-        document.getElementById("share-x").style.display = "inline-block";
+
+        // encode tweet text
+        const text = `Shadowverseボイスクイズで${streak}問連続正解しました！`;
+        const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+        const shareEl = document.getElementById("share-x");
+        if (shareEl) {
+            shareEl.href = tweetUrl;
+            shareEl.style.display = "inline-block";
+        }
     } else {
         resultEl.textContent = `不正解… 正解：${currentCard.name}`;
         resultEl.style.color = "red";
         streak = 0;
-        document.getElementById("streak").textContent = "0";
+        const sEl = document.getElementById("streak");
+        if (sEl) sEl.textContent = "0";
         showCardImage(currentCard);
-        document.getElementById("share-x").style.display = "none";
+        const shareEl = document.getElementById("share-x");
+        if (shareEl) shareEl.style.display = "none";
     }
 
-    document.getElementById("next-btn").style.display = "inline-block";
+    const nextBtn = document.getElementById("next-btn");
+    if (nextBtn) nextBtn.style.display = "inline-block";
     updateProgressUI();
-});
+}
 
 /* ================================
    次へボタン
 ================================ */
-document.getElementById("next-btn").addEventListener("click", nextQuestion);
+function nextButtonHandler() {
+    nextQuestion();
+}
 
 /* ================================
    進捗更新
 ================================ */
 function updateProgressUI() {
-    document.getElementById("currentIndex").textContent = currentIndex;
-    document.getElementById("totalQuestions").textContent = totalQuestions;
-    document.getElementById("remainingCount").textContent = Math.max(0, remainingCards.length);
+    const elCurrent = document.getElementById("currentIndex");
+    if (elCurrent) elCurrent.textContent = currentIndex;
+    const elTotal = document.getElementById("totalQuestions");
+    if (elTotal) elTotal.textContent = totalQuestions;
+    const elRemaining = document.getElementById("remainingCount");
+    if (elRemaining) elRemaining.textContent = Math.max(0, remainingCards.length);
 }
 
 /* ================================
-   初期化
+   初期化（DOMContentLoaded）
 ================================ */
-window.addEventListener("load", () => {
-    // data.js の cards はそのまま利用できるので上書き不要
+window.addEventListener("DOMContentLoaded", () => {
+    // 安全に要素を取得してイベントを登録
+    const voiceButtons = document.querySelector(".voice-buttons");
+    if (voiceButtons) {
+        voiceButtons.addEventListener("click", async (e) => {
+            const btn = e.target;
+            if (!btn || !btn.dataset) return;
+            const type = btn.dataset.type;
+            if (!type) return;
+            if (!currentCard) return;
 
-    // 必要ならここで初期表示を調整
-    const quizArea = document.getElementById("quiz-area");
-    if (quizArea) {
-        quizArea.style.display = "none";
+            const audio = document.getElementById("audio");
+            if (!audio) return;
+            audio.volume = parseFloat(document.getElementById("volume")?.value || 1);
+
+            if (type === "other") {
+                const listEl = document.getElementById("other-voices-list");
+                if (!listEl) return;
+                if (listEl.style.display === "block") {
+                    listEl.style.display = "none";
+                } else {
+                    populateOtherVoicesUI(currentCard);
+                }
+                return;
+            }
+
+            try {
+                const res = await loadCardResources(currentCard);
+                let src = res && res.voices ? res.voices[type] : null;
+                if (!src && type === "fanfare" && res && res.voices && res.voices.other && res.voices.other.length) {
+                    src = res.voices.other[0].url;
+                }
+                if (!src) {
+                    console.warn("no voice for type", type, currentCard?.id);
+                    return;
+                }
+                audio.src = src;
+                audio.play().catch(err => console.warn("play err", err));
+            } catch (err) {
+                console.error("voice play err", err);
+            }
+        });
     }
 
-    // toggle-btn の初期化は main.js のイベント委譲で全て対応済み
-});
+    const startBtn = document.getElementById("start-btn");
+    if (startBtn) startBtn.addEventListener("click", startQuizHandler);
 
+    const submitBtn = document.getElementById("submit-btn");
+    if (submitBtn) submitBtn.addEventListener("click", submitAnswerHandler);
+
+    const nextBtn = document.getElementById("next-btn");
+    if (nextBtn) nextBtn.addEventListener("click", nextButtonHandler);
+
+    // 初期は quiz エリア非表示（HTML に既にあるので冗長ではあるが確実にする）
+    const quizArea = document.getElementById("quiz-area");
+    if (quizArea) quizArea.style.display = "none";
+});

@@ -109,7 +109,109 @@ export const Classic_Gold = [
     pack: "Classic",
     zip: "voices/Classic/Gold/Wight_King.zip"
   }
+  // === Classic / Gold ===
+{
+  id: "phantom_dragon",
+  name: "ファントムドラゴン",
+  reading: ["ふぁんとむどらごん", "ファントムドラゴン"],
+  class: "ドラゴン",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Phantom_Dragon/Phantom_Dragon.zip"
+},
+{
+  id: "wind_god",
+  name: "風神",
+  reading: ["ふうじん", "風神", "フウジン"],
+  class: "ニュートラル",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Wind_God/Wind_God.zip"
+},
+{
+  id: "noble_fairy",
+  name: "ノーブルフェアリー",
+  reading: ["のーぶるふぇありー", "ノーブルフェアリー"],
+  class: "エルフ",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Noble_Fairy/Noble_Fairy.zip"
+},
+{
+  id: "robin_hood",
+  name: "ロビンフッド",
+  reading: ["ろびんふっど", "ロビンフッド"],
+  class: "エルフ",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Robin_Hood/Robin_Hood.zip"
+},
+{
+  id: "ancient_alchemist",
+  name: "エンシェントアルケミスト",
+  reading: ["えんしぇんとあるけみすと", "エンシェントアルケミスト"],
+  class: "ウィッチ",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Ancient_Alchemist/Ancient_Alchemist.zip"
+},
+{
+  id: "elinas",
+  name: "エリニュス",
+  reading: ["えりにゅす", "エリニュス"],
+  class: "ヴァンパイア",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Elinas/Elinas.zip"
+},
+{
+  id: "angel_crusher",
+  name: "天翼を食らう者",
+  reading: ["てんよくをくらうもの", "天翼を食らう者", "テンヨクヲクラクモノ"],
+  class: "ニュートラル",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Angel_Crusher/Angel_Crusher.zip"
+},
+{
+  id: "athena",
+  name: "アテナ",
+  reading: ["あてな", "アテナ"],
+  class: "ニュートラル",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Athena/Athena.zip"
+},
+{
+  id: "dragon_knight",
+  name: "騎竜兵",
+  reading: ["きりゅうへい", "騎竜兵", "キリュウヘイ"],
+  class: "ドラゴン",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Dragon_Knight/Dragon_Knight.zip"
+},
+{
+  id: "death_tyrant",
+  name: "デスタイラント",
+  reading: ["ですたいらんと", "デスタイラント"],
+  class: "ネクロマンサー",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Death_Tyrant/Death_Tyrant.zip"
+},
+{
+  id: "medusa",
+  name: "メドゥーサ",
+  reading: ["めどぅーさ", "メドゥーサ"],
+  class: "ヴァンパイア",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Medusa/Medusa.zip"
+}
+
 ];
+
 
 
 

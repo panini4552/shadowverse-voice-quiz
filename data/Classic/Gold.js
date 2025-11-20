@@ -22,7 +22,7 @@ export const Classic_Gold = [
   {
     id: "Shapeshifting_Mage",
     name: "変化する魔術師",
-    reading: ["へんかするまじゅつし", "ヘンカスルマジュツシ"],
+    reading: ["へんげするまじゅつし", "ヘンゲスルマジュツシ"],
     class: "ドラゴン",
     rarity: "Gold",
     pack: "Classic",
@@ -85,7 +85,7 @@ export const Classic_Gold = [
   {
     id: "Latham,_Vanguard_Captain",
     name: "ヴァンガード・レイサム",
-    reading: ["ゔぁんがーどれいさむ", "ヴァンガードレイサム"],
+    reading: ["ゔぁんがーど・れいさむ", "ヴァンガード・レイサム","ヴァンガードレイサム","れいさむ","レイサム"],
     class: "ロイヤル",
     rarity: "Gold",
     pack: "Classic",
@@ -209,8 +209,117 @@ export const Classic_Gold = [
   pack: "Classic",
   zip: "voices/Classic/Gold/Medusa/Medusa.zip"
 }
+{
+  id: "arch_priestess_laelia",
+  name: "アークビショップ・レリア",
+  reading: ["あーくびしょっぷ・れりあ", "アークビショップ・レリア","あーくびしょっぷれりあ", "アークビショップ・レリア"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Arch_Priestess_Laelia/Arch_Priestess_Laelia.zip"
+},
+{
+  id: "frontguard_general",
+  name: "フロントガードジェネラル",
+  reading: ["ふろんとがーどじぇねらる", "フロントガードジェネラル"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Frontguard_General/Frontguard_General.zip"
+},
+{
+  id: "dragonbond_mage",
+  name: "ドラゴンメイジ",
+  reading: ["どらごんめいじ", "ドラゴンメイジ"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Dragonbond_Mage/Dragonbond_Mage.zip"
+},
+{
+  id: "hydra",
+  name: "ハイドラ",
+  reading: ["はいどら", "ハイドラ"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Hydra/Hydra.zip"
+},
+{
+  id: "ancient_forest_dragon",
+  name: "エンシェントフォレストドラゴン",
+  reading: ["えんしぇんとふぉれすとどらごん", "エンシェントフォレストドラゴン"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Ancient_Forest_Dragon/Ancient_Forest_Dragon.zip"
+},
+{
+  id: "dragonewt_charlotte",
+  name: "ドラゴニュート・シャルロット",
+  reading: ["どらごにゅーと・しゃるろっと", "ドラゴニュート・シャルロット","どらごにゅーとしゃるろっと","ドラゴニュートシャルロット","シャルロット","しゃるろっと"],
+  class: "ロイヤル",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Dragonewt_Charlotte/Dragonewt_Charlotte.zip"
+},
+{
+  id: "mordecai_the_duelist",
+  name: "デュエリスト・モルディカイ",
+  reading: ["でゅえりすと・もるでぃかい", "デュエリスト・モルディカイ","でゅえりすともるでぃかい", "デュエリストモルディカイ","モルディカイ","もるでぃかい"],
+  class: "ネクロマンサー",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Mordecai_the_Duelist/Mordecai_the_Duelist.zip"
+},
+{
+  id: "furiae",
+  name: "フリアエ",
+  reading: ["ふりあえ", "フリアエ"],
+  class: "ヴァンパイア",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Furiae/Furiae.zip"
+},
+{
+  id: "orb_dragon",
+  name: "オーブドラゴン",
+  reading: ["おーぶどらごん", "オーブドラゴン"],
+  class: "ドラゴン",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Orb_Dragon/Orb_Dragon.zip"
+},
+{
+  id: "temptress_vampire",
+  name: "セクシーヴァンパイア",
+  reading: ["せくしーゔぁんぱいあ", "セクシーヴァンパイア"],
+  class: "ヴァンパイア",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Temptress_Vampire/Temptress_Vampire.zip"
+},
+{
+  id: "incandescent_dragon",
+  name: "光輝ドラゴン",
+  reading: ["こうきどらごん", "光輝ドラゴン", "コウキドラゴン"],
+  class: "ドラゴン",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Incandescent_Dragon/Incandescent_Dragon.zip"
+},
+{
+  id: "genesis_dragon",
+  name: "ジェネシスドラゴン",
+  reading: ["じぇねしすどらごん", "ジェネシスドラゴン"],
+  class: "",
+  rarity: "Gold",
+  pack: "Classic",
+  zip: "voices/Classic/Gold/Genesis_Dragon/Genesis_Dragon.zip"
+}
 
 ];
+
 
 
 

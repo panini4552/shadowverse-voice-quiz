@@ -20,7 +20,8 @@ function normalize(str) {
         .toLowerCase()
         .normalize("NFKC")
         .replace(/[ぁ-ん]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60))
-        .replace(/\s+/g, "");
+        .replace(/[・\s\-\ー＿／,\.!！?？'’"”“]/g, "")
+        .replace(/[　・‐―－]/g, "");
 }
 
 function shuffleArray(arr) {
@@ -340,15 +341,24 @@ function nextQuestion() {
 function submitAnswerHandler() {
     if (!currentCard) return;
 
+    // --- 入力 ---
     const inputRaw = (document.getElementById("answer-input")?.value) || "";
     const input = normalize(inputRaw.trim());
-    if (document.getElementById("answer-input")) document.getElementById("answer-input").value = "";
+    if (document.getElementById("answer-input")) {
+        document.getElementById("answer-input").value = "";
+    }
 
+    // --- 判定用に normalize したカード名・読み ---
     const readings = (currentCard.reading || []).map(r => normalize(r));
-    const acceptedNames = [normalize(currentCard.name)].concat(readings);
+    const acceptedNames = [ normalize(currentCard.name) ].concat(readings);
 
-    const correct = acceptedNames.some(r => r === input);
+    // --- 正解判定（3文字以上 & 部分一致 & 順番一致） ---
+    const correct = acceptedNames.some(normalizedName => {
+        if (input.length < 3) return false;
+        return normalizedName.includes(input);
+    });
 
+    // --- UI 反映 ---
     const resultEl = document.getElementById("result");
     if (!resultEl) return;
 
@@ -359,7 +369,7 @@ function submitAnswerHandler() {
         document.getElementById("streak").textContent = streak;
         showCardImage(currentCard);
 
-        // encode tweet text
+        // tweet
         const text = `Shadowverseボイスクイズで${streak}問連続正解しました！`;
         const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
         const shareEl = document.getElementById("share-x");
@@ -368,12 +378,13 @@ function submitAnswerHandler() {
             shareEl.style.display = "inline-block";
         }
     } else {
+        // ★ 表示はオリジナル名（記号あり）
         resultEl.textContent = `不正解… 正解：${currentCard.name}`;
         resultEl.style.color = "red";
         streak = 0;
-        const sEl = document.getElementById("streak");
-        if (sEl) sEl.textContent = "0";
+        document.getElementById("streak").textContent = "0";
         showCardImage(currentCard);
+
         const shareEl = document.getElementById("share-x");
         if (shareEl) shareEl.style.display = "none";
     }

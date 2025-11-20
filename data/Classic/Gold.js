@@ -109,7 +109,7 @@ export const Classic_Gold = [
     pack: "Classic",
     zip: "voices/Classic/Gold/Wight_King.zip"
   }
-  // === Classic / Gold ===
+ 
 {
   id: "phantom_dragon",
   name: "ファントムドラゴン",
@@ -117,7 +117,7 @@ export const Classic_Gold = [
   class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Phantom_Dragon/Phantom_Dragon.zip"
+  zip: "voices/Classic/Gold/Phantom_Dragon.zip"
 },
 {
   id: "wind_god",
@@ -126,7 +126,7 @@ export const Classic_Gold = [
   class: "ニュートラル",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Wind_God/Wind_God.zip"
+  zip: "voices/Classic/Gold/Wind_God.zip"
 },
 {
   id: "noble_fairy",
@@ -135,7 +135,7 @@ export const Classic_Gold = [
   class: "エルフ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Noble_Fairy/Noble_Fairy.zip"
+  zip: "voices/Classic/Gold/Noble_Fairy.zip"
 },
 {
   id: "robin_hood",
@@ -144,7 +144,7 @@ export const Classic_Gold = [
   class: "エルフ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Robin_Hood/Robin_Hood.zip"
+  zip: "voices/Classic/Gold/Robin_Hood.zip"
 },
 {
   id: "ancient_alchemist",
@@ -153,7 +153,7 @@ export const Classic_Gold = [
   class: "ウィッチ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Ancient_Alchemist/Ancient_Alchemist.zip"
+  zip: "voices/Classic/Gold/Ancient_Alchemist.zip"
 },
 {
   id: "elinas",
@@ -162,7 +162,7 @@ export const Classic_Gold = [
   class: "ヴァンパイア",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Elinas/Elinas.zip"
+  zip: "voices/Classic/Gold/Elinas.zip"
 },
 {
   id: "angel_crusher",
@@ -171,7 +171,7 @@ export const Classic_Gold = [
   class: "ニュートラル",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Angel_Crusher/Angel_Crusher.zip"
+  zip: "voices/Classic/Gold/Angel_Crusher.zip"
 },
 {
   id: "athena",
@@ -180,7 +180,7 @@ export const Classic_Gold = [
   class: "ニュートラル",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Athena/Athena.zip"
+  zip: "voices/Classic/Gold/Athena.zip"
 },
 {
   id: "dragon_knight",
@@ -189,7 +189,7 @@ export const Classic_Gold = [
   class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Dragon_Knight/Dragon_Knight.zip"
+  zip: "voices/Classic/Gold/Dragon_Knight.zip"
 },
 {
   id: "death_tyrant",
@@ -198,7 +198,7 @@ export const Classic_Gold = [
   class: "ネクロマンサー",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Death_Tyrant/Death_Tyrant.zip"
+  zip: "voices/Classic/Gold/Death_Tyrant.zip"
 },
 {
   id: "medusa",
@@ -207,52 +207,52 @@ export const Classic_Gold = [
   class: "ヴァンパイア",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Medusa/Medusa.zip"
+  zip: "voices/Classic/Gold/Medusa.zip"
 }
 {
   id: "arch_priestess_laelia",
   name: "アークビショップ・レリア",
   reading: ["あーくびしょっぷ・れりあ", "アークビショップ・レリア","あーくびしょっぷれりあ", "アークビショップ・レリア"],
-  class: "",
+  class: "ビショップ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Arch_Priestess_Laelia/Arch_Priestess_Laelia.zip"
+  zip: "voices/Classic/Gold/Arch_Priestess_Laelia.zip"
 },
 {
   id: "frontguard_general",
   name: "フロントガードジェネラル",
   reading: ["ふろんとがーどじぇねらる", "フロントガードジェネラル"],
-  class: "",
+  class: "ロイヤル",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Frontguard_General/Frontguard_General.zip"
+  zip: "voices/Classic/Gold/Frontguard_General.zip"
 },
 {
   id: "dragonbond_mage",
   name: "ドラゴンメイジ",
   reading: ["どらごんめいじ", "ドラゴンメイジ"],
-  class: "",
+  class: "ウィッチ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Dragonbond_Mage/Dragonbond_Mage.zip"
+  zip: "voices/Classic/Gold/Dragonbond_Mage.zip"
 },
 {
   id: "hydra",
   name: "ハイドラ",
   reading: ["はいどら", "ハイドラ"],
-  class: "",
+  class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Hydra/Hydra.zip"
+  zip: "voices/Classic/Gold/Hydra.zip"
 },
 {
   id: "ancient_forest_dragon",
   name: "エンシェントフォレストドラゴン",
   reading: ["えんしぇんとふぉれすとどらごん", "エンシェントフォレストドラゴン"],
-  class: "",
+  class: "エルフ",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Ancient_Forest_Dragon/Ancient_Forest_Dragon.zip"
+  zip: "voices/Classic/Gold/Ancient_Forest_Dragon.zip"
 },
 {
   id: "dragonewt_charlotte",
@@ -261,7 +261,7 @@ export const Classic_Gold = [
   class: "ロイヤル",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Dragonewt_Charlotte/Dragonewt_Charlotte.zip"
+  zip: "voices/Classic/Gold/Dragonewt_Charlotte.zip"
 },
 {
   id: "mordecai_the_duelist",
@@ -270,7 +270,7 @@ export const Classic_Gold = [
   class: "ネクロマンサー",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Mordecai_the_Duelist/Mordecai_the_Duelist.zip"
+  zip: "voices/Classic/Gold/Mordecai_the_Duelist.zip"
 },
 {
   id: "furiae",
@@ -279,7 +279,7 @@ export const Classic_Gold = [
   class: "ヴァンパイア",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Furiae/Furiae.zip"
+  zip: "voices/Classic/Gold/Furiae.zip"
 },
 {
   id: "orb_dragon",
@@ -288,7 +288,7 @@ export const Classic_Gold = [
   class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Orb_Dragon/Orb_Dragon.zip"
+  zip: "voices/Classic/Gold/Orb_Dragon.zip"
 },
 {
   id: "temptress_vampire",
@@ -297,7 +297,7 @@ export const Classic_Gold = [
   class: "ヴァンパイア",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Temptress_Vampire/Temptress_Vampire.zip"
+  zip: "voices/Classic/Gold/Temptress_Vampire.zip"
 },
 {
   id: "incandescent_dragon",
@@ -306,19 +306,20 @@ export const Classic_Gold = [
   class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Incandescent_Dragon/Incandescent_Dragon.zip"
+  zip: "voices/Classic/Gold/Incandescent_Dragon.zip"
 },
 {
   id: "genesis_dragon",
   name: "ジェネシスドラゴン",
   reading: ["じぇねしすどらごん", "ジェネシスドラゴン"],
-  class: "",
+  class: "ドラゴン",
   rarity: "Gold",
   pack: "Classic",
-  zip: "voices/Classic/Gold/Genesis_Dragon/Genesis_Dragon.zip"
+  zip: "voices/Classic/Gold/Genesis_Dragon.zip"
 }
 
 ];
+
 
 
 

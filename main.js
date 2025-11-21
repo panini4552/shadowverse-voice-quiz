@@ -473,24 +473,29 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
-// --- Enterキーでボタンを押す ---
+// --- Enterキーによる送信/次へ --- 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        // 「カード送信」ボタンが表示されているとき
-        const sendBtn = document.getElementById("check-btn");
-        if (sendBtn && !sendBtn.disabled) {
-            sendBtn.click();
-            return;
-        }
+    if (e.key !== "Enter") return;
 
-        // 「次の問題へ」ボタンが表示されているとき
-        const nextBtn = document.getElementById("next-btn");
-        if (nextBtn && !nextBtn.disabled) {
-            nextBtn.click();
-            return;
-        }
+    // 変換パッドの文字入力中は Enter 無効化
+    const active = document.activeElement;
+    if (active && active.id === "custom-kanji-input") return;
+
+    // 「カード送信」ボタンが“表示されている”場合だけ発火
+    const sendBtn = document.getElementById("check-btn");
+    if (sendBtn && !sendBtn.disabled && sendBtn.offsetParent !== null) {
+        sendBtn.click();
+        return;
+    }
+
+    // 「次の問題へ」ボタンが“表示されている”場合だけ発火
+    const nextBtn = document.getElementById("next-btn");
+    if (nextBtn && !nextBtn.disabled && nextBtn.offsetParent !== null) {
+        nextBtn.click();
+        return;
     }
 });
+
 
 
 

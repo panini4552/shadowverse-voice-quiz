@@ -10,10 +10,11 @@ export const cards = [
   ...Classic_Legendary,
   ...Classic_Gold,
   ...Classic_Silver,
-  ...Classic_Bronze
+  ...Classic_Bronze,
   ...DRK_Legendary
 ];
 
 // 互換性のためグローバルにも公開（既存の main.js が参照するため）
 window.cards = cards;
+
 

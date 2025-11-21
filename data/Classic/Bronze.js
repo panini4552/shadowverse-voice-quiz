@@ -325,13 +325,13 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Fire_Lizard.zip"
 },
 {
-  id: "Aiela,_Dragon_Knight",
+  id: "Aiela_Dragon_Knight",
   name: "ドラゴンナイト・アイラ",
   reading: ["どらごんないとあいら", "ドラゴンナイトアイラ"],
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  zip: "voices/Classic/Bronze/Aiela,_Dragon_Knight.zip"
+  zip: "voices/Classic/Bronze/Aiela_Dragon_Knight.zip"
 },
 {
   id: "Twin-Headed_Dragon",
@@ -788,6 +788,7 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Desert_Rider.zip"
 },
 ];
+
 
 
 

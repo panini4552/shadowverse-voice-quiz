@@ -301,7 +301,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"dragon_voice"
+  tags: "dragon_voice",
   zip: "voices/Classic/Bronze/Maelstrom_Dragon.zip"
 },
 {
@@ -788,6 +788,7 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Desert_Rider.zip"
 },
 ];
+
 
 
 

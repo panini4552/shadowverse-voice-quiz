@@ -203,7 +203,7 @@ export const Classic_Silver = [
   },
 ];
 
-];
+
 
 
 

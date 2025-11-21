@@ -446,13 +446,13 @@ export const Classic_Silver = [
   },
   // === ヴァンパイア ===
 {
-  id: "AccursedSwordVampire",
+  id: "Cursebrand Vampire",
   name: "呪剣の吸血鬼",
   reading: ["じゅけんのきゅうけつき", "ジュケンノキュウケツキ"],
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/AccursedSwordVampire.zip"
+  zip: "voices/Classic/Silver/Cursebrand Vampire.zip"
 },
 {
   id: "Mormo",
@@ -470,10 +470,10 @@ export const Classic_Silver = [
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/DarkSummoner.zip"
+  zip: "voices/Classic/Silver/Dark_Summoner.zip"
 },
 {
-  id: "RevengeDemon",
+  id: "Devil_of_Vengeance",
   name: "復讐の悪魔",
   reading: ["ふくしゅうのあくま", "フクシュウノアクマ"],
   class: "ヴァンパイア",
@@ -482,31 +482,31 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/RevengeDemon.zip"
 },
 {
-  id: "MidnightVampire",
+  id: "Midnight_Vampire",
   name: "ミッドナイトヴァンパイア",
   reading: ["みっどないとゔぁんぱいあ", "ミッドナイトヴァンパイア"],
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/MidnightVampire.zip"
+  zip: "voices/Classic/Silver/Midnight_Vampire.zip"
 },
 {
-  id: "VampireLycan",
+  id: "Vampire_Lykos",
   name: "ヴァンパイアライカン",
   reading: ["ゔぁんぱいあらいかん", "ヴァンパイアライカン"],
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/VampireLycan.zip"
+  zip: "voices/Classic/Silver/Vampire_Lykos.zip"
 },
 {
-  id: "MaskedSlayer",
+  id: "Masked_Butcher",
   name: "仮面の殺戮者",
   reading: ["かめんのさつりくしゃ", "カメンノサツリクシャ"],
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/MaskedSlayer.zip"
+  zip: "voices/Classic/Silver/Masked_Butcher.zip"
 },
 {
   id: "Geryon",
@@ -518,13 +518,13 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/Geryon.zip"
 },
 {
-  id: "VampireBird",
+  id: "VampireBard",
   name: "ヴァンパイアバード",
   reading: ["ゔぁんぱいあばーど", "ヴァンパイアバード"],
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/VampireBird.zip"
+  zip: "voices/Classic/Silver/Vampire_Bard.zip"
 },
 {
   id: "Alucard",
@@ -664,5 +664,6 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/Gilgamesh.zip"
 },
 ];
+
 
 

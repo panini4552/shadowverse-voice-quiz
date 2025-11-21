@@ -39,13 +39,13 @@ export const Classic_Bronze = [
     zip: "voices/Classic/Bronze/Fairy_Bringer.zip"
   },
   {
-    id: "Wonder_Elf_Mage",
+    id: "Wandering_Elf_Mage",
     name: "ワンダーエルフメイジ",
     reading: ["わんだーえるふめいじ", "ワンダーエルフメイジ"],
     class: "エルフ",
     rarity: "Bronze",
     pack: "Classic",
-    zip: "voices/Classic/Bronze/Wonder_Elf_Mage.zip"
+    zip: "voices/Classic/Bronze/Wandering_Elf_Mage.zip"
   },
   {
     id: "Elf_Wanderer",
@@ -212,13 +212,13 @@ export const Classic_Bronze = [
   },
   // === ウィッチ ===
   {
-    id: "Craft_Warlock",
+    id: "Crafty_Warlock",
     name: "クラフトウォーロック",
     reading: ["くらふとうぉーろっく", "クラフトウォーロック"],
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "Classic",
-    zip: "voices/Classic/Bronze/Craft_Warlock.zip"
+    zip: "voices/Classic/Bronze/Crafty_Warlock.zip"
   },
   {
     id: "Apprentice_Alchemist",
@@ -780,5 +780,6 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Desert_Rider.zip"
 },
 ];
+
 
 

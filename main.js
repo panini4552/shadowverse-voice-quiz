@@ -473,7 +473,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
-// --- Enterキーによる送信/次へ --- 
+// --- Enterキーによる送信/次へ ---
 document.addEventListener("keydown", (e) => {
     if (e.key !== "Enter") return;
 
@@ -481,20 +481,29 @@ document.addEventListener("keydown", (e) => {
     const active = document.activeElement;
     if (active && active.id === "custom-kanji-input") return;
 
-    // 「カード送信」ボタンが“表示されている”場合だけ発火
-    const sendBtn = document.getElementById("check-btn");
-    if (sendBtn && !sendBtn.disabled && sendBtn.offsetParent !== null) {
-        sendBtn.click();
-        return;
+    const submitBtn = document.getElementById("submit-btn");
+    const nextBtn   = document.getElementById("next-btn");
+    const resultEl  = document.getElementById("result");
+
+    // --- 解答がまだ表示されていない時 ---
+    // → Enter = 送信
+    if (resultEl && resultEl.textContent.trim() === "") {
+        if (submitBtn && submitBtn.offsetParent !== null && !submitBtn.disabled) {
+            submitBtn.click();
+            return;
+        }
     }
 
-    // 「次の問題へ」ボタンが“表示されている”場合だけ発火
-    const nextBtn = document.getElementById("next-btn");
-    if (nextBtn && !nextBtn.disabled && nextBtn.offsetParent !== null) {
-        nextBtn.click();
-        return;
+    // --- 解答が表示されている時 ---
+    // → Enter = 次の問題へ
+    if (resultEl && resultEl.textContent.trim() !== "") {
+        if (nextBtn && nextBtn.offsetParent !== null && !nextBtn.disabled) {
+            nextBtn.click();
+            return;
+        }
     }
 });
+
 
 
 

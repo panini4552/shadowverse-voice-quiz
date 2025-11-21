@@ -230,13 +230,13 @@ export const Classic_Bronze = [
     zip: "voices/Classic/Bronze/Apprentice_Alchemist.zip"
   },
   {
-    id: "Rune_Guardian",
+    id: "Runic_Guardian",
     name: "ルーンガーディアン",
     reading: ["るーんがーでぃあん", "ルーンガーディアン"],
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "Classic",
-    zip: "voices/Classic/Bronze/Rune_Guardian.zip"
+    zip: "voices/Classic/Bronze/Runic_Guardian.zip"
   },
   {
     id: "Gauntleted_Healer",
@@ -780,6 +780,7 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Desert_Rider.zip"
 },
 ];
+
 
 
 

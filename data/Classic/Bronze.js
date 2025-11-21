@@ -301,7 +301,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags: "dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Maelstrom_Dragon.zip"
 },
 {
@@ -311,7 +311,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags: "dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Sandstorm_Dragon.zip"
 },
 {
@@ -321,7 +321,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Fire_Lizard.zip"
 },
 {
@@ -340,7 +340,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Twin-Headed_Dragon.zip"
 },
 {
@@ -350,7 +350,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"creature",
+  tags:["creature"],
   zip: "voices/Classic/Bronze/Roc.zip"
 },
 {
@@ -369,7 +369,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Glint_Dragon.zip"
 },
 {
@@ -379,7 +379,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"creature",
+  tags:["creature"],
   zip: "voices/Classic/Bronze/Seabrand_Dragon.zip"
 },
 {
@@ -389,7 +389,7 @@ export const Classic_Bronze = [
   class: "ドラゴン",
   rarity: "Bronze",
   pack: "Classic",
-  tags:"dragon_voice",
+  tags: ["dragon_voice"]
   zip: "voices/Classic/Bronze/Skull_Dragon.zip"
 },
 {
@@ -788,6 +788,7 @@ export const Classic_Bronze = [
   zip: "voices/Classic/Bronze/Desert_Rider.zip"
 },
 ];
+
 
 
 

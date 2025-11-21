@@ -473,40 +473,29 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
-// --- Enterキーでボタンを押す ---
+// --- Enterキーでボタンを押す（変換パッド入力中は無効） ---
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        // 「カード送信」ボタンが表示されているとき
-        const sendBtn = document.getElementById("check-btn");
-        if (sendBtn && !sendBtn.disabled) {
-            sendBtn.click();
-            return;
-        }
+    if (e.key !== "Enter") return;
 
-        // 「次の問題へ」ボタンが表示されているとき
-        const nextBtn = document.getElementById("next-btn");
-        if (nextBtn && !nextBtn.disabled) {
-            nextBtn.click();
-            return;
-        }
+    // 変換パッドの input がアクティブなら Enter を無効化
+    const active = document.activeElement;
+    if (active && active.id === "custom-kanji-input") {
+        return; // 何もしない
+    }
+
+    // 「カード送信」ボタン
+    const sendBtn = document.getElementById("check-btn");
+    if (sendBtn && !sendBtn.disabled && sendBtn.offsetParent !== null) {
+        sendBtn.click();
+        return;
+    }
+
+    // 「次の問題へ」ボタン
+    const nextBtn = document.getElementById("next-btn");
+    if (nextBtn && !nextBtn.disabled && nextBtn.offsetParent !== null) {
+        nextBtn.click();
+        return;
     }
 });
-// --- Enterキーでボタンを押す ---
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        // 「カード送信」ボタンが表示されているとき
-        const sendBtn = document.getElementById("check-btn");
-        if (sendBtn && !sendBtn.disabled) {
-            sendBtn.click();
-            return;
-        }
 
-        // 「次の問題へ」ボタンが表示されているとき
-        const nextBtn = document.getElementById("next-btn");
-        if (nextBtn && !nextBtn.disabled) {
-            nextBtn.click();
-            return;
-        }
-    }
-});
 

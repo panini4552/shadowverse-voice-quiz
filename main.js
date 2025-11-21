@@ -473,36 +473,50 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
-// --- Enterキーによる送信/次へ ---
+// ==============================
+// Enterキー送信（IME変換中は無効 / Next誤動作防止）
+// ==============================
+
+let isComposing = false;
+
+// IME 変換開始
+document.addEventListener("compositionstart", () => {
+    isComposing = true;
+});
+
+// IME 変換終了
+document.addEventListener("compositionend", () => {
+    isComposing = false;
+});
+
 document.addEventListener("keydown", (e) => {
     if (e.key !== "Enter") return;
 
-    // 変換パッドの文字入力中は Enter 無効化
-    const active = document.activeElement;
-    if (active && active.id === "custom-kanji-input") return;
+    // 変換中なら Enter を無効化
+    if (isComposing) return;
 
     const submitBtn = document.getElementById("submit-btn");
     const nextBtn   = document.getElementById("next-btn");
     const resultEl  = document.getElementById("result");
 
-    // --- 解答がまだ表示されていない時 ---
-    // → Enter = 送信
-    if (resultEl && resultEl.textContent.trim() === "") {
-        if (submitBtn && submitBtn.offsetParent !== null && !submitBtn.disabled) {
-            submitBtn.click();
-            return;
-        }
-    }
+    // result 表示が空 → 回答前と判定
+    const isAnswered = resultEl && resultEl.textContent.trim() !== "";
 
-    // --- 解答が表示されている時 ---
-    // → Enter = 次の問題へ
-    if (resultEl && resultEl.textContent.trim() !== "") {
+    if (!isAnswered) {
+        // --- 回答前：Enter で送信 ---
+        if (submitBtn && submitBtn.offsetParent !== null && !submitBtn.disabled) {
+            e.preventDefault();   // Next 誤作動防止
+            submitBtn.click();
+        }
+    } else {
+        // --- 回答後：Enter で次へ ---
         if (nextBtn && nextBtn.offsetParent !== null && !nextBtn.disabled) {
+            e.preventDefault();
             nextBtn.click();
-            return;
         }
     }
 });
+
 
 
 

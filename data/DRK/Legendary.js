@@ -1,4 +1,4 @@
-export const Classic_Legendary = [
+export const DRK_Legendary = [
   // ===  ===
   {
     id: "アレキサンダー",
@@ -14,3 +14,4 @@ export const Classic_Legendary = [
 
 
 ];
+

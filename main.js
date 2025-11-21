@@ -473,3 +473,40 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
+// --- Enterキーでボタンを押す ---
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        // 「カード送信」ボタンが表示されているとき
+        const sendBtn = document.getElementById("check-btn");
+        if (sendBtn && !sendBtn.disabled) {
+            sendBtn.click();
+            return;
+        }
+
+        // 「次の問題へ」ボタンが表示されているとき
+        const nextBtn = document.getElementById("next-btn");
+        if (nextBtn && !nextBtn.disabled) {
+            nextBtn.click();
+            return;
+        }
+    }
+});
+// --- Enterキーでボタンを押す ---
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        // 「カード送信」ボタンが表示されているとき
+        const sendBtn = document.getElementById("check-btn");
+        if (sendBtn && !sendBtn.disabled) {
+            sendBtn.click();
+            return;
+        }
+
+        // 「次の問題へ」ボタンが表示されているとき
+        const nextBtn = document.getElementById("next-btn");
+        if (nextBtn && !nextBtn.disabled) {
+            nextBtn.click();
+            return;
+        }
+    }
+});
+

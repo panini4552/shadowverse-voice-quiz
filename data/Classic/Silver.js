@@ -634,7 +634,7 @@ export const Classic_Silver = [
   class: "ニュートラル",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/BellringerAngel.zip"
+  zip: "voices/Classic/Silver/Bellringer_Angel.zip"
 },
 {
   id: "Lizardman",
@@ -646,13 +646,13 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/Lizardman.zip"
 },
 {
-  id: "GoblinmountDemon",
+  id: "Goblinmount_Demon",
   name: "ゴブリンマウントデーモン",
   reading: ["ごぶりんまうんとでーもん", "ゴブリンマウントデーモン"],
   class: "ニュートラル",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/GoblinmountDemon.zip"
+  zip: "voices/Classic/Silver/Goblinmount_Demon.zip"
 },
 {
   id: "Gilgamesh",
@@ -664,4 +664,5 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/Gilgamesh.zip"
 },
 ];
+
 

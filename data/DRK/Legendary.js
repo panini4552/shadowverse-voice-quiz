@@ -1,14 +1,15 @@
 export const Classic_Legendary = [
-  // === エルフ ===
+  // ===  ===
   {
-    id: "Ancient_Elf",
-    name: "エンシェントエルフ",
-    reading: ["えんしぇんとえるふ", "エンシェントエルフ"],
-    class: "エルフ",
+    id: "アレキサンダー",
+    name: "アレキサンダー",
+    reading: ["アレキサンダー", "あれきさんだー"],
+    class: "ロイヤル",
     rarity: "Legendary",
     pack: "Classic",
-    zip: "voices/Classic/Legendary/Ancient_Elf.zip"
+    zip: "voices/Classic/Legendary/アレキサンダー.zip"
   },
+
 
 
 

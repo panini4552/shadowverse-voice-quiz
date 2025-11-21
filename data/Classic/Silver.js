@@ -101,6 +101,109 @@ export const Classic_Silver = [
     pack: "Classic",
     zip: "voices/Classic/Silver/Forest_Giant.zip"
   },
+  // === ロイヤル ===
+  {
+    id: "Maid_Leader",
+    name: "メイドリーダー",
+    reading: ["めいどりーだー", "メイドリーダー"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Maid_Leader.zip"
+  },
+  {
+    id: "Assassin",
+    name: "アサシン",
+    reading: ["あさしん", "アサシン"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Assassin.zip"
+  },
+  {
+    id: "Luminous_Knight",
+    name: "ルミナスナイト",
+    reading: ["るみなすないと", "ルミナスナイト"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Luminous_Knight.zip"
+  },
+  {
+    id: "Princess_Vanguard",
+    name: "プリンセスヴァンガード",
+    reading: ["ぷりんせすゔぁんがーど", "プリンセスヴァンガード"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Princess_Vanguard.zip"
+  },
+  {
+    id: "Navy_Lieutenant",
+    name: "ネイビールテナント",
+    reading: ["ねいびーるてなんと", "ネイビールテナント"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Navy_Lieutenant.zip"
+  },
+  {
+    id: "Pompous_Princess",
+    name: "わがままプリンセス",
+    reading: ["わがままぷりんせす", "ワガママプリンセス"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Pompous_Princess.zip"
+  },
+  {
+    id: "Cursed_General",
+    name: "カースドジェネラル",
+    reading: ["かーすどじぇねらる", "カースドジェネラル"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Cursed_General.zip"
+  },
+  {
+    id: "Swordsman",
+    name: "剣豪",
+    reading: ["けんごう", "ケンゴウ"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Swordsman.zip"
+  },
+  {
+    id: "Percival",
+    name: "パーシヴァル",
+    reading: ["ぱーしゔぁる", "パーシヴァル"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Percival.zip"
+  },
+  {
+    id: "Noble_Knight",
+    name: "ノーブルナイト",
+    reading: ["のーぶるないと", "ノーブルナイト"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Noble_Knight.zip"
+  },
+  {
+    id: "Enraged_General",
+    name: "レイジングジェネラル",
+    reading: ["れいじんぐじぇねらる", "レイジングジェネラル"],
+    class: "ロイヤル",
+    rarity: "Silver",
+    pack: "Classic",
+    zip: "voices/Classic/Silver/Enraged_General.zip"
+  },
 ];
+
+];
+
 
 

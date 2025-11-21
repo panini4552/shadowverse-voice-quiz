@@ -452,7 +452,7 @@ export const Classic_Silver = [
   class: "ヴァンパイア",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/Cursebrand Vampire.zip"
+  zip: "voices/Classic/Silver/Cursebrand_Vampire.zip"
 },
 {
   id: "Mormo",
@@ -537,94 +537,94 @@ export const Classic_Silver = [
 },
 // === ビショップ ===
 {
-  id: "SisterOfGrace",
+  id: "Protectoress",
   name: "加護の修道女",
   reading: ["かごのしゅうどうじょ", "カゴノシュウドウジョ"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/SisterOfGrace.zip"
+  zip: "voices/Classic/Silver/Protectoress.zip"
 },
 {
-  id: "ChurchProtector",
+  id: "Temple_Defender",
   name: "教会の護り手",
   reading: ["きょうかいのまもりて", "キョウカイノマモリテ"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/ChurchProtector.zip"
+  zip: "voices/Classic/Silver/Temple_Defender.zip"
 },
 {
-  id: "PrismPriest",
+  id: "Prism_Priestess",
   name: "プリズムプリースト",
   reading: ["ぷりずむぷりーすと", "プリズムプリースト"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/PrismPriest.zip"
+  zip: "voices/Classic/Silver/Prism_Priestess.zip"
 },
 {
-  id: "RadiantShaman",
+  id: "Radiant_Shaman",
   name: "レディアントシャーマン",
   reading: ["れでぃあんとしゃーまん", "レディアントシャーマン"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/RadiantShaman.zip"
+  zip: "voices/Classic/Silver/Radiant_Shaman.zip"
 },
 {
-  id: "HolyMage",
+  id: "Holy_Mage",
   name: "ホーリーメイジ",
   reading: ["ほーりーめいじ", "ホーリーメイジ"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/HolyMage.zip"
+  zip: "voices/Classic/Silver/Holy_Mage.zip"
 },
 {
-  id: "SadisticNun",
+  id: "Cruel_Priestess",
   name: "残忍な修道女",
   reading: ["ざんにんなしゅうどうじょ", "ザンニンナシュウドウジョ"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/SadisticNun.zip"
+  zip: "voices/Classic/Silver/Cruel_Priestess.zip"
 },
 {
-  id: "ClericLancer",
+  id: "Cleric_Lancer",
   name: "クレリックランサー",
   reading: ["くれりっくらんさー", "クレリックランサー"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/ClericLancer.zip"
+  zip: "voices/Classic/Silver/Cleric_Lancer.zip"
 },
 {
-  id: "ShrineKnightMaiden",
+  id: "Shrine_Knight_Maiden",
   name: "シュラインナイトメイデン",
   reading: ["しゅらいんないとめいでん", "シュラインナイトメイデン"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/ShrineKnightMaiden.zip"
+  zip: "voices/Classic/Silver/Shrine_Knight_Maiden.zip"
 },
 {
-  id: "OracleNoble",
+  id: "Angelic_Noble",
   name: "神託の貴族",
   reading: ["しんたくのきぞく", "シンタクノキゾク"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/OracleNoble.zip"
+  zip: "voices/Classic/Silver/Angelic_Noble.zip"
 },
 {
-  id: "WhiteKnight",
+  id: "White_Knight",
   name: "ホワイトナイト",
   reading: ["ほわいとないと", "ホワイトナイト"],
   class: "ビショップ",
   rarity: "Silver",
   pack: "Classic",
-  zip: "voices/Classic/Silver/WhiteKnight.zip"
+  zip: "voices/Classic/Silver/White_Knight.zip"
 },
 // === ニュートラル ===
 {
@@ -664,6 +664,7 @@ export const Classic_Silver = [
   zip: "voices/Classic/Silver/Gilgamesh.zip"
 },
 ];
+
 
 
 

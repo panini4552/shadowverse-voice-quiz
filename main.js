@@ -392,6 +392,10 @@ function submitAnswerHandler() {
     const nextBtn = document.getElementById("next-btn");
     if (nextBtn) nextBtn.style.display = "inline-block";
     updateProgressUI();
+       resultEl.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 }
 
 /* ================================

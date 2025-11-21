@@ -6,12 +6,13 @@ export const DRK_Legendary = [
     reading: ["アレキサンダー", "あれきさんだー"],
     class: "ロイヤル",
     rarity: "Legendary",
-    pack: "Classic",
-    zip: "voices/Classic/Legendary/アレキサンダー.zip"
+    pack: "DRK",
+    zip: "voices/DRK/Legendary/アレキサンダー.zip"
   },
 
 
 
 
 ];
+
 

@@ -6,7 +6,7 @@ export const TOG_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "イスラーフィール.zip"
+    zip: "voices/TOG/Legendary/イスラーフィール.zip"
   },
   {
     id: "ウロボロス",
@@ -15,7 +15,7 @@ export const TOG_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "ウロボロス.zip"
+    zip: "voices/TOG/Legendary/ウロボロス.zip"
   },
   {
     id: "エルフクイーン",
@@ -24,7 +24,7 @@ export const TOG_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "エルフクイーン.zip"
+    zip: "voices/TOG/Legendary/エルフクイーン.zip"
   },
   {
     id: "ゼウス",
@@ -33,7 +33,7 @@ export const TOG_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "ゼウス.zip"
+    zip: "voices/TOG/Legendary/ゼウス.zip"
   },
   {
     id: "ダークジャンヌ",
@@ -42,7 +42,7 @@ export const TOG_Legendary = [
     class: "ビショップ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "ダークジャンヌ.zip"
+    zip: "voices/TOG/Legendary/ダークジャンヌ.zip"
   },
   {
     id: "ヘヴンリーイージス",
@@ -51,7 +51,7 @@ export const TOG_Legendary = [
     class: "ビショップ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "ヘヴンリーイージス.zip"
+    zip: "voices/TOG/Legendary/ヘヴンリーイージス.zip"
   },
   {
     id: "ベルフェゴール",
@@ -60,7 +60,7 @@ export const TOG_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "ベルフェゴール.zip"
+    zip: "voices/TOG/Legendary/ベルフェゴール.zip"
   },
   {
     id: "メイルストロームサーペント",
@@ -69,7 +69,7 @@ export const TOG_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "メイルストロームサーペント.zip"
+    zip: "voices/TOG/Legendary/メイルストロームサーペント.zip"
   },
   {
     id: "円卓の騎士・ガウェイン",
@@ -78,7 +78,7 @@ export const TOG_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "円卓の騎士・ガウェイン.zip"
+    zip: "voices/TOG/Legendary/円卓の騎士・ガウェイン.zip"
   },
   {
     id: "言霊遣い・ジンジャー",
@@ -87,7 +87,7 @@ export const TOG_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "言霊遣い・ジンジャー.zip"
+    zip: "voices/TOG/Legendary/言霊遣い・ジンジャー.zip"
   },
   {
     id: "魂の番人・ミント",
@@ -96,7 +96,7 @@ export const TOG_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "魂の番人・ミント.zip"
+    zip: "voices/TOG/Legendary/魂の番人・ミント.zip"
   },
   {
     id: "深き森の異形",
@@ -105,7 +105,7 @@ export const TOG_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "深き森の異形.zip"
+    zip: "voices/TOG/Legendary/深き森の異形.zip"
   },
   {
     id: "水竜神の巫女",
@@ -114,7 +114,7 @@ export const TOG_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "水竜神の巫女.zip"
+    zip: "voices/TOG/Legendary/水竜神の巫女.zip"
   },
   {
     id: "不滅の英雄・ローラン",
@@ -123,7 +123,7 @@ export const TOG_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "不滅の英雄・ローラン.zip"
+    zip: "voices/TOG/Legendary/不滅の英雄・ローラン.zip"
   },
   {
     id: "魔将軍・ヘクター",
@@ -132,7 +132,7 @@ export const TOG_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "魔将軍・ヘクター.zip"
+    zip: "voices/TOG/Legendary/魔将軍・ヘクター.zip"
   },
   {
     id: "魔導の巨兵",
@@ -141,6 +141,6 @@ export const TOG_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "TOG",
-    zip: "魔導の巨兵.zip"
+    zip: "voices/TOG/Legendary/魔導の巨兵.zip"
   }
 ];

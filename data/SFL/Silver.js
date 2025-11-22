@@ -1,233 +1,234 @@
 export const SFL_Silver = [
   // === エルフ ===
   {
-    id: "Elf_Singer_Polka",
+    id: "エルフシンガー・ポルカ",
     name: "エルフシンガー・ポルカ",
     reading: ["えるふしんがー・ぽるか", "エルフシンガー・ポルカ", "エルフシンガー・ポルカ"],
     class: "エルフ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Elf_Singer_Polka.zip"
+    zip: "voices/SFL/Silver/エルフシンガー・ポルカ.zip"
   },
   {
-    id: "Alea_Teacher_of_Nature",
+    id: "自然の教え手・アレア",
     name: "自然の教え手・アレア",
     reading: ["しぜんのおしえて・あれあ", "シゼンノオシエテ・アレア", "自然の教え手・アレア"],
     class: "エルフ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Alea_Teacher_of_Nature.zip"
+    zip: "voices/SFL/Silver/自然の教え手・アレア.zip"
   },
   {
-    id: "Imakio",
+    id: "忌刃鬼",
     name: "忌刃鬼",
     reading: ["きじんき", "キジンキ", "忌刃鬼"],
     class: "エルフ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Imakio.zip"
+    zip: "voices/SFL/Silver/忌刃鬼.zip"
   },
 
   // === ロイヤル ===
   {
-    id: "Cu_Chulainn",
+    id: "クーフーリン",
     name: "クーフーリン",
     reading: ["くーふーりん", "クーフーリン", "クーフーリン"],
     class: "ロイヤル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Cu_Chulainn.zip"
+    zip: "voices/SFL/Silver/クーフーリン.zip"
   },
   {
-    id: "Romeo_Lord_General",
+    id: "ロードジェネラル・ロミオ",
     name: "ロードジェネラル・ロミオ",
     reading: ["ろーどじぇねらる・ろみお", "ロードジェネラル・ロミオ", "ロードジェネラル・ロミオ"],
     class: "ロイヤル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Romeo_Lord_General.zip"
+    zip: "voices/SFL/Silver/ロードジェネラル・ロミオ.zip"
   },
   {
-    id: "Princess_Juliet",
+    id: "プリンセス・ジュリエット",
     name: "プリンセス・ジュリエット",
     reading: ["ぷりんせす・じゅりえっと", "プリンセス・ジュリエット", "プリンセス・ジュリエット"],
     class: "ロイヤル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Princess_Juliet.zip"
+    zip: "voices/SFL/Silver/プリンセス・ジュリエット.zip"
   },
 
   // === ウィッチ ===
   {
-    id: "Magic_Gun_Hunter",
+    id: "マジックガンハンター",
     name: "マジックガンハンター",
     reading: ["まじっくがんはんたー", "マジックガンハンター", "マジックガンハンター"],
     class: "ウィッチ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Magic_Gun_Hunter.zip"
+    zip: "voices/SFL/Silver/マジックガンハンター.zip"
   },
   {
-    id: "Flow_Teacher_of_Sacred_Law",
+    id: "聖法の教師・フロウ",
     name: "聖法の教師・フロウ",
     reading: ["せいほうのきょうし・ふろう", "セイホウノキョウシ・フロウ", "聖法の教師・フロウ"],
     class: "ウィッチ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Flow_Teacher_of_Sacred_Law.zip"
+    zip: "voices/SFL/Silver/聖法の教師・フロウ.zip"
   },
   {
-    id: "Lorea_Solar_Dancer",
+    id: "太陽の踊り手・ロレア",
     name: "太陽の踊り手・ロレア",
     reading: ["たいようのおどりて・ろれあ", "タイヨウノオドリテ・ロレア", "太陽の踊り手・ロレア"],
     class: "ウィッチ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Lorea_Solar_Dancer.zip"
+    zip: "voices/SFL/Silver/太陽の踊り手・ロレア.zip"
   },
 
   // === ドラゴン ===
   {
-    id: "Beowulf",
+    id: "ベオウルフ",
     name: "ベオウルフ",
     reading: ["べおうるふ", "ベオウルフ", "ベオウルフ"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Beowulf.zip"
+    zip: "voices/SFL/Silver/ベオウルフ.zip"
   },
   {
-    id: "Beast_Rider",
+    id: "魔獣の乗り手",
     name: "魔獣の乗り手",
     reading: ["まじゅうののりて", "マジュウノノリテ", "魔獣の乗り手"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Beast_Rider.zip"
+    zip: "voices/SFL/Silver/魔獣の乗り手.zip"
   },
   {
-    id: "Cetus",
+    id: "ケートス",
     name: "ケートス",
     reading: ["けーとす", "ケートス", "ケートス"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Cetus.zip"
+    zip: "voices/SFL/Silver/ケートス.zip"
   },
 
   // === ネクロマンサー ===
   {
-    id: "Sora_Demonic_Karate",
+    id: "悪魔の拳法家・ソーラ",
     name: "悪魔の拳法家・ソーラ",
     reading: ["あくまのけんぽうか・そーら", "アクマノケンポウカ・ソーラ", "悪魔の拳法家・ソーラ"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Sora_Demonic_Karate.zip"
+    zip: "voices/SFL/Silver/悪魔の拳法家・ソーラ.zip"
   },
   {
-    id: "Hresvelgr",
+    id: "フレスベルグ",
     name: "フレスベルグ",
     reading: ["ふれすべるぐ", "フレスベルグ", "フレスベルグ"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Hresvelgr.zip"
+    zip: "voices/SFL/Silver/フレスベルグ.zip"
   },
   {
-    id: "Lyut_Lunar_Necromancer",
+    id: "ルナルの死霊術師・リュート",
     name: "ルナルの死霊術師・リュート",
     reading: ["るなるのしりょうじゅつし・りゅーと", "ルナルノシリョウジュツシ・リュート", "ルナルの死霊術師・リュート"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Lyut_Lunar_Necromancer.zip"
+    zip: "voices/SFL/Silver/ルナルの死霊術師・リュート.zip"
   },
 
   // === ヴァンパイア ===
   {
-    id: "Devil_Sheep",
+    id: "デビルシープ",
     name: "デビルシープ",
     reading: ["でびるしーぷ", "デビルシープ", "デビルシープ"],
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Devil_Sheep.zip"
+    zip: "voices/SFL/Silver/デビルシープ.zip"
   },
   {
-    id: "Euryale",
+    id: "エウリュアレー",
     name: "エウリュアレー",
     reading: ["えうりゅあれー", "エウリュアレー", "エウリュアレー"],
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Euryale.zip"
+    zip: "voices/SFL/Silver/エウリュアレー.zip"
   },
   {
-    id: "Fenrir",
+    id: "フェンリル",
     name: "フェンリル",
     reading: ["ふぇんりる", "フェンリル", "フェンリル"],
     class: "ヴァンパイア",
     rarity: "Silver",
+    rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Fenrir.zip"
+    zip: "voices/SFL/Silver/フェンリル.zip"
   },
 
   // === ビショップ ===
   {
-    id: "Aegina",
+    id: "アイギーナ",
     name: "アイギーナ",
     reading: ["あいぎーな", "アイギーナ", "アイギーナ"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Aegina.zip"
+    zip: "voices/SFL/Silver/アイギーナ.zip"
   },
   {
-    id: "Temple_Mad_Oni",
+    id: "神殿の狂鬼",
     name: "神殿の狂鬼",
     reading: ["しんでんのきょうき", "シンデンノキョウキ", "神殿の狂鬼"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Temple_Mad_Oni.zip"
+    zip: "voices/SFL/Silver/神殿の狂鬼.zip"
   },
   {
-    id: "Star_Priestess",
+    id: "スタープリーステス",
     name: "スタープリーステス",
     reading: ["すたーぷりーすてす", "スタープリーステス", "スタープリーステス"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Star_Priestess.zip"
+    zip: "voices/SFL/Silver/スタープリーステス.zip"
   },
 
   // === ニュートラル ===
   {
-    id: "Ivlishia_Fallen_Angel",
+    id: "堕天使・イヴリシア",
     name: "堕天使・イヴリシア",
     reading: ["だてんし・いゔりしあ", "ダテンシ・イヴリシア", "堕天使・イヴリシア"],
     class: "ニュートラル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Ivlishia_Fallen_Angel.zip"
+    zip: "voices/SFL/Silver/堕天使・イヴリシア.zip"
   },
   {
-    id: "Innocent_Singer",
+    id: "純心の歌い手",
     name: "純心の歌い手",
     reading: ["じゅんしんのうたいて", "ジュンシンノウタイテ", "純心の歌い手"],
     class: "ニュートラル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Innocent_Singer.zip"
+    zip: "voices/SFL/Silver/純心の歌い手.zip"
   },
   {
-    id: "Gigas",
+    id: "ギガース",
     name: "ギガース",
     reading: ["ぎがーす", "ギガース", "ギガース"],
     class: "ニュートラル",
     rarity: "Silver",
     pack: "SFL",
-    zip: "voices/SFL/Silver/Gigas.zip"
+    zip: "voices/SFL/Silver/ギガース.zip"
   }
 ];

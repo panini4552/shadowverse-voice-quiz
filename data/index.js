@@ -7,6 +7,10 @@ import { DRK_Legendary } from "./DRK/Legendary.js";
 import { DRK_Gold } from "./DRK/Gold.js";
 import { DRK_Silver } from "./DRK/Silver.js";
 import { DRK_Bronze } from "./DRK/Bronze.js";
+import { ROB_Legendary } from "./ROB/Legendary.js";
+import { ROB_Gold } from "./ROB/Gold.js";
+import { ROB_Silver } from "./ROB/Silver.js";
+import { ROB_Bronze } from "./ROB/Bronze.js";
 // 必要なら他パックもここに import
 
 export const cards = [
@@ -17,11 +21,16 @@ export const cards = [
   ...DRK_Legendary,
   ...DRK_Gold,
   ...DRK_Silver,
-  ...DRK_Bronze
+  ...DRK_Bronze,
+  ...ROB_Legendary,
+  ...ROB_Gold,
+  ...ROB_Silver,
+  ...ROB_Bronze
 ];
 
 // 互換性のためグローバルにも公開（既存の main.js が参照するため）
 window.cards = cards;
+
 
 
 

@@ -15,6 +15,10 @@ import { TOG_Legendary } from "./TOG/Legendary.js";
 import { TOG_Gold } from "./TOG/Gold.js";
 import { TOG_Silver } from "./TOG/Silver.js";
 import { TOG_Bronze } from "./TOG/Bronze.js";
+import { WLD_Legendary } from "./WLD/Legendary.js";
+import { WLD_Gold } from "./WLD/Gold.js";
+import { WLD_Silver } from "./WLD/Silver.js";
+import { WLD_Bronze } from "./WLD/Bronze.js";
 // 必要なら他パックもここに import
 
 export const cards = [
@@ -33,11 +37,16 @@ export const cards = [
   ...TOG_Legendary,
   ...TOG_Gold,
   ...TOG_Silver,
-  ...TOG_Bronze
+  ...TOG_Bronze,
+  ...WLD_Legendary,
+  ...WLD_Gold,
+  ...WLD_Silver,
+  ...WLD_Bronze
 ];
 
 // 互換性のためグローバルにも公開（既存の main.js が参照するため）
 window.cards = cards;
+
 
 
 

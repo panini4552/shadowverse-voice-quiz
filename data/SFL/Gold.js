@@ -1,161 +1,161 @@
 export const SFL_Gold = [
   // === エルフ ===
   {
-    id: "Zain_Boy_of_Demons",
+    id: "魔族の少年・ザイン",
     name: "魔族の少年・ザイン",
     reading: ["まぞくのしょうねん・ざいん", "マゾクノショウネン・ザイン", "魔族の少年・ザイン"],
     class: "エルフ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Zain_Boy_of_Demons.zip"
+    zip: "voices/SFL/Gold/魔族の少年・ザイン.zip"
   },
   {
-    id: "Venus",
+    id: "ヴィーナス",
     name: "ヴィーナス",
     reading: ["ヴぃーなす", "ヴィーナス", "ヴィーナス"],
     class: "エルフ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Venus.zip"
+    zip: "voices/SFL/Gold/ヴィーナス.zip"
   },
 
   // === ロイヤル ===
   {
-    id: "Perseus",
+    id: "ペルセウス",
     name: "ペルセウス",
     reading: ["ぺるせうす", "ペルセウス", "ペルセウス"],
     class: "ロイヤル",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Perseus.zip"
+    zip: "voices/SFL/Gold/ペルセウス.zip"
   },
   {
-    id: "Lou_Spear_of_the_Sun",
+    id: "太陽の槍・ルー",
     name: "太陽の槍・ルー",
     reading: ["たいようのやり・るー", "タイヨウノヤリ・ルー", "太陽の槍・ルー"],
     class: "ロイヤル",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Lou_Spear_of_the_Sun.zip"
+    zip: "voices/SFL/Gold/太陽の槍・ルー.zip"
   },
 
   // === ウィッチ ===
   {
-    id: "Europe",
+    id: "エウロペ",
     name: "エウロペ",
     reading: ["えうろぺ", "エウロペ", "エウロペ"],
     class: "ウィッチ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Europe.zip"
+    zip: "voices/SFL/Gold/エウロペ.zip"
   },
   {
-    id: "Rampaging_Golem",
+    id: "暴威のゴーレム",
     name: "暴威のゴーレム",
     reading: ["ぼういのごーれむ", "ボウイノゴーレム", "暴威のゴーレム"],
     class: "ウィッチ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Rampaging_Golem.zip"
+    zip: "voices/SFL/Gold/暴威のゴーレム.zip"
   },
 
   // === ドラゴン ===
   {
-    id: "Star_Phoenix",
+    id: "スターフェニックス",
     name: "スターフェニックス",
     reading: ["すたーふぇにっくす", "スターフェニックス", "スターフェニックス"],
     class: "ドラゴン",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Star_Phoenix.zip"
+    zip: "voices/SFL/Gold/スターフェニックス.zip"
   },
   {
-    id: "Dragonic_Singer",
+    id: "ドラゴニックシンガー",
     name: "ドラゴニックシンガー",
     reading: ["どらごにっくしんがー", "ドラゴニックシンガー", "ドラゴニックシンガー"],
     class: "ドラゴン",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Dragonic_Singer.zip"
+    zip: "voices/SFL/Gold/ドラゴニックシンガー.zip"
   },
 
   // === ネクロマンサー ===
   {
-    id: "Andrealphus",
+    id: "アンドレアルフス",
     name: "アンドレアルフス",
     reading: ["あんどれあるふす", "アンドレアルフス", "アンドレアルフス"],
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Andrealphus.zip"
+    zip: "voices/SFL/Gold/アンドレアルフス.zip"
   },
   {
-    id: "Ceres_Lady_of_the_Night",
+    id: "夜の令嬢・セレス",
     name: "夜の令嬢・セレス",
     reading: ["よるのれいじょう・せれす", "ヨルノレイジョウ・セレス", "夜の令嬢・セレス"],
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Ceres_Lady_of_the_Night.zip"
+    zip: "voices/SFL/Gold/夜の令嬢・セレス.zip"
   },
 
   // === ヴァンパイア ===
   {
-    id: "Thunder_Demon",
+    id: "轟雷の悪魔",
     name: "轟雷の悪魔",
     reading: ["ごうらいのあくま", "ゴウライノアクマ", "轟雷の悪魔"],
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Thunder_Demon.zip"
+    zip: "voices/SFL/Gold/轟雷の悪魔.zip"
   },
   {
-    id: "Stheno",
+    id: "ステンノ",
     name: "ステンノ",
     reading: ["すてんの", "ステンノ", "ステンノ"],
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Stheno.zip"
+    zip: "voices/SFL/Gold/ステンノ.zip"
   },
 
   // === ビショップ ===
   {
-    id: "Andromeda",
+    id: "アンドロメダ",
     name: "アンドロメダ",
     reading: ["あんどろめだ", "アンドロメダ", "アンドロメダ"],
     class: "ビショップ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Andromeda.zip"
+    zip: "voices/SFL/Gold/アンドロメダ.zip"
   },
   {
-    id: "Great_Taurus",
+    id: "グレートタウラス",
     name: "グレートタウラス",
     reading: ["ぐれーとたうらす", "グレートタウラス", "グレートタウラス"],
     class: "ビショップ",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Great_Taurus.zip"
+    zip: "voices/SFL/Gold/グレートタウラス.zip"
   },
 
   // === ニュートラル ===
   {
-    id: "Brindy",
+    id: "ブリンディ",
     name: "ブリンディ",
     reading: ["ぶりんでぃ", "ブリンディ", "ブリンディ"],
     class: "ニュートラル",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Brindy.zip"
+    zip: "voices/SFL/Gold/ブリンディ.zip"
   },
   {
-    id: "Kirin",
+    id: "麒麟",
     name: "麒麟",
     reading: ["きりん", "キリン", "麒麟"],
     class: "ニュートラル",
     rarity: "Gold",
     pack: "SFL",
-    zip: "voices/SFL/Gold/Kirin.zip"
+    zip: "voices/SFL/Gold/麒麟.zip"
   }
 ];

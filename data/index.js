@@ -19,6 +19,10 @@ import { WLD_Legendary } from "./WLD/Legendary.js";
 import { WLD_Gold } from "./WLD/Gold.js";
 import { WLD_Silver } from "./WLD/Silver.js";
 import { WLD_Bronze } from "./WLD/Bronze.js";
+import { SFL_Legendary } from "./SFL/Legendary.js";
+import { SFL_Gold } from "./SFL/Gold.js";
+import { SFL_Silver } from "./SFL/Silver.js";
+import { SFL_Bronze } from "./SFL/Bronze.js";
 // 必要なら他パックもここに import
 
 export const cards = [
@@ -41,11 +45,16 @@ export const cards = [
   ...WLD_Legendary,
   ...WLD_Gold,
   ...WLD_Silver,
-  ...WLD_Bronze
+  ...WLD_Bronze,
+  ...SFL_Legendary,
+  ...SFL_Gold,
+  ...SFL_Silver,
+  ...SFL_Bronze
 ];
 
 // 互換性のためグローバルにも公開（既存の main.js が参照するため）
 window.cards = cards;
+
 
 
 

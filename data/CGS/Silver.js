@@ -7,7 +7,7 @@ export const CGS_Silver = [
     class: "エルフ",
     rarity: "Silver",
     pack: "CGS",
-    zip: "憤怒のエルダーウィードマン.zip"
+    zip: "voices/CGS/Silver/憤怒のエルダーウィードマン.zip"
   },
   {
     id: "紅弓のエルフ",
@@ -16,7 +16,7 @@ export const CGS_Silver = [
     class: "エルフ",
     rarity: "Silver",
     pack: "CGS",
-    zip: "紅弓のエルフ.zip"
+    zip: "voices/CGS/Silver/紅弓のエルフ.zip"
   },
 
   // === ロイヤル ===
@@ -27,7 +27,7 @@ export const CGS_Silver = [
     class: "ロイヤル",
     rarity: "Silver",
     pack: "CGS",
-    zip: "傭兵の帰還者.zip"
+    zip: "voices/CGS/Silver/傭兵の帰還者.zip"
   },
   {
     id: "先陣の騎兵",
@@ -36,7 +36,7 @@ export const CGS_Silver = [
     class: "ロイヤル",
     rarity: "Silver",
     pack: "CGS",
-    zip: "先陣の騎兵.zip"
+    zip: "voices/CGS/Silver/先陣の騎兵.zip"
   },
 
   // === ウィッチ ===
@@ -47,7 +47,7 @@ export const CGS_Silver = [
     class: "ウィッチ",
     rarity: "Silver",
     pack: "CGS",
-    zip: "笑顔の奇術師・サミー.zip"
+    zip: "voices/CGS/Silver/笑顔の奇術師・サミー.zip"
   },
 
   // === ドラゴン ===
@@ -58,7 +58,7 @@ export const CGS_Silver = [
     class: "ドラゴン",
     rarity: "Silver",
     pack: "CGS",
-    zip: "塔の守護竜・アデール.zip"
+    zip: "voices/CGS/Silver/塔の守護竜・アデール.zip"
   },
   {
     id: "美麗なる竜人・マリオン",
@@ -67,7 +67,7 @@ export const CGS_Silver = [
     class: "ドラゴン",
     rarity: "Silver",
     pack: "CGS",
-    zip: "美麗なる竜人・マリオン.zip"
+    zip: "voices/CGS/Silver/美麗なる竜人・マリオン.zip"
   },
 
   // === ネクロマンサー ===
@@ -78,7 +78,7 @@ export const CGS_Silver = [
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "CGS",
-    zip: "アヌビス.zip"
+    zip: "voices/CGS/Silver/アヌビス.zip"
   },
   {
     id: "霊呼びの少女",
@@ -87,7 +87,7 @@ export const CGS_Silver = [
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "CGS",
-    zip: "霊呼びの少女.zip"
+    zip: "voices/CGS/Silver/霊呼びの少女.zip"
   },
 
   // === ヴァンパイア ===
@@ -98,7 +98,7 @@ export const CGS_Silver = [
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "CGS",
-    zip: "ヴァッサゴ.zip"
+    zip: "voices/CGS/Silver/ヴァッサゴ.zip"
   },
   {
     id: "パズズ",
@@ -107,7 +107,7 @@ export const CGS_Silver = [
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "CGS",
-    zip: "パズズ.zip"
+    zip: "voices/CGS/Silver/パズズ.zip"
   },
 
   // === ビショップ ===
@@ -118,7 +118,7 @@ export const CGS_Silver = [
     class: "ビショップ",
     rarity: "Silver",
     pack: "CGS",
-    zip: "アークビショップ・カトレア.zip"
+    zip: "voices/CGS/Silver/アークビショップ・カトレア.zip"
   },
 
   // === ネメシス ===
@@ -129,7 +129,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "アメジストの巨兵.zip"
+    zip: "voices/CGS/Silver/アメジストの巨兵.zip"
   },
   {
     id: "復讐の人形遣い・ノア",
@@ -138,7 +138,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "復讐の人形遣い・ノア.zip"
+    zip: "voices/CGS/Silver/復讐の人形遣い・ノア.zip"
   },
   {
     id: "造られし巨像",
@@ -147,7 +147,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "造られし巨像.zip"
+    zip: "voices/CGS/Silver/造られし巨像.zip"
   },
   {
     id: "不定の実験体",
@@ -156,7 +156,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "不定の実験体.zip"
+    zip: "voices/CGS/Silver/不定の実験体.zip"
   },
   {
     id: "オートマタソルジャー",
@@ -165,7 +165,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "オートマタソルジャー.zip"
+    zip: "voices/CGS/Silver/オートマタソルジャー.zip"
   },
   {
     id: "機構翼の少女・ローザ",
@@ -174,7 +174,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "機構翼の少女・ローザ.zip"
+    zip: "voices/CGS/Silver/機構翼の少女・ローザ.zip"
   },
   {
     id: "機構職人・ジノ",
@@ -183,7 +183,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "機構職人・ジノ.zip"
+    zip: "voices/CGS/Silver/機構職人・ジノ.zip"
   },
   {
     id: "イカロス",
@@ -192,7 +192,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "イカロス.zip"
+    zip: "voices/CGS/Silver/イカロス.zip"
   },
   {
     id: "フラワードール",
@@ -201,7 +201,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "フラワードール.zip"
+    zip: "voices/CGS/Silver/フラワードール.zip"
   },
   {
     id: "熱狂の機兵士",
@@ -210,7 +210,7 @@ export const CGS_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "CGS",
-    zip: "熱狂の機兵士.zip"
+    zip: "voices/CGS/Silver/熱狂の機兵士.zip"
   },
 
   // === ニュートラル ===
@@ -221,7 +221,7 @@ export const CGS_Silver = [
     class: "ニュートラル",
     rarity: "Silver",
     pack: "CGS",
-    zip: "ゴブリンマウントオーガ.zip"
+    zip: "voices/CGS/Silver/ゴブリンマウントオーガ.zip"
   },
   {
     id: "ホーリーエンジェル・アルテア",
@@ -230,6 +230,6 @@ export const CGS_Silver = [
     class: "ニュートラル",
     rarity: "Silver",
     pack: "CGS",
-    zip: "ホーリーエンジェル・アルテア.zip"
+    zip: "voices/CGS/Silver/ホーリーエンジェル・アルテア.zip"
   }
 ];

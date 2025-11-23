@@ -7,7 +7,7 @@ export const CGS_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "リーフマン.zip"
+    zip: "voices/CGS/Bronze/リーフマン.zip"
   },
   {
     id: "百錬のアーチャー",
@@ -16,7 +16,7 @@ export const CGS_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "百錬のアーチャー.zip"
+    zip: "voices/CGS/Bronze/百錬のアーチャー.zip"
   },
   {
     id: "森の哲学者",
@@ -25,7 +25,7 @@ export const CGS_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "森の哲学者.zip"
+    zip: "voices/CGS/Bronze/森の哲学者.zip"
   },
 
   // === ロイヤル ===
@@ -36,7 +36,7 @@ export const CGS_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "王城の守衛.zip"
+    zip: "voices/CGS/Bronze/王城の守衛.zip"
   },
   {
     id: "マーチャントガール",
@@ -45,7 +45,7 @@ export const CGS_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "マーチャントガール.zip"
+    zip: "voices/CGS/Bronze/マーチャントガール.zip"
   },
   {
     id: "狼牙の剣士",
@@ -54,7 +54,7 @@ export const CGS_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "狼牙の剣士.zip"
+    zip: "voices/CGS/Bronze/狼牙の剣士.zip"
   },
 
   // === ウィッチ ===
@@ -65,7 +65,7 @@ export const CGS_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "マナリアの召喚士・ベリル.zip"
+    zip: "voices/CGS/Bronze/マナリアの召喚士・ベリル.zip"
   },
   {
     id: "術式の教師・ジル",
@@ -74,7 +74,7 @@ export const CGS_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "術式の教師・ジル.zip"
+    zip: "voices/CGS/Bronze/術式の教師・ジル.zip"
   },
 
   // === ドラゴン ===
@@ -85,7 +85,7 @@ export const CGS_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "氷炎竜.zip"
+    zip: "voices/CGS/Bronze/氷炎竜.zip"
   },
   {
     id: "竜友の少女",
@@ -94,7 +94,7 @@ export const CGS_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "竜友の少女.zip"
+    zip: "voices/CGS/Bronze/竜友の少女.zip"
   },
   {
     id: "バジリスクライダー",
@@ -103,7 +103,7 @@ export const CGS_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "バジリスクライダー.zip"
+    zip: "voices/CGS/Bronze/バジリスクライダー.zip"
   },
 
   // === ネクロマンサー ===
@@ -114,7 +114,7 @@ export const CGS_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "マミー.zip"
+    zip: "voices/CGS/Bronze/マミー.zip"
   },
   {
     id: "骸骨虫",
@@ -123,7 +123,7 @@ export const CGS_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "骸骨虫.zip"
+    zip: "voices/CGS/Bronze/骸骨虫.zip"
   },
   {
     id: "陰鬱な死霊術師",
@@ -132,7 +132,7 @@ export const CGS_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "陰鬱な死霊術師.zip"
+    zip: "voices/CGS/Bronze/陰鬱な死霊術師.zip"
   },
 
   // === ヴァンパイア ===
@@ -143,7 +143,7 @@ export const CGS_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "サーベイジウルフ.zip"
+    zip: "voices/CGS/Bronze/サーベイジウルフ.zip"
   },
   {
     id: "呪いのカカシ",
@@ -152,7 +152,7 @@ export const CGS_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "呪いのカカシ.zip"
+    zip: "voices/CGS/Bronze/呪いのカカシ.zip"
   },
   {
     id: "硝子刃の悪魔",
@@ -161,7 +161,7 @@ export const CGS_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "硝子刃の悪魔.zip"
+    zip: "voices/CGS/Bronze/硝子刃の悪魔.zip"
   },
 
   // === ビショップ ===
@@ -172,7 +172,7 @@ export const CGS_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "誓いの翼戦士.zip"
+    zip: "voices/CGS/Bronze/誓いの翼戦士.zip"
   },
   {
     id: "ソードシスター",
@@ -181,7 +181,7 @@ export const CGS_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "ソードシスター.zip"
+    zip: "voices/CGS/Bronze/ソードシスター.zip"
   },
 
   // === ネメシス ===
@@ -192,7 +192,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "エアシップホエール.zip"
+    zip: "voices/CGS/Bronze/エアシップホエール.zip"
   },
   {
     id: "キャプテン・メテオ",
@@ -201,7 +201,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "キャプテン・メテオ.zip"
+    zip: "voices/CGS/Bronze/キャプテン・メテオ.zip"
   },
   {
     id: "魔銃の傭兵",
@@ -210,7 +210,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "魔銃の傭兵.zip"
+    zip: "voices/CGS/Bronze/魔銃の傭兵.zip"
   },
   {
     id: "仮面人形",
@@ -219,7 +219,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "仮面人形.zip"
+    zip: "voices/CGS/Bronze/仮面人形.zip"
   },
   {
     id: "重力戦士",
@@ -228,7 +228,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "重力戦士.zip"
+    zip: "voices/CGS/Bronze/重力戦士.zip"
   },
   {
     id: "機構の弓兵",
@@ -237,7 +237,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "機構の弓兵.zip"
+    zip: "voices/CGS/Bronze/機構の弓兵.zip"
   },
   {
     id: "鉄杖の機構士",
@@ -246,7 +246,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "鉄杖の機構士.zip"
+    zip: "voices/CGS/Bronze/鉄杖の機構士.zip"
   },
   {
     id: "機構翼の剣士",
@@ -255,7 +255,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "機構翼の剣士.zip"
+    zip: "voices/CGS/Bronze/機構翼の剣士.zip"
   },
   {
     id: "鋼鉄の壊し屋",
@@ -264,7 +264,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "鋼鉄の壊し屋.zip"
+    zip: "voices/CGS/Bronze/鋼鉄の壊し屋.zip"
   },
   {
     id: "肉球砲の撃ち手",
@@ -273,7 +273,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "肉球砲の撃ち手.zip"
+    zip: "voices/CGS/Bronze/肉球砲の撃ち手.zip"
   },
   {
     id: "カースドストーン",
@@ -282,7 +282,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "カースドストーン.zip"
+    zip: "voices/CGS/Bronze/カースドストーン.zip"
   },
   {
     id: "熊人形の少女",
@@ -291,7 +291,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "熊人形の少女.zip"
+    zip: "voices/CGS/Bronze/熊人形の少女.zip"
   },
   {
     id: "ハーメルン",
@@ -300,7 +300,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "ハーメルン.zip"
+    zip: "voices/CGS/Bronze/ハーメルン.zip"
   },
   {
     id: "悪魔のエピタフ",
@@ -309,7 +309,7 @@ export const CGS_Bronze = [
     class: "ネメシス",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "悪魔のエピタフ.zip"
+    zip: "voices/CGS/Bronze/悪魔のエピタフ.zip"
   },
 
   // === ニュートラル ===
@@ -320,7 +320,7 @@ export const CGS_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "ハッピーピッグ.zip"
+    zip: "voices/CGS/Bronze/ハッピーピッグ.zip"
   },
   {
     id: "豪快な斧使い",
@@ -329,7 +329,7 @@ export const CGS_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "豪快な斧使い.zip"
+    zip: "voices/CGS/Bronze/豪快な斧使い.zip"
   },
   {
     id: "ダンジョンエクスプローラー・クロエ",
@@ -338,6 +338,6 @@ export const CGS_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "CGS",
-    zip: "ダンジョンエクスプローラー・クロエ.zip"
+    zip: "voices/CGS/Bronze/ダンジョンエクスプローラー・クロエ.zip"
   }
 ];

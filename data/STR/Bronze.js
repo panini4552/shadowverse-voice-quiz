@@ -1,262 +1,262 @@
 export const STR_Bronze = [
   // === エルフ ===
   {
-    id: "Machine_Minoworm",
+    id: "機械ミノムシ",
     name: "機械ミノムシ",
     reading: ["きかいみのむし", "キカイミノムシ", "機械ミノムシ"],
     class: "エルフ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Machine_Minoworm.zip"
+    zip: "voices/STR/Bronze/機械ミノムシ.zip"
   },
   {
-    id: "White_Flower_Archer",
+    id: "白華の弓使い",
     name: "白華の弓使い",
     reading: ["はっかのゆみつかい", "ハッカノユミツカイ", "白華の弓使い"],
     class: "エルフ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/White_Flower_Archer.zip"
+    zip: "voices/STR/Bronze/白華の弓使い.zip"
   },
   {
-    id: "Forest_Hermit",
+    id: "森の隠者",
     name: "森の隠者",
     reading: ["もりのいんじゃ", "モリノインジャ", "森の隠者"],
     class: "エルフ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Forest_Hermit.zip"
+    zip: "voices/STR/Bronze/森の隠者.zip"
   },
 
   // === ロイヤル ===
   {
-    id: "Cannon_Smasher",
+    id: "キャノンスマッシャー",
     name: "キャノンスマッシャー",
     reading: ["きゃのんすまっしゃー", "キャノンスマッシャー", "キャノンスマッシャー"],
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Cannon_Smasher.zip"
+    zip: "voices/STR/Bronze/キャノンスマッシャー.zip"
   },
   {
-    id: "Indomitable_Commander",
+    id: "不屈の司令官",
     name: "不屈の司令官",
     reading: ["ふくつのしれいかん", "フクツノシレイカン", "不屈の司令官"],
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Indomitable_Commander.zip"
+    zip: "voices/STR/Bronze/不屈の司令官.zip"
   },
   {
-    id: "Phantom_Assassin",
+    id: "ファントムアサシン",
     name: "ファントムアサシン",
     reading: ["ふぁんとむあさしん", "ファントムアサシン", "ファントムアサシン"],
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Phantom_Assassin.zip"
+    zip: "voices/STR/Bronze/ファントムアサシン.zip"
   },
 
   // === ウィッチ ===
   {
-    id: "Mechanical_Sorcerer",
+    id: "メカニカルソーサラー",
     name: "メカニカルソーサラー",
     reading: ["めかにかるそーさらー", "メカニカルソーサラー", "メカニカルソーサラー"],
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Mechanical_Sorcerer.zip"
+    zip: "voices/STR/Bronze/メカニカルソーサラー.zip"
   },
   {
-    id: "Manaria_Richboy_Shirati",
+    id: "マナリアリッチボーイ・シラティ",
     name: "マナリアリッチボーイ・シラティ",
     reading: ["まなりありっちぼーいしらてぃ", "マナリアリッチボーイシラティ", "マナリアリッチボーイ・シラティ"],
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Manaria_Richboy_Shirati.zip"
+    zip: "voices/STR/Bronze/マナリアリッチボーイ・シラティ.zip"
   },
   {
-    id: "Magic_Sword_Girl",
+    id: "マジックソードガール",
     name: "マジックソードガール",
     reading: ["まじっくそーどがーる", "マジックソードガール", "マジックソードガール"],
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Magic_Sword_Girl.zip"
+    zip: "voices/STR/Bronze/マジックソードガール.zip"
   },
 
   // === ドラゴン ===
   {
-    id: "Merciful_Dragoon",
+    id: "慈愛の竜戦士",
     name: "慈愛の竜戦士",
     reading: ["じあいのりゅうせんし", "ジアイノリュウセンシ", "慈愛の竜戦士"],
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Merciful_Dragoon.zip"
+    zip: "voices/STR/Bronze/慈愛の竜戦士.zip"
   },
   {
-    id: "Bomb_Pufferfish",
+    id: "爆弾フグ",
     name: "爆弾フグ",
     reading: ["ばくだんふぐ", "バクダンフグ", "爆弾フグ"],
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Bomb_Pufferfish.zip"
+    zip: "voices/STR/Bronze/爆弾フグ.zip"
   },
   {
-    id: "Machine_Diver",
+    id: "マシンダイバー",
     name: "マシンダイバー",
     reading: ["ましんだいばー", "マシンダイバー", "マシンダイバー"],
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Machine_Diver.zip"
+    zip: "voices/STR/Bronze/マシンダイバー.zip"
   },
 
   // === ネクロマンサー ===
   {
-    id: "Ghostwriter",
+    id: "ゴーストライター",
     name: "ゴーストライター",
     reading: ["ごーすとらいたー", "ゴーストライター", "ゴーストライター"],
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Ghostwriter.zip"
+    zip: "voices/STR/Bronze/ゴーストライター.zip"
   },
   {
-    id: "Ghoul",
+    id: "グール",
     name: "グール",
     reading: ["ぐーる", "グール", "グール"],
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Ghoul.zip"
+    zip: "voices/STR/Bronze/グール.zip"
   },
   {
-    id: "Bone_Drone",
+    id: "ボーンドローン",
     name: "ボーンドローン",
     reading: ["ぼーんどろーん", "ボーンドローン", "ボーンドローン"],
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Bone_Drone.zip"
+    zip: "voices/STR/Bronze/ボーンドローン.zip"
   },
 
   // === ヴァンパイア ===
   {
-    id: "Young_Werewolf_Liberte",
+    id: "幼き人狼・リベルテ",
     name: "幼き人狼・リベルテ",
     reading: ["おさきじんろうりべるて", "オサキジンロウリベルテ", "幼き人狼・リベルテ"],
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Young_Werewolf_Liberte.zip"
+    zip: "voices/STR/Bronze/幼き人狼・リベルテ.zip"
   },
   {
-    id: "Armored_Bat",
+    id: "アーマードバット",
     name: "アーマードバット",
     reading: ["あーまーどばっと", "アーマードバット", "アーマードバット"],
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Armored_Bat.zip"
+    zip: "voices/STR/Bronze/アーマードバット.zip"
   },
   {
-    id: "Berserk_Demon",
+    id: "バーサークデーモン",
     name: "バーサークデーモン",
     reading: ["ばーさーくでーもん", "バーサークデーモン", "バーサークデーモン"],
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Berserk_Demon.zip"
+    zip: "voices/STR/Bronze/バーサークデーモン.zip"
   },
 
   // === ビショップ ===
   {
-    id: "White_Reindeer",
+    id: "白きレインディア",
     name: "白きレインディア",
     reading: ["しろきれいんでぃあ", "シロキレインディア", "白きレインディア"],
     class: "ビショップ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/White_Reindeer.zip"
+    zip: "voices/STR/Bronze/白きレインディア.zip"
   },
   {
-    id: "Ironarm_Nun",
+    id: "鉄腕の修道女",
     name: "鉄腕の修道女",
     reading: ["てつわんのしゅうどうじょ", "テツワンノシュウドウジョ", "鉄腕の修道女"],
     class: "ビショップ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Ironarm_Nun.zip"
+    zip: "voices/STR/Bronze/鉄腕の修道女.zip"
   },
   {
-    id: "Flower_Feather_Folk",
+    id: "フラワーフェザーフォルク",
     name: "フラワーフェザーフォルク",
     reading: ["ふらわーふぇざーふぉるく", "フラワーフェザーフォルク", "フラワーフェザーフォルク"],
     class: "ビショップ",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Flower_Feather_Folk.zip"
+    zip: "voices/STR/Bronze/フラワーフェザーフォルク.zip"
   },
 
   // === ネメシス ===
   {
-    id: "Doll_Angel_Mia",
+    id: "ドールエンジェル・ミーア",
     name: "ドールエンジェル・ミーア",
     reading: ["どーるえんじぇるみーあ", "ドールエンジェルミーア", "ドールエンジェル・ミーア"],
     class: "ネメシス",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Doll_Angel_Mia.zip"
+    zip: "voices/STR/Bronze/ドールエンジェル・ミーア.zip"
   },
   {
-    id: "Prototype_Mech",
+    id: "試作機械兵",
     name: "試作機械兵",
     reading: ["しさくきかいへい", "シサクキカイヘイ", "試作機械兵"],
     class: "ネメシス",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Prototype_Mech.zip"
+    zip: "voices/STR/Bronze/試作機械兵.zip"
   },
   {
-    id: "Crawling_Slime",
+    id: "這いずるスライム",
     name: "這いずるスライム",
     reading: ["はいずるすらいむ", "ハイズルスライム", "這いずるスライム"],
     class: "ネメシス",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Crawling_Slime.zip"
+    zip: "voices/STR/Bronze/這いずるスライム.zip"
   },
 
   // === ニュートラル ===
   {
-    id: "Mecha_Goblin",
+    id: "メカゴブリン",
     name: "メカゴブリン",
     reading: ["めかごぶりん", "メカゴブリン", "メカゴブリン"],
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Mecha_Goblin.zip"
+    zip: "voices/STR/Bronze/メカゴブリン.zip"
   },
   {
-    id: "Thunder_War_God_Funical",
+    id: "雷鳴の軍神・フニカル",
     name: "雷鳴の軍神・フニカル",
     reading: ["らいめいのぐんしんふにかる", "ライメイノグンシンフニカル", "雷鳴の軍神・フニカル"],
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Thunder_War_God_Funical.zip"
+    zip: "voices/STR/Bronze/雷鳴の軍神・フニカル.zip"
   },
   {
-    id: "Gal_Angel_Ardis",
+    id: "ギャル天使・アルディス",
     name: "ギャル天使・アルディス",
     reading: ["ぎゃるてんしあるでぃす", "ギャルテンシアルディス", "ギャル天使・アルディス"],
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "STR",
-    zip: "voices/STR/Bronze/Gal_Angel_Ardis.zip"
+    zip: "voices/STR/Bronze/ギャル天使・アルディス.zip"
   }
 ];

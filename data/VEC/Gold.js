@@ -7,7 +7,7 @@ export const VEC_Gold = [
     class: "エルフ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "萌芽の化身.zip"
+    zip: "voices/VEC/Gold/萌芽の化身.zip"
   },
   {
     id: "豊穣の闘士・アイリーネ",
@@ -16,7 +16,7 @@ export const VEC_Gold = [
     class: "エルフ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "豊穣の闘士・アイリーネ.zip"
+    zip: "voices/VEC/Gold/豊穣の闘士・アイリーネ.zip"
   },
 
   // === ロイヤル ===
@@ -27,18 +27,18 @@ export const VEC_Gold = [
     class: "ロイヤル",
     rarity: "Gold",
     pack: "VEC",
-    zip: "森の姫・ミストリナ.zip"
+    zip: "voices/VEC/Gold/森の姫・ミストリナ.zip"
   },
 
   // === ウィッチ ===
   {
     id: "エレメントシャーマン・ライリー",
     name: "エレメントシャーマン・ライリー",
-    reading: ["えれめんとしゃーまんらいりー", "エレメントシャーマンライリー", "エレメントシャーマン・ライリー"],
+    reading: ["えれめんとしゃーまんらいりー", "エレメントシャーマン・ライリー", "エレメントシャーマン・ライリー"],
     class: "ウィッチ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "エレメントシャーマン・ライリー.zip"
+    zip: "voices/VEC/Gold/エレメントシャーマン・ライリー.zip"
   },
   {
     id: "カオスウィザード",
@@ -47,7 +47,7 @@ export const VEC_Gold = [
     class: "ウィッチ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "カオスウィザード.zip"
+    zip: "voices/VEC/Gold/カオスウィザード.zip"
   },
 
   // === ドラゴン ===
@@ -58,7 +58,7 @@ export const VEC_Gold = [
     class: "ドラゴン",
     rarity: "Gold",
     pack: "VEC",
-    zip: "霧氷のトリケラトプス.zip"
+    zip: "voices/VEC/Gold/霧氷のトリケラトプス.zip"
   },
   {
     id: "華麗なる竜人・マリオン",
@@ -67,7 +67,7 @@ export const VEC_Gold = [
     class: "ドラゴン",
     rarity: "Gold",
     pack: "VEC",
-    zip: "華麗なる竜人・マリオン.zip"
+    zip: "voices/VEC/Gold/華麗なる竜人・マリオン.zip"
   },
 
   // === ネクロマンサー ===
@@ -78,7 +78,7 @@ export const VEC_Gold = [
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "VEC",
-    zip: "不可侵の死霊・ヘリオ.zip"
+    zip: "voices/VEC/Gold/不可侵の死霊・ヘリオ.zip"
   },
   {
     id: "イモータルエレファント",
@@ -87,7 +87,7 @@ export const VEC_Gold = [
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "VEC",
-    zip: "イモータルエレファント.zip"
+    zip: "voices/VEC/Gold/イモータルエレファント.zip"
   },
   {
     id: "バトルキョンシーガール",
@@ -96,7 +96,7 @@ export const VEC_Gold = [
     class: "ネクロマンサー",
     rarity: "Gold",
     pack: "VEC",
-    zip: "バトルキョンシーガール.zip"
+    zip: "voices/VEC/Gold/バトルキョンシーガール.zip"
   },
 
   // === ヴァンパイア ===
@@ -107,7 +107,7 @@ export const VEC_Gold = [
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "VEC",
-    zip: "覆面の闘士・シャランゼア.zip"
+    zip: "voices/VEC/Gold/覆面の闘士・シャランゼア.zip"
   },
   {
     id: "ナイトレイドヴァンパイア",
@@ -116,16 +116,16 @@ export const VEC_Gold = [
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "VEC",
-    zip: "ナイトレイドヴァンパイア.zip"
+    zip: "voices/VEC/Gold/ナイトレイドヴァンパイア.zip"
   },
   {
     id: "マリスバウンサー・バルト",
     name: "マリスバウンサー・バルト",
-    reading: ["まりすばうんさーばると", "マリスバウンサーバルト", "マリスバウンサー・バルト"],
+    reading: ["まりすばうんさーばると", "マリスバウンサー・バルト", "マリスバウンサー・バルト"],
     class: "ヴァンパイア",
     rarity: "Gold",
     pack: "VEC",
-    zip: "マリスバウンサー・バルト.zip"
+    zip: "voices/VEC/Gold/マリスバウンサー・バルト.zip"
   },
 
   // === ビショップ ===
@@ -136,7 +136,7 @@ export const VEC_Gold = [
     class: "ビショップ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "報復の白き刃・アニエス.zip"
+    zip: "voices/VEC/Gold/報復の白き刃・アニエス.zip"
   },
   {
     id: "ジャッジメントスピアマスター",
@@ -145,7 +145,7 @@ export const VEC_Gold = [
     class: "ビショップ",
     rarity: "Gold",
     pack: "VEC",
-    zip: "ジャッジメントスピアマスター.zip"
+    zip: "voices/VEC/Gold/ジャッジメントスピアマスター.zip"
   },
 
   // === ネメシス ===
@@ -156,7 +156,7 @@ export const VEC_Gold = [
     class: "ネメシス",
     rarity: "Gold",
     pack: "VEC",
-    zip: "キャノンハーミットクラブ.zip"
+    zip: "voices/VEC/Gold/キャノンハーミットクラブ.zip"
   },
   {
     id: "浄化の輝き・ミュニエ",
@@ -165,7 +165,7 @@ export const VEC_Gold = [
     class: "ネメシス",
     rarity: "Gold",
     pack: "VEC",
-    zip: "浄化の輝き・ミュニエ.zip"
+    zip: "voices/VEC/Gold/浄化の輝き・ミュニエ.zip"
   },
 
   // === ニュートラル ===
@@ -176,7 +176,7 @@ export const VEC_Gold = [
     class: "ニュートラル",
     rarity: "Gold",
     pack: "VEC",
-    zip: "荒野の案内人.zip"
+    zip: "voices/VEC/Gold/荒野の案内人.zip"
   },
   {
     id: "極光の天使",
@@ -185,6 +185,6 @@ export const VEC_Gold = [
     class: "ニュートラル",
     rarity: "Gold",
     pack: "VEC",
-    zip: "極光の天使.zip"
+    zip: "voices/VEC/Gold/極光の天使.zip"
   }
 ];

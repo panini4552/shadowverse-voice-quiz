@@ -7,16 +7,16 @@ export const VEC_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "回帰する抱擁・ラティカ.zip"
+    zip: "voices/VEC/Legendary/回帰する抱擁・ラティカ.zip"
   },
   {
     id: "フェアリーブレイダー・アマツ",
     name: "フェアリーブレイダー・アマツ",
-    reading: ["ふぇありーぶれいだーあまつ", "フェアリーブレイダーアマツ", "フェアリーブレイダー・アマツ"],
+    reading: ["ふぇありーぶれいだーあまつ", "フェアリーブレイダー・アマツ", "フェアリーブレイダー・アマツ"],
     class: "エルフ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "フェアリーブレイダー・アマツ.zip"
+    zip: "voices/VEC/Legendary/フェアリーブレイダー・アマツ.zip"
   },
   {
     id: "プライマルギガント",
@@ -25,7 +25,7 @@ export const VEC_Legendary = [
     class: "エルフ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "プライマルギガント.zip"
+    zip: "voices/VEC/Legendary/プライマルギガント.zip"
   },
 
   // === ロイヤル ===
@@ -36,7 +36,7 @@ export const VEC_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "王たる光・ベイリオン.zip"
+    zip: "voices/VEC/Legendary/王たる光・ベイリオン.zip"
   },
   {
     id: "君臨する猛虎",
@@ -45,7 +45,7 @@ export const VEC_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "君臨する猛虎.zip"
+    zip: "voices/VEC/Legendary/君臨する猛虎.zip"
   },
   {
     id: "妖刀の鬼・ツバキ",
@@ -54,7 +54,7 @@ export const VEC_Legendary = [
     class: "ロイヤル",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "妖刀の鬼・ツバキ.zip"
+    zip: "voices/VEC/Legendary/妖刀の鬼・ツバキ.zip"
   },
 
   // === ウィッチ ===
@@ -65,7 +65,7 @@ export const VEC_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "極点のエレメンタル.zip"
+    zip: "voices/VEC/Legendary/極点のエレメンタル.zip"
   },
   {
     id: "魔神の使役者",
@@ -74,7 +74,7 @@ export const VEC_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "魔神の使役者.zip"
+    zip: "voices/VEC/Legendary/魔神の使役者.zip"
   },
   {
     id: "秘蹟の魔女・メディア",
@@ -83,7 +83,7 @@ export const VEC_Legendary = [
     class: "ウィッチ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "秘蹟の魔女・メディア.zip"
+    zip: "voices/VEC/Legendary/秘蹟の魔女・メディア.zip"
   },
 
   // === ドラゴン ===
@@ -94,7 +94,7 @@ export const VEC_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "呪われし影・ヴァイディ.zip"
+    zip: "voices/VEC/Legendary/呪われし影・ヴァイディ.zip"
   },
   {
     id: "蒼海の主・ネプチューン",
@@ -103,7 +103,7 @@ export const VEC_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "蒼海の主・ネプチューン.zip"
+    zip: "voices/VEC/Legendary/蒼海の主・ネプチューン.zip"
   },
   {
     id: "猛火のティラノサウルス",
@@ -112,7 +112,7 @@ export const VEC_Legendary = [
     class: "ドラゴン",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "猛火のティラノサウルス.zip"
+    zip: "voices/VEC/Legendary/猛火のティラノサウルス.zip"
   },
 
   // === ネクロマンサー ===
@@ -123,16 +123,16 @@ export const VEC_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "トート.zip"
+    zip: "voices/VEC/Legendary/トート.zip"
   },
   {
     id: "ネクログループ・ルベル",
     name: "ネクログループ・ルベル",
-    reading: ["ねくろぐるーぷるべる", "ネクログループルベル", "ネクログループ・ルベル"],
+    reading: ["ねくろぐるーぷるべる", "ネクログループ・ルベル", "ネクログループ・ルベル"],
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "ネクログループ・ルベル.zip"
+    zip: "voices/VEC/Legendary/ネクログループ・ルベル.zip"
   },
   {
     id: "レジェンダリースケルトン",
@@ -141,7 +141,7 @@ export const VEC_Legendary = [
     class: "ネクロマンサー",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "レジェンダリースケルトン.zip"
+    zip: "voices/VEC/Legendary/レジェンダリースケルトン.zip"
   },
 
   // === ヴァンパイア ===
@@ -152,7 +152,7 @@ export const VEC_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "仁義の悪魔・ユヅキ.zip"
+    zip: "voices/VEC/Legendary/仁義の悪魔・ユヅキ.zip"
   },
   {
     id: "胎動の魔神",
@@ -161,7 +161,7 @@ export const VEC_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "胎動の魔神.zip"
+    zip: "voices/VEC/Legendary/胎動の魔神.zip"
   },
   {
     id: "クドラク",
@@ -170,18 +170,18 @@ export const VEC_Legendary = [
     class: "ヴァンパイア",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "クドラク.zip"
+    zip: "voices/VEC/Legendary/クドラク.zip"
   },
 
   // === ビショップ ===
   {
     id: "ミュースプリンセス・ミルフィ",
     name: "ミュースプリンセス・ミルフィ",
-    reading: ["みゅーすぷりんせすみるふぃ", "ミュースプリンセスミルフィ", "ミュースプリンセス・ミルフィ"],
+    reading: ["みゅーすぷりんせすみるふぃ", "ミュースプリンセス・ミルフィ", "ミュースプリンセス・ミルフィ"],
     class: "ビショップ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "ミュースプリンセス・ミルフィ.zip"
+    zip: "voices/VEC/Legendary/ミュースプリンセス・ミルフィ.zip"
   },
   {
     id: "聖波動のスフィンクス",
@@ -190,7 +190,7 @@ export const VEC_Legendary = [
     class: "ビショップ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "聖波動のスフィンクス.zip"
+    zip: "voices/VEC/Legendary/聖波動のスフィンクス.zip"
   },
   {
     id: "炎氷の司祭・カラト",
@@ -199,7 +199,7 @@ export const VEC_Legendary = [
     class: "ビショップ",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "炎氷の司祭・カラト.zip"
+    zip: "voices/VEC/Legendary/炎氷の司祭・カラト.zip"
   },
 
   // === ネメシス ===
@@ -210,7 +210,7 @@ export const VEC_Legendary = [
     class: "ネメシス",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "マキシマムメタルゴリラ.zip"
+    zip: "voices/VEC/Legendary/マキシマムメタルゴリラ.zip"
   },
   {
     id: "ラグナアウェイク",
@@ -219,16 +219,16 @@ export const VEC_Legendary = [
     class: "ネメシス",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "ラグナアウェイク.zip"
+    zip: "voices/VEC/Legendary/ラグナアウェイク.zip"
   },
   {
     id: "アブソリュート・モデスト",
     name: "アブソリュート・モデスト",
-    reading: ["あぶそりゅーと もですと", "アブソリュートモデスト", "アブソリュート・モデスト"],
+    reading: ["あぶそりゅーともですと", "アブソリュート・モデスト", "アブソリュート・モデスト"],
     class: "ネメシス",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "アブソリュート・モデスト.zip"
+    zip: "voices/VEC/Legendary/アブソリュート・モデスト.zip"
   },
 
   // === ニュートラル ===
@@ -239,7 +239,7 @@ export const VEC_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "母なる君.zip"
+    zip: "voices/VEC/Legendary/母なる君.zip"
   },
   {
     id: "シヴァ",
@@ -248,6 +248,6 @@ export const VEC_Legendary = [
     class: "ニュートラル",
     rarity: "Legendary",
     pack: "VEC",
-    zip: "シヴァ.zip"
+    zip: "voices/VEC/Legendary/シヴァ.zip"
   }
 ];

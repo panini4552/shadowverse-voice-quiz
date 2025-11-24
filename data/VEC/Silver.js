@@ -7,7 +7,7 @@ export const VEC_Silver = [
     class: "エルフ",
     rarity: "Silver",
     pack: "VEC",
-    zip: "ブルームスピリット.zip"
+    zip: "voices/VEC/Silver/ブルームスピリット.zip"
   },
   {
     id: "スピアーエルフ",
@@ -16,18 +16,18 @@ export const VEC_Silver = [
     class: "エルフ",
     rarity: "Silver",
     pack: "VEC",
-    zip: "スピアーエルフ.zip"
+    zip: "voices/VEC/Silver/スピアーエルフ.zip"
   },
 
   // === ロイヤル ===
   {
     id: "必中の狙撃士・ワルツ",
     name: "必中の狙撃士・ワルツ",
-    reading: ["ひっちゅうのそげきしわるつ", "必中の狙撃士・ワルツ", "必中の狙撃士ワルツ"],
+    reading: ["ひっちゅうのそげきしわるつ", "必中の狙撃士・ワルツ", "必中の狙撃士・ワルツ"],
     class: "ロイヤル",
     rarity: "Silver",
     pack: "VEC",
-    zip: "必中の狙撃士・ワルツ.zip"
+    zip: "voices/VEC/Silver/必中の狙撃士・ワルツ.zip"
   },
   {
     id: "躍動する獣戦士",
@@ -36,7 +36,7 @@ export const VEC_Silver = [
     class: "ロイヤル",
     rarity: "Silver",
     pack: "VEC",
-    zip: "躍動する獣戦士.zip"
+    zip: "voices/VEC/Silver/躍動する獣戦士.zip"
   },
 
   // === ウィッチ ===
@@ -47,7 +47,7 @@ export const VEC_Silver = [
     class: "ウィッチ",
     rarity: "Silver",
     pack: "VEC",
-    zip: "パイロエレメントソーサラー.zip"
+    zip: "voices/VEC/Silver/パイロエレメントソーサラー.zip"
   },
 
   // === ドラゴン ===
@@ -58,7 +58,7 @@ export const VEC_Silver = [
     class: "ドラゴン",
     rarity: "Silver",
     pack: "VEC",
-    zip: "バブルマーメイド.zip"
+    zip: "voices/VEC/Silver/バブルマーメイド.zip"
   },
   {
     id: "旋風のプテラノドン",
@@ -67,7 +67,7 @@ export const VEC_Silver = [
     class: "ドラゴン",
     rarity: "Silver",
     pack: "VEC",
-    zip: "旋風のプテラノドン.zip"
+    zip: "voices/VEC/Silver/旋風のプテラノドン.zip"
   },
 
   // === ネクロマンサー ===
@@ -78,27 +78,27 @@ export const VEC_Silver = [
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "VEC",
-    zip: "コープスドッグ.zip"
+    zip: "voices/VEC/Silver/コープスドッグ.zip"
   },
   {
     id: "イグジストソード・ギルト",
     name: "イグジストソード・ギルト",
-    reading: ["いぐじすとそーどぎると", "イグジストソード・ギルト", "イグジストソードギルト"],
+    reading: ["いぐじすとそーどぎると", "イグジストソード・ギルト", "イグジストソード・ギルト"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "VEC",
-    zip: "イグジストソード・ギルト.zip"
+    zip: "voices/VEC/Silver/イグジストソード・ギルト.zip"
   },
 
   // === ヴァンパイア ===
   {
     id: "ヴァンパイアシーカー・ユナ",
     name: "ヴァンパイアシーカー・ユナ",
-    reading: ["ゔぁんぱいあしーかーゆな", "ヴァンパイアシーカー・ユナ", "ヴァンパイアシーカーユナ"],
+    reading: ["ゔぁんぱいあしーかーゆな", "ヴァンパイアシーカー・ユナ", "ヴァンパイアシーカー・ユナ"],
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "VEC",
-    zip: "ヴァンパイアシーカー・ユナ.zip"
+    zip: "voices/VEC/Silver/ヴァンパイアシーカー・ユナ.zip"
   },
   {
     id: "狂える人狼",
@@ -107,18 +107,18 @@ export const VEC_Silver = [
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "VEC",
-    zip: "狂える人狼.zip"
+    zip: "voices/VEC/Silver/狂える人狼.zip"
   },
 
   // === ビショップ ===
   {
     id: "警察神官・パイン",
     name: "警察神官・パイン",
-    reading: ["けいさつしんかんぱいん", "警察神官・パイン", "警察神官パイン"],
+    reading: ["けいさつしんかんぱいん", "警察神官・パイン", "警察神官・パイン"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "VEC",
-    zip: "警察神官・パイン.zip"
+    zip: "voices/VEC/Silver/警察神官・パイン.zip"
   },
   {
     id: "フェザーフォルクパニッシャー",
@@ -127,18 +127,18 @@ export const VEC_Silver = [
     class: "ビショップ",
     rarity: "Silver",
     pack: "VEC",
-    zip: "フェザーフォルクパニッシャー.zip"
+    zip: "voices/VEC/Silver/フェザーフォルクパニッシャー.zip"
   },
 
   // === ネメシス ===
   {
     id: "暗雲の巫女・エネス",
     name: "暗雲の巫女・エネス",
-    reading: ["あんうんのみこえねす", "暗雲の巫女・エネス", "暗雲の巫女エネス"],
+    reading: ["あんうんのみこえねす", "暗雲の巫女・エネス", "暗雲の巫女・エネス"],
     class: "ネメシス",
     rarity: "Silver",
     pack: "VEC",
-    zip: "暗雲の巫女・エネス.zip"
+    zip: "voices/VEC/Silver/暗雲の巫女・エネス.zip"
   },
   {
     id: "ブーステッドタイガー",
@@ -147,7 +147,7 @@ export const VEC_Silver = [
     class: "ネメシス",
     rarity: "Silver",
     pack: "VEC",
-    zip: "ブーステッドタイガー.zip"
+    zip: "voices/VEC/Silver/ブーステッドタイガー.zip"
   },
 
   // === ニュートラル ===
@@ -158,6 +158,6 @@ export const VEC_Silver = [
     class: "ニュートラル",
     rarity: "Silver",
     pack: "VEC",
-    zip: "エクストリームキャロット.zip"
+    zip: "voices/VEC/Silver/エクストリームキャロット.zip"
   }
 ];

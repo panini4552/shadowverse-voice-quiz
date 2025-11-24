@@ -61,31 +61,22 @@ export const ALT_Silver = [
 
   // ドラゴン
   {
-    id: "侮蔑の狂信者",
-    name: "侮蔑の狂信者",
-    reading: ["ぶべつのきょうしんしゃ", "侮蔑の狂信者"],
+    id: "精霊竜姫",
+    name: "精霊竜姫",
+    reading: ["せいれいりゅうひめ", "セイレイリュウヒメ", "精霊竜姫"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "ALT",
-    zip: "侮蔑の狂信者.zip"
+    zip: "voices/ALT/Silver/精霊竜姫.zip"
   },
   {
-    id: "正義のドラグーン",
-    name: "正義のドラグーン",
-    reading: ["せいぎのどらぐーん", "正義のドラグーン"],
+    id: "忌まわしき紫竜",
+    name: "忌まわしき紫竜",
+    reading: ["いまわしきむらさきりゅう", "イマワシキムラサキリュウ", "忌まわしき紫竜"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "ALT",
-    zip: "正義のドラグーン.zip"
-  },
-  {
-    id: "岩食い竜",
-    name: "岩食い竜",
-    reading: ["いわぐいりゅう", "岩食い竜"],
-    class: "ドラゴン",
-    rarity: "Silver",
-    pack: "ALT",
-    zip: "岩食い竜.zip"
+    zip: "voices/ALT/Silver/忌まわしき紫竜.zip"
   },
 
   // ネクロマンサー

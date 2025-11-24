@@ -1,172 +1,172 @@
 export const STR_Silver = [
   // === エルフ ===
   {
-    id: "Ironbow_Archer",
+    id: "鉄弓の射手",
     name: "鉄弓の射手",
     reading: ["てつゆみのしゃしゅ", "テツユミノシャシュ", "鉄弓の射手"],
     class: "エルフ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Ironbow_Archer.zip"
+    zip: "voices/STR/Silver/鉄弓の射手.zip"
   },
   {
-    id: "Guardian_of_Nature",
+    id: "大自然の守護者",
     name: "大自然の守護者",
     reading: ["だいしぜんのしゅごしゃ", "ダイシゼンノシュゴシャ", "大自然の守護者"],
     class: "エルフ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Guardian_of_Nature.zip"
+    zip: "voices/STR/Silver/大自然の守護者.zip"
   },
 
   // === ロイヤル ===
   {
-    id: "Machineblade_Soldier",
+    id: "マシンブレードソルジャー",
     name: "マシンブレードソルジャー",
     reading: ["ましんぶれーどそるじゃー", "マシンブレードソルジャー", "マシンブレードソルジャー"],
     class: "ロイヤル",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Machineblade_Soldier.zip"
+    zip: "voices/STR/Silver/マシンブレードソルジャー.zip"
   },
 
   // === ウィッチ ===
   {
-    id: "Machine_Lifeform",
+    id: "機械生命体",
     name: "機械生命体",
     reading: ["きかいせいめいたい", "キカイセイメイタイ", "機械生命体"],
     class: "ウィッチ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Machine_Lifeform.zip"
+    zip: "voices/STR/Silver/機械生命体.zip"
   },
   {
-    id: "Manaria_Leader_Hanna",
+    id: "マナリアリーダー・ハンナ",
     name: "マナリアリーダー・ハンナ",
     reading: ["まなりありーだーはんな", "マナリアリーダーハンナ", "マナリアリーダー・ハンナ"],
     class: "ウィッチ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Manaria_Leader_Hanna.zip"
+    zip: "voices/STR/Silver/マナリアリーダー・ハンナ.zip"
   },
 
   // === ドラゴン ===
   {
-    id: "Strike_Dragoon",
+    id: "ストライクドラグーン",
     name: "ストライクドラグーン",
     reading: ["すとらいくどらぐーん", "ストライクドラグーン", "ストライクドラグーン"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Strike_Dragoon.zip"
+    zip: "voices/STR/Silver/ストライクドラグーン.zip"
   },
   {
-    id: "Dragon_Cannon_Dragonewt",
+    id: "竜砲のドラゴニュート",
     name: "竜砲のドラゴニュート",
     reading: ["りゅうほうのどらごにゅーと", "リュウホウノドラゴニュート", "竜砲のドラゴニュート"],
     class: "ドラゴン",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Dragon_Cannon_Dragonewt.zip"
+    zip: "voices/STR/Silver/竜砲のドラゴニュート.zip"
   },
 
   // === ネクロマンサー ===
   {
-    id: "Girl_of_Death_Dream",
+    id: "死の夢の少女",
     name: "死の夢の少女",
     reading: ["しのゆめのしょうじょ", "シノユメノショウジョ", "死の夢の少女"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Girl_of_Death_Dream.zip"
+    zip: "voices/STR/Silver/死の夢の少女.zip"
   },
   {
-    id: "Mechanical_Zombie",
+    id: "メカニカルゾンビ",
     name: "メカニカルゾンビ",
     reading: ["めかにかるぞんび", "メカニカルゾンビ", "メカニカルゾンビ"],
     class: "ネクロマンサー",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Mechanical_Zombie.zip"
+    zip: "voices/STR/Silver/メカニカルゾンビ.zip"
   },
 
   // === ヴァンパイア ===
   {
-    id: "Hellfire_Demon",
+    id: "獄炎のデーモン",
     name: "獄炎のデーモン",
     reading: ["ごくえんのでーもん", "ゴクエンノデーモン", "獄炎のデーモン"],
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Hellfire_Demon.zip"
+    zip: "voices/STR/Silver/獄炎のデーモン.zip"
   },
   {
-    id: "Ironblade_Demon",
+    id: "鉄刃の悪鬼",
     name: "鉄刃の悪鬼",
     reading: ["てつじんのあっき", "テツジンノアッキ", "鉄刃の悪鬼"],
     class: "ヴァンパイア",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Ironblade_Demon.zip"
+    zip: "voices/STR/Silver/鉄刃の悪鬼.zip"
   },
 
   // === ビショップ ===
   {
-    id: "Heretic_Nun_Melcotte",
+    id: "異端の修道女・メルコット",
     name: "異端の修道女・メルコット",
     reading: ["いたんのしゅうどうじょめるこっと", "イタンノシュウドウジョメルコット", "異端の修道女・メルコット"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Heretic_Nun_Melcotte.zip"
+    zip: "voices/STR/Silver/異端の修道女・メルコット.zip"
   },
   {
-    id: "Machine_Falcon",
+    id: "マシンファルコン",
     name: "マシンファルコン",
     reading: ["ましんふぁるこん", "マシンファルコン", "マシンファルコン"],
     class: "ビショップ",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Machine_Falcon.zip"
+    zip: "voices/STR/Silver/マシンファルコン.zip"
   },
 
   // === ネメシス ===
   {
-    id: "Mechanical_Gunner",
+    id: "メカニカルガンナー",
     name: "メカニカルガンナー",
     reading: ["めかにかるがんなー", "メカニカルガンナー", "メカニカルガンナー"],
     class: "ネメシス",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Mechanical_Gunner.zip"
+    zip: "voices/STR/Silver/メカニカルガンナー.zip"
   },
   {
-    id: "Accelerator_Soldier",
+    id: "機械の加速兵",
     name: "機械の加速兵",
     reading: ["きかいのかそくへい", "キカイノカソクヘイ", "機械の加速兵"],
     class: "ネメシス",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Accelerator_Soldier.zip"
+    zip: "voices/STR/Silver/機械の加速兵.zip"
   },
 
   // === ニュートラル ===
   {
-    id: "Flame_War_God_Yavnhar",
+    id: "火焔の軍神・ヤヴンハール",
     name: "火焔の軍神・ヤヴンハール",
     reading: ["かえんのぐんしんやゔんはーる", "カエンノグンシンヤヴンハール", "火焔の軍神・ヤヴンハール"],
     class: "ニュートラル",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Flame_War_God_Yavnhar.zip"
+    zip: "voices/STR/Silver/火焔の軍神・ヤヴンハール.zip"
   },
   {
-    id: "Gourmet_Angel_Ekaterine",
+    id: "美食天使・エカテリーヌ",
     name: "美食天使・エカテリーヌ",
     reading: ["びしょくてんしえかてりーぬ", "ビショクテンシエカテリーヌ", "美食天使・エカテリーヌ"],
     class: "ニュートラル",
     rarity: "Silver",
     pack: "STR",
-    zip: "voices/STR/Silver/Gourmet_Angel_Ekaterine.zip"
+    zip: "voices/STR/Silver/美食天使・エカテリーヌ.zip"
   }
 ];

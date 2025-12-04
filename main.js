@@ -519,6 +519,50 @@ document.addEventListener("keydown", (e) => {
             nextBtn.click();
         }
     }
+   /* ================================
+   スマホ用音声再生アンロック（重要）
+================================ */
+function unlockAudioOnce() {
+    const audio = document.getElementById("audio");
+    if (!audio) return;
+
+    // すでに解除済みなら何もしない
+    if (window.__audioUnlocked) return;
+
+    // 無音データを再生してスマホの再生制限を解除
+    audio.src =
+        "data:audio/mp3;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAACcQCA...";
+    audio.volume = 0;
+
+    audio
+        .play()
+        .then(() => {
+            window.__audioUnlocked = true;
+            console.log("🔓 Audio unlocked for mobile");
+        })
+        .catch((e) => {
+            console.warn("unlock failed:", e);
+        });
+}
+
+// スマホでは「最初のタップ」でのみ実行
+window.addEventListener(
+    "touchstart",
+    () => {
+        unlockAudioOnce();
+    },
+    { once: true }
+);
+
+// PCは click でも一応発火
+window.addEventListener(
+    "click",
+    () => {
+        unlockAudioOnce();
+    },
+    { once: true }
+);
+
 });
 
 

@@ -300,7 +300,7 @@ function startQuizHandler() {
 /* ================================
    次の問題
 ================================ */
-function nextQuestion() {
+async function nextQuestion() {
     const resultEl = document.getElementById("result");
     if (resultEl) resultEl.textContent = "";
     const nextBtn = document.getElementById("next-btn");
@@ -327,13 +327,15 @@ function nextQuestion() {
     currentIndex++;
     updateProgressUI();
 
-    // preload resources (非同期で安全に取得)
-    loadCardResources(currentCard).then(() => {
-        // preload 完了（必要ならここで何かする）
-    }).catch(err => {
-        console.warn("preload err", err);
-    });
+    // ★ ZIP を完全ロードし終わるまで待つ（重要！）
+    try {
+        await loadCardResources(currentCard);
+        console.log("ZIP preload complete:", currentCard.id);
+    } catch (err) {
+        console.warn("ZIP preload error:", err);
+    }
 }
+
 
 /* ================================
    回答チェック

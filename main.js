@@ -1,5 +1,5 @@
 /* ============================================
-   main.js — 安全化・整合性強化版
+   main.js — 安全化・整合性強化版（スマホ音声対応 完全統合）
 ============================================ */
 
 let remainingCards = [];
@@ -59,8 +59,6 @@ function findGroup(groupKey) {
 
 /* ================================
    collectSelectedArray
-   - 実装: 選択された .toggle-btn.active の data-value を返す
-   - 選択が0個の場合は空配列を返す（start ボタン側で空配列は「全選択扱い」されます）
 ================================ */
 function collectSelectedArray(groupKey) {
     const group = findGroup(groupKey);
@@ -73,32 +71,9 @@ function collectSelectedArray(groupKey) {
 }
 
 /* ================================
-   トグル系イベント（委譲）
-================================ */
-document.addEventListener("click", (e) => {
-    const t = e.target;
-    if (!t || !t.classList) return;
-
-    if (t.classList.contains("toggle-btn")) {
-        t.classList.toggle("active");
-        return;
-    }
-
-    if (t.classList.contains("select-all-btn")) {
-        const target = t.dataset.target;
-        if (!target) return;
-        const group = findGroup(target);
-        if (!group) return;
-        const buttons = [...group.querySelectorAll(".toggle-btn")];
-        if (buttons.length === 0) return;
-        const allActive = buttons.every(b => b.classList.contains("active"));
-        buttons.forEach(b => b.classList.toggle("active", !allActive));
-        return;
-    }
-});
-
-/* ================================
    ZIP から資源をロードする関数（堅牢化）
+   - 既にキャッシュがあればそれを返す
+   - 呼び出し側は await で待てる（preload 用）
 ================================ */
 async function loadCardResources(card) {
     if (!card || !card.id) return null;
@@ -135,10 +110,11 @@ async function loadCardResources(card) {
 
                 // 画像
                 if (!result.imageUrl && (lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".jpeg") || lower.endsWith(".webp"))) {
+                    // 名前に id を含むファイルを優先
                     if (lower.includes(idLower) || !result.imageUrl) {
                         const blob = await entry.async("blob");
                         result.imageUrl = URL.createObjectURL(blob);
-                        // continue to collect audio as well
+                        // 画像見つけても音声を引き続き収集
                         continue;
                     }
                 }
@@ -167,6 +143,7 @@ async function loadCardResources(card) {
             }
         }
 
+        // fallback: other に似た名前のものを fanfare に割り当てる
         if (!result.voices.fanfare) {
             const found = result.voices.other.find(o => /play|fanfare|enter|summon|sample|01/.test(o.name));
             if (found) {
@@ -186,7 +163,7 @@ async function loadCardResources(card) {
 }
 
 /* ================================
-   画像表示
+   画像表示（キャッシュ優先）
 ================================ */
 function showCardImage(card) {
     const imgEl = document.getElementById("resultImage");
@@ -195,6 +172,13 @@ function showCardImage(card) {
 
     imgEl.style.display = "none";
     placeholder.style.display = "none";
+
+    const cached = cardResourceCache.get(card.id);
+    if (cached && cached.imageUrl) {
+        imgEl.src = cached.imageUrl;
+        imgEl.style.display = "block";
+        return;
+    }
 
     loadCardResources(card).then(res => {
         if (res && res.imageUrl) {
@@ -211,7 +195,8 @@ function showCardImage(card) {
 }
 
 /* ================================
-   その他ボイス UI を作る
+   その他ボイス UI を作る（キャッシュ優先・未キャッシュならバックグラウンドで読み込み）
+   注意: 再生ボタン（play）はここでは呼ばない（再生は別ボタンで即行う）
 ================================ */
 function populateOtherVoicesUI(card) {
     const listEl = document.getElementById("other-voices-list");
@@ -219,6 +204,27 @@ function populateOtherVoicesUI(card) {
     listEl.innerHTML = "";
     listEl.style.display = "none";
 
+    const cached = cardResourceCache.get(card.id);
+    if (cached && cached.voices && cached.voices.other && cached.voices.other.length) {
+        cached.voices.other.forEach(it => {
+            const btn = document.createElement("button");
+            btn.className = "voice-item btn";
+            btn.textContent = it.name || "その他";
+            btn.addEventListener("click", () => {
+                const audio = document.getElementById("audio");
+                if (!audio) return;
+                audio.volume = parseFloat(document.getElementById("volume").value || 1);
+                audio.src = it.url;
+                // ここでは再生を行って OK（ボタン押下が直接のユーザー操作）
+                audio.play().catch(err => console.warn("play err", err));
+            });
+            listEl.appendChild(btn);
+        });
+        listEl.style.display = "block";
+        return;
+    }
+
+    // 未キャッシュならバックグラウンドでロードして UI を更新（非同期・非ブロッキング）
     loadCardResources(card).then(res => {
         const items = res && res.voices ? res.voices.other || [] : [];
         if (!items.length) return;
@@ -243,8 +249,54 @@ function populateOtherVoicesUI(card) {
 
 /* ================================
    voice-buttons 再生ハンドラ（登録は DOMContentLoaded 内で）
+   重要：ここでは一切 await を使わない（audio.play() を直後に呼べるようにする）
 ================================ */
-// 登録は初期化時に行う（下）
+function handleVoiceButtonClick(e) {
+    const btn = e.target;
+    if (!btn || !btn.dataset) return;
+    const type = btn.dataset.type;
+    if (!type) return;
+    if (!currentCard) return;
+
+    const audioEl = document.getElementById("audio");
+    if (!audioEl) return;
+    audioEl.volume = parseFloat(document.getElementById("volume")?.value || 1);
+
+    if (type === "other") {
+        const listEl = document.getElementById("other-voices-list");
+        if (!listEl) return;
+        if (listEl.style.display === "block") {
+            listEl.style.display = "none";
+        } else {
+            populateOtherVoicesUI(currentCard);
+        }
+        return;
+    }
+
+    // キャッシュから取得（ここで絶対に await を挟まない）
+    const cached = cardResourceCache.get(currentCard.id);
+    let src = cached && cached.voices ? cached.voices[type] : null;
+
+    // fanfare のフォールバック
+    if (!src && type === "fanfare" && cached && cached.voices && cached.voices.other && cached.voices.other.length) {
+        src = cached.voices.other[0].url;
+    }
+
+    if (!src) {
+        // キャッシュがない、あるいは該当音声が未ロードの可能性
+        // 背景でロードだけ開始しておく（ただしここでは再生は行わない）
+        console.warn("no voice in cache for type", type, currentCard?.id);
+        // kick off background load so next press will succeed
+        loadCardResources(currentCard).then(() => {
+            console.log("background preload for missing voice complete:", currentCard.id);
+        }).catch(() => {});
+        return;
+    }
+
+    // 即再生（ユーザー操作直後に呼ぶ -> スマホで許可される）
+    audioEl.src = src;
+    audioEl.play().catch(err => console.warn("play err", err));
+}
 
 /* ================================
    フィルタ収集 & クイズ開始
@@ -299,6 +351,8 @@ function startQuizHandler() {
 
 /* ================================
    次の問題
+   - ランダム選択済みの remainingCards から shift で取り出す
+   - ここで **await loadCardResources(currentCard)** を行い完全プリロードする（音声ボタンは待たせない）
 ================================ */
 async function nextQuestion() {
     const resultEl = document.getElementById("result");
@@ -323,11 +377,12 @@ async function nextQuestion() {
         return;
     }
 
+    // pick next
     currentCard = remainingCards.shift();
     currentIndex++;
     updateProgressUI();
 
-    // ★ ZIP を完全ロードし終わるまで待つ（重要！）
+    // ここで完全プリロード（await）しておく → 以後の再生ボタンは即 play を呼べる
     try {
         await loadCardResources(currentCard);
         console.log("ZIP preload complete:", currentCard.id);
@@ -335,7 +390,6 @@ async function nextQuestion() {
         console.warn("ZIP preload error:", err);
     }
 }
-
 
 /* ================================
    回答チェック
@@ -394,7 +448,7 @@ function submitAnswerHandler() {
     const nextBtn = document.getElementById("next-btn");
     if (nextBtn) nextBtn.style.display = "inline-block";
     updateProgressUI();
-       resultEl.scrollIntoView({
+    resultEl.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
@@ -426,44 +480,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // 安全に要素を取得してイベントを登録
     const voiceButtons = document.querySelector(".voice-buttons");
     if (voiceButtons) {
-        voiceButtons.addEventListener("click", async (e) => {
-            const btn = e.target;
-            if (!btn || !btn.dataset) return;
-            const type = btn.dataset.type;
-            if (!type) return;
-            if (!currentCard) return;
-
-            const audio = document.getElementById("audio");
-            if (!audio) return;
-            audio.volume = parseFloat(document.getElementById("volume")?.value || 1);
-
-            if (type === "other") {
-                const listEl = document.getElementById("other-voices-list");
-                if (!listEl) return;
-                if (listEl.style.display === "block") {
-                    listEl.style.display = "none";
-                } else {
-                    populateOtherVoicesUI(currentCard);
-                }
-                return;
-            }
-
-            try {
-                const res = await loadCardResources(currentCard);
-                let src = res && res.voices ? res.voices[type] : null;
-                if (!src && type === "fanfare" && res && res.voices && res.voices.other && res.voices.other.length) {
-                    src = res.voices.other[0].url;
-                }
-                if (!src) {
-                    console.warn("no voice for type", type, currentCard?.id);
-                    return;
-                }
-                audio.src = src;
-                audio.play().catch(err => console.warn("play err", err));
-            } catch (err) {
-                console.error("voice play err", err);
-            }
-        });
+        voiceButtons.addEventListener("click", handleVoiceButtonClick);
     }
 
     const startBtn = document.getElementById("start-btn");
@@ -479,68 +496,58 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizArea = document.getElementById("quiz-area");
     if (quizArea) quizArea.style.display = "none";
 });
-// ==============================
-// Enterキー送信（IME変換中は無効 / Next誤動作防止）
-// ==============================
 
+/* ================================
+   Enterキー送信（IME変換中は無効 / Next誤動作防止）
+================================ */
 let isComposing = false;
-
-// IME 変換開始
-document.addEventListener("compositionstart", () => {
-    isComposing = true;
-});
-
-// IME 変換終了
-document.addEventListener("compositionend", () => {
-    isComposing = false;
-});
+document.addEventListener("compositionstart", () => { isComposing = true; });
+document.addEventListener("compositionend", () => { isComposing = false; });
 
 document.addEventListener("keydown", (e) => {
     if (e.key !== "Enter") return;
-
-    // 変換中なら Enter を無効化
     if (isComposing) return;
 
     const submitBtn = document.getElementById("submit-btn");
     const nextBtn   = document.getElementById("next-btn");
     const resultEl  = document.getElementById("result");
-
-    // result 表示が空 → 回答前と判定
     const isAnswered = resultEl && resultEl.textContent.trim() !== "";
 
     if (!isAnswered) {
-        // --- 回答前：Enter で送信 ---
         if (submitBtn && submitBtn.offsetParent !== null && !submitBtn.disabled) {
-            e.preventDefault();   // Next 誤作動防止
+            e.preventDefault();
             submitBtn.click();
         }
     } else {
-        // --- 回答後：Enter で次へ ---
         if (nextBtn && nextBtn.offsetParent !== null && !nextBtn.disabled) {
             e.preventDefault();
             nextBtn.click();
         }
     }
-   /* ================================
+});
+
+/* ================================
    スマホ用音声再生アンロック（重要）
+   - DOMContentLoaded の外に出して確実に実行されるようにする
+   - 無音 base64 を利用（外部ファイル不要）
 ================================ */
 function unlockAudioOnce() {
     const audio = document.getElementById("audio");
     if (!audio) return;
 
-    // すでに解除済みなら何もしない
     if (window.__audioUnlocked) return;
 
-    // 無音データを再生してスマホの再生制限を解除
-    audio.src =
-        "data:audio/mp3;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAACcQCA...";
+    // 小さめの無音 WAV（十分なトリガーになる）
+    audio.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQAAAAA=";
     audio.volume = 0;
 
-    audio
-        .play()
+    audio.play()
         .then(() => {
             window.__audioUnlocked = true;
             console.log("🔓 Audio unlocked for mobile");
+            // すぐに停止して再利用できるようにする
+            audio.pause();
+            audio.currentTime = 0;
         })
         .catch((e) => {
             console.warn("unlock failed:", e);
@@ -548,27 +555,10 @@ function unlockAudioOnce() {
 }
 
 // スマホでは「最初のタップ」でのみ実行
-window.addEventListener(
-    "touchstart",
-    () => {
-        unlockAudioOnce();
-    },
-    { once: true }
-);
+window.addEventListener("touchstart", () => { unlockAudioOnce(); }, { once: true });
+// PCは click でも一応発火（保険）
+window.addEventListener("click", () => { unlockAudioOnce(); }, { once: true });
 
-// PCは click でも一応発火
-window.addEventListener(
-    "click",
-    () => {
-        unlockAudioOnce();
-    },
-    { once: true }
-);
-
-});
-
-
-
-
-
-
+/* ============================================
+   End of file
+============================================ */

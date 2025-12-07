@@ -1,4 +1,4 @@
-[
+export const AOA_Silver = [
   // === エルフ ===
   {
     id: "ナチュラルテイマー",

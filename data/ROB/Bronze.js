@@ -6,7 +6,7 @@ export const ROB_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ジュエルデビル・モリアナ.zip"
+    zip: "voices/ROB/Bronze/ジュエルデビル・モリアナ.zip"
   },
   {
     id: "セクトール",
@@ -15,7 +15,7 @@ export const ROB_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "セクトール.zip"
+    zip: "voices/ROB/Bronze/セクトール.zip"
   },
   {
     id: "ソウルコレクター",
@@ -24,7 +24,7 @@ export const ROB_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ソウルコレクター.zip"
+    zip: "voices/ROB/Bronze/ソウルコレクター.zip"
   },
   {
     id: "ソードウィップメイド",
@@ -33,7 +33,7 @@ export const ROB_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ソードウィップメイド.zip"
+    zip: "voices/ROB/Bronze/ソードウィップメイド.zip"
   },
   {
     id: "タイムレスウィッチ",
@@ -42,7 +42,7 @@ export const ROB_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "タイムレスウィッチ.zip"
+    zip: "voices/ROB/Bronze/タイムレスウィッチ.zip"
   },
   {
     id: "ドラゴンテイマー",
@@ -51,7 +51,7 @@ export const ROB_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ドラゴンテイマー.zip"
+    zip: "voices/ROB/Bronze/ドラゴンテイマー.zip"
   },
   {
     id: "ハンサ",
@@ -60,7 +60,7 @@ export const ROB_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ハンサ.zip"
+    zip: "voices/ROB/Bronze/ハンサ.zip"
   },
   {
     id: "フェアリーナイト",
@@ -69,7 +69,7 @@ export const ROB_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "フェアリーナイト.zip"
+    zip: "voices/ROB/Bronze/フェアリーナイト.zip"
   },
   {
     id: "フォレストギガース",
@@ -78,7 +78,7 @@ export const ROB_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "フォレストギガース.zip"
+    zip: "voices/ROB/Bronze/フォレストギガース.zip"
   },
   {
     id: "フォレストスピリット",
@@ -87,7 +87,7 @@ export const ROB_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "フォレストスピリット.zip"
+    zip: "voices/ROB/Bronze/フォレストスピリット.zip"
   },
   {
     id: "ブリッツランサー",
@@ -96,7 +96,7 @@ export const ROB_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ブリッツランサー.zip"
+    zip: "voices/ROB/Bronze/ブリッツランサー.zip"
   },
   {
     id: "フロッグクレリック",
@@ -105,7 +105,7 @@ export const ROB_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "フロッグクレリック.zip"
+    zip: "voices/ROB/Bronze/フロッグクレリック.zip"
   },
   {
     id: "ベビーフェルパー",
@@ -114,7 +114,7 @@ export const ROB_Bronze = [
     class: "エルフ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ベビーフェルパー.zip"
+    zip: "voices/ROB/Bronze/ベビーフェルパー.zip"
   },
   {
     id: "マスターレディセージ",
@@ -123,7 +123,7 @@ export const ROB_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "マスターレディセージ.zip"
+    zip: "voices/ROB/Bronze/マスターレディセージ.zip"
   },
   {
     id: "マナリアウィザード・クレイグ",
@@ -132,7 +132,7 @@ export const ROB_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "マナリアウィザード・クレイグ.zip"
+    zip: "voices/ROB/Bronze/マナリアウィザード・クレイグ.zip"
   },
   {
     id: "ミニゴブリンメイジ",
@@ -141,7 +141,7 @@ export const ROB_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ミニゴブリンメイジ.zip"
+    zip: "voices/ROB/Bronze/ミニゴブリンメイジ.zip"
   },
   {
     id: "レヴィオンデューク・ユリウス",
@@ -150,7 +150,7 @@ export const ROB_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "レヴィオンデューク・ユリウス.zip"
+    zip: "voices/ROB/Bronze/レヴィオンデューク・ユリウス.zip"
   },
   {
     id: "ワイリーワイバーン",
@@ -159,7 +159,7 @@ export const ROB_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ワイリーワイバーン.zip"
+    zip: "voices/ROB/Bronze/ワイリーワイバーン.zip"
   },
   {
     id: "闇の従者",
@@ -168,7 +168,7 @@ export const ROB_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "闇の従者.zip"
+    zip: "voices/ROB/Bronze/闇の従者.zip"
   },
   {
     id: "怪犬の墓守",
@@ -177,7 +177,7 @@ export const ROB_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "怪犬の墓守.zip"
+    zip: "voices/ROB/Bronze/怪犬の墓守.zip"
   },
   {
     id: "海賊ゾンビ",
@@ -186,7 +186,7 @@ export const ROB_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "海賊ゾンビ.zip"
+    zip: "voices/ROB/Bronze/海賊ゾンビ.zip"
   },
   {
     id: "御言葉の天使",
@@ -195,7 +195,7 @@ export const ROB_Bronze = [
     class: "ニュートラル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "御言葉の天使.zip"
+    zip: "voices/ROB/Bronze/御言葉の天使.zip"
   },
   {
     id: "高慢なる悪魔",
@@ -204,7 +204,7 @@ export const ROB_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "高慢なる悪魔.zip"
+    zip: "voices/ROB/Bronze/高慢なる悪魔.zip"
   },
   {
     id: "熟達の調教師",
@@ -213,7 +213,7 @@ export const ROB_Bronze = [
     class: "ビショップ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "熟達の調教師.zip"
+    zip: "voices/ROB/Bronze/熟達の調教師.zip"
   },
   {
     id: "人狼の群れ長",
@@ -222,7 +222,7 @@ export const ROB_Bronze = [
     class: "ヴァンパイア",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "人狼の群れ長.zip"
+    zip: "voices/ROB/Bronze/人狼の群れ長.zip"
   },
   {
     id: "刃の魔術師",
@@ -231,7 +231,7 @@ export const ROB_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "刃の魔術師.zip"
+    zip: "voices/ROB/Bronze/刃の魔術師.zip"
   },
   {
     id: "双翼の警護者",
@@ -240,7 +240,7 @@ export const ROB_Bronze = [
     class: "ネクロマンサー",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "双翼の警護者.zip"
+    zip: "voices/ROB/Bronze/双翼の警護者.zip"
   },
   {
     id: "煌牙の戦士・キット",
@@ -249,7 +249,7 @@ export const ROB_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "煌牙の戦士・キット.zip"
+    zip: "voices/ROB/Bronze/煌牙の戦士・キット.zip"
   },
   {
     id: "グリフォンナイト",
@@ -258,7 +258,7 @@ export const ROB_Bronze = [
     class: "ドラゴン",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "グリフォンナイト.zip"
+    zip: "voices/ROB/Bronze/グリフォンナイト.zip"
   },
   {
     id: "ゲイザー",
@@ -267,7 +267,7 @@ export const ROB_Bronze = [
     class: "ウィッチ",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "ゲイザー.zip"
+    zip: "voices/ROB/Bronze/ゲイザー.zip"
   },
   {
     id: "サムライ",
@@ -276,7 +276,7 @@ export const ROB_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "サムライ.zip"
+    zip: "voices/ROB/Bronze/サムライ.zip"
   },
   {
     id: "シーフ",
@@ -285,6 +285,7 @@ export const ROB_Bronze = [
     class: "ロイヤル",
     rarity: "Bronze",
     pack: "ROB",
-    zip: "シーフ.zip"
+    zip: "voices/ROB/Bronze/シーフ.zip"
   }
 ];
+

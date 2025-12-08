@@ -1,8 +1,3 @@
-// ORS 全レアリティ（Legendary / Gold / Silver / Bronze）統合データ
-// すべて既存のフォーマットに準拠
-
-export const ORS_All = [
-  // ---- ORS Bronze のデータ ----
 export const ORS_Bronze = [
   // === エルフ ===
   {
@@ -242,3 +237,4 @@ export const ORS_Bronze = [
 // ---- ここまで ORS Bronze ----
 
 ];
+

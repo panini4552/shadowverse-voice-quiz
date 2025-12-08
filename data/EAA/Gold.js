@@ -1,4 +1,4 @@
-[
+export const EAA_Gold = [
   // === エルフ ===
   {
     id: "葉脈の舎弟頭",
@@ -197,3 +197,4 @@
     zip: "voices/EAA/Gold/円環の看守.zip"
   }
 ]
+

@@ -1,5 +1,4 @@
 export const ETA_Legendary = [
-[
   // === エルフ ===
   {
     id: "Thorn_Hunter",
@@ -242,5 +241,6 @@ export const ETA_Legendary = [
     pack: "ETA",
     zip: "voices/ETA/Legendary/始原の竜・バハムート.zip"
   }
-]
+];
+
 

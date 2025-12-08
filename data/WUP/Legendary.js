@@ -232,31 +232,24 @@ export const WUP_Legendary = [
   }
   // === ニュートラル（日本語ID／日本語ZIP） ===
 {
-  id: "天地の侵略者・ベルフォメット",
-  name: "天地の侵略者・ベルフォメット",
-  reading: ["てんちのしんりゃくしゃ・べるふぉめっと", "テンチノシンリャクシャ・ベルフォメット", "天地の侵略者・ベルフォメット"],
+  id: "神託の大天使・ガブリエル",
+  name: "神託の大天使・ガブリエル",
+  reading: ["しんたくのだいてんし・がぶりえる", "シンタクノダイテンシ・ガブリエル", "神託の大天使・ガブリエル"],
   class: "ニュートラル",
   rarity: "Legendary",
   pack: "WUP",
-  zip: "voices/WUP/Legendary/天地の侵略者・ベルフォメット.zip"
+  zip: "voices/WUP/Legendary/神託の大天使・ガブリエル.zip"
 },
 {
-  id: "音速の機構・ララミア",
-  name: "音速の機構・ララミア",
-  reading: ["おんそくのきこう・ららみあ", "オンソクノキコウ・ララミア", "音速の機構・ララミア"],
+  id: "鋼鉄と大地の神",
+  name: "鋼鉄と大地の神",
+  reading: ["こうてつとだいちのかみ", "コウテツトダイチノカミ", "鋼鉄と大地の神"],
   class: "ニュートラル",
   rarity: "Legendary",
   pack: "WUP",
-  zip: "voices/WUP/Legendary/音速の機構・ララミア.zip"
+  zip: "voices/WUP/Legendary/鋼鉄と大地の神.zip"
 },
-{
-  id: "ターミネイトマシンベア",
-  name: "ターミネイトマシンベア",
-  reading: ["たーみねいとましんべあ", "ターミネイトマシンベア", "ターミネイトマシンベア"],
-  class: "ニュートラル",
-  rarity: "Legendary",
-  pack: "WUP",
-  zip: "voices/WUP/Legendary/ターミネイトマシンベア.zip"
-}
+
 
 ];
+

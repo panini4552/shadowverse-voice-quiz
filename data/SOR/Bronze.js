@@ -1,4 +1,4 @@
-[
+export const SOR_Silver = [
   // === エルフ ===
   {
     id: "Monomi_no_Elf",
@@ -250,4 +250,5 @@
     pack: "SOR",
     zip: "voices/SOR/Bronze/自由なる冒険者.zip"
   }
-]
+];
+

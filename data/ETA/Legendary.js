@@ -1,3 +1,4 @@
+export const ETA_Legendary = [
 [
   // === エルフ ===
   {
@@ -242,3 +243,4 @@
     zip: "voices/ETA/Legendary/始原の竜・バハムート.zip"
   }
 ]
+

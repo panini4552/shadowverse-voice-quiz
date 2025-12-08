@@ -39,15 +39,6 @@ export const RGW_Bronze = [
     zip: "voices/RGW/Bronze/グレートシーフ.zip"
   },
   {
-    id: "Luminous_Healer_Rilala",
-    name: "ルミナスヒーラー・リララ",
-    reading: ["るみなすひーらー・りらら", "ルミナスヒーラー・リララ"],
-    class: "ロイヤル",
-    rarity: "Bronze",
-    pack: "RGW",
-    zip: "voices/RGW/Bronze/ルミナスヒーラー・リララ.zip"
-  },
-  {
     id: "Sergeant_Cat",
     name: "サージェントキャット",
     reading: ["さーじぇんときゃっと", "サージェントキャット"],
@@ -242,3 +233,4 @@ export const RGW_Bronze = [
     zip: "voices/RGW/Bronze/福音の天使.zip"
   }
 ];
+

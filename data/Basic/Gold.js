@@ -1,14 +1,24 @@
-export const Classic_Legendary = [
+export const Basic_Gold = [
   // === エルフ ===
   {
-    id: "Ancient_Elf",
-    name: "エンシェントエルフ",
-    reading: ["えんしぇんとえるふ", "エンシェントエルフ"],
-    class: "エルフ",
-    rarity: "Legendary",
-    pack: "Classic",
-    zip: "voices/Classic/Legendary/Ancient_Elf.zip"
+    id: "ツインプリズナー・グラス",
+    name: "ツインプリズナー・グラス",
+    reading: ["ついんぷりずなー・ぐらす", "ツインプリズナー・グラス"],
+    class: "ニュートラル",
+    rarity: "Gold",
+    pack: "Basic",
+    zip: "voices/Basic/Gold/ツインプリズナー・グラス.zip"
   },
+  {
+    id: "ツインプリズナー・フラム",
+    name: "ツインプリズナー・フラム",
+    reading: ["ついんぷりずなー・ふらむ", "ツインプリズナー・フラム"],
+    class: "ニュートラル",
+    rarity: "Gold",
+    pack: "Basic",
+    zip: "voices/Basic/Gold/ツインプリズナー・フラム.zip"
+  },
+
 
 
 

@@ -1,3 +1,4 @@
+export const DOC_Bronze = [
 // === エルフ ===
 {
   id: "妖精の先導者",
@@ -249,3 +250,4 @@
   pack: "DOC",
   zip: "voices/DOC/Bronze/カエルの演奏家.zip"
 }
+

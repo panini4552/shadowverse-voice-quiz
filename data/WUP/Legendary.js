@@ -229,7 +229,7 @@ export const WUP_Legendary = [
     rarity: "Legendary",
     pack: "WUP",
     zip: "voices/WUP/Legendary/ターミネイトマシンベア.zip"
-  }
+  },
   // === ニュートラル（日本語ID／日本語ZIP） ===
 {
   id: "神託の大天使・ガブリエル",
@@ -252,4 +252,5 @@ export const WUP_Legendary = [
 
 
 ];
+
 

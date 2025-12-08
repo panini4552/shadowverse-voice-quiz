@@ -241,4 +241,5 @@ export const OOS_Legendary = [
   pack: "OOS",
   zip: "voices/OOS/Legendary/干絶の飢餓・ギルネリーゼ.zip"
 }
+];
 

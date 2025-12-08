@@ -279,10 +279,12 @@ function populateOtherVoicesUI(card) {
             const items = res && res.voices ? res.voices.other || [] : [];
             if (!items.length) return;
 
-            items.forEach(it => {
+            items.forEach((it, idx) => {
                 const btn = document.createElement("button");
                 btn.className = "voice-item btn";
-                btn.textContent = it.name || "その他";
+
+                // ボタン名を「1」「2」「3」…にする
+                btn.textContent = String(idx + 1);
 
                 btn.addEventListener("click", () => {
                     const audio = document.getElementById("audio");

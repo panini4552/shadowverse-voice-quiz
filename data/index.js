@@ -221,8 +221,9 @@ export const cards = [
   ...ORS_Legendary, ...ORS_Gold, ...ORS_Silver, ...ORS_Bronze,
   ...RSL_Legendary, ...RSL_Gold, ...RSL_Silver, ...RSL_Bronze,
   ...HOS_Legendary, ...HOS_Gold, ...HOS_Silver, ...HOS_Bronze,
-  ...Basic_Legendary, ...Basic_Gold, ...Basic_Silver, ...Basic_Bronze
+  ...Basic_Gold, ...Basic_Silver, ...Basic_Bronze
 ];
 
 // グローバル公開
 window.cards = cards;
+

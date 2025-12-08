@@ -94,22 +94,96 @@ import { UCL_Gold } from "./UCL/Gold.js";
 import { UCL_Silver } from "./UCL/Silver.js";
 import { UCL_Bronze } from "./UCL/Bronze.js";
 
-// === 新規追加パック ===
-const newPacks = [
-  "WUP","FOH","SOR","ETA","DOV","RSC","DOC","OOS","EOP","RGW",
-  "CDB","EAA","AOA","HOR","ORS","RSL","HOS","Basic"
-];
+// 新規パック（WUP〜Basic）
+import { WUP_Legendary } from "./WUP/Legendary.js";
+import { WUP_Gold } from "./WUP/Gold.js";
+import { WUP_Silver } from "./WUP/Silver.js";
+import { WUP_Bronze } from "./WUP/Bronze.js";
 
-// 動的インポート用
-newPacks.forEach(pack => {
-  // eslint-disable-next-line no-eval
-  eval(`
-    import { ${pack}_Legendary } from "./${pack}/Legendary.js";
-    import { ${pack}_Gold } from "./${pack}/Gold.js";
-    import { ${pack}_Silver } from "./${pack}/Silver.js";
-    import { ${pack}_Bronze } from "./${pack}/Bronze.js";
-  `);
-});
+import { FOH_Legendary } from "./FOH/Legendary.js";
+import { FOH_Gold } from "./FOH/Gold.js";
+import { FOH_Silver } from "./FOH/Silver.js";
+import { FOH_Bronze } from "./FOH/Bronze.js";
+
+import { SOR_Legendary } from "./SOR/Legendary.js";
+import { SOR_Gold } from "./SOR/Gold.js";
+import { SOR_Silver } from "./SOR/Silver.js";
+import { SOR_Bronze } from "./SOR/Bronze.js";
+
+import { ETA_Legendary } from "./ETA/Legendary.js";
+import { ETA_Gold } from "./ETA/Gold.js";
+import { ETA_Silver } from "./ETA/Silver.js";
+import { ETA_Bronze } from "./ETA/Bronze.js";
+
+import { DOV_Legendary } from "./DOV/Legendary.js";
+import { DOV_Gold } from "./DOV/Gold.js";
+import { DOV_Silver } from "./DOV/Silver.js";
+import { DOV_Bronze } from "./DOV/Bronze.js";
+
+import { RSC_Legendary } from "./RSC/Legendary.js";
+import { RSC_Gold } from "./RSC/Gold.js";
+import { RSC_Silver } from "./RSC/Silver.js";
+import { RSC_Bronze } from "./RSC/Bronze.js";
+
+import { DOC_Legendary } from "./DOC/Legendary.js";
+import { DOC_Gold } from "./DOC/Gold.js";
+import { DOC_Silver } from "./DOC/Silver.js";
+import { DOC_Bronze } from "./DOC/Bronze.js";
+
+import { OOS_Legendary } from "./OOS/Legendary.js";
+import { OOS_Gold } from "./OOS/Gold.js";
+import { OOS_Silver } from "./OOS/Silver.js";
+import { OOS_Bronze } from "./OOS/Bronze.js";
+
+import { EOP_Legendary } from "./EOP/Legendary.js";
+import { EOP_Gold } from "./EOP/Gold.js";
+import { EOP_Silver } from "./EOP/Silver.js";
+import { EOP_Bronze } from "./EOP/Bronze.js";
+
+import { RGW_Legendary } from "./RGW/Legendary.js";
+import { RGW_Gold } from "./RGW/Gold.js";
+import { RGW_Silver } from "./RGW/Silver.js";
+import { RGW_Bronze } from "./RGW/Bronze.js";
+
+import { CDB_Legendary } from "./CDB/Legendary.js";
+import { CDB_Gold } from "./CDB/Gold.js";
+import { CDB_Silver } from "./CDB/Silver.js";
+import { CDB_Bronze } from "./CDB/Bronze.js";
+
+import { EAA_Legendary } from "./EAA/Legendary.js";
+import { EAA_Gold } from "./EAA/Gold.js";
+import { EAA_Silver } from "./EAA/Silver.js";
+import { EAA_Bronze } from "./EAA/Bronze.js";
+
+import { AOA_Legendary } from "./AOA/Legendary.js";
+import { AOA_Gold } from "./AOA/Gold.js";
+import { AOA_Silver } from "./AOA/Silver.js";
+import { AOA_Bronze } from "./AOA/Bronze.js";
+
+import { HOR_Legendary } from "./HOR/Legendary.js";
+import { HOR_Gold } from "./HOR/Gold.js";
+import { HOR_Silver } from "./HOR/Silver.js";
+import { HOR_Bronze } from "./HOR/Bronze.js";
+
+import { ORS_Legendary } from "./ORS/Legendary.js";
+import { ORS_Gold } from "./ORS/Gold.js";
+import { ORS_Silver } from "./ORS/Silver.js";
+import { ORS_Bronze } from "./ORS/Bronze.js";
+
+import { RSL_Legendary } from "./RSL/Legendary.js";
+import { RSL_Gold } from "./RSL/Gold.js";
+import { RSL_Silver } from "./RSL/Silver.js";
+import { RSL_Bronze } from "./RSL/Bronze.js";
+
+import { HOS_Legendary } from "./HOS/Legendary.js";
+import { HOS_Gold } from "./HOS/Gold.js";
+import { HOS_Silver } from "./HOS/Silver.js";
+import { HOS_Bronze } from "./HOS/Bronze.js";
+
+import { Basic_Legendary } from "./Basic/Legendary.js";
+import { Basic_Gold } from "./Basic/Gold.js";
+import { Basic_Silver } from "./Basic/Silver.js";
+import { Basic_Bronze } from "./Basic/Bronze.js";
 
 /* ==============================
    cards 配列にすべて展開
@@ -130,7 +204,6 @@ export const cards = [
   ...ROG_Legendary, ...ROG_Gold, ...ROG_Silver, ...ROG_Bronze,
   ...VEC_Legendary, ...VEC_Gold, ...VEC_Silver, ...VEC_Bronze,
   ...UCL_Legendary, ...UCL_Gold, ...UCL_Silver, ...UCL_Bronze,
-  // 新規追加パック展開
   ...WUP_Legendary, ...WUP_Gold, ...WUP_Silver, ...WUP_Bronze,
   ...FOH_Legendary, ...FOH_Gold, ...FOH_Silver, ...FOH_Bronze,
   ...SOR_Legendary, ...SOR_Gold, ...SOR_Silver, ...SOR_Bronze,
@@ -151,5 +224,5 @@ export const cards = [
   ...Basic_Legendary, ...Basic_Gold, ...Basic_Silver, ...Basic_Bronze
 ];
 
-// 互換性のためグローバルにも公開
+// グローバル公開
 window.cards = cards;

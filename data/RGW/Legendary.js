@@ -168,4 +168,86 @@ export const RGW_Legendary = [
     name: "月下の狼王・ヴァルツ",
     reading: ["げっかのおうおうゔぁるつ", "ゲッカノオウオウヴァルツ", "月下の狼王・ヴァルツ"],
     class: "ヴァンパイア",
+    pack: "RGW",
+    zip: "voices/RGW/Legendary/月下の狼王・ヴァルツ.zip"
+　},
+
+// ビショップクラス
+{
+  id: "インペリアルセイント",
+  name: "インペリアルセイント",
+  reading: ["インペリアルセイント", "いんぺりあるせいんと"],
+  class: "ビショップ",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/インペリアルセイント.zip"
+},
+{
+  id: "救済の聖女_ジャンヌ",
+  name: "救済の聖女・ジャンヌ",
+  reading: ["救済の聖女・ジャンヌ", "きゅうさいのせいじょ・じゃんぬ"],
+  class: "ビショップ",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/救済の聖女・ジャンヌ.zip"
+},
+{
+  id: "廃滅のスカルフェイン",
+  name: "廃滅のスカルフェイン",
+  reading: ["廃滅のスカルフェイン", "はいめつのすかるふぇいん"],
+  class: "ビショップ",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/廃滅のスカルフェイン.zip"
+},
+
+// ネメシスクラス
+{
+  id: "エンドレスワールド_オーキス",
+  name: "エンドレスワールド・オーキス",
+  reading: ["エンドレスワールド・オーキス", "えんどれすわーるど・おーきす"],
+  class: "ネメシス",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/エンドレスワールド・オーキス.zip"
+},
+{
+  id: "百獣獅子王_グライアス",
+  name: "百獣獅子王・グライアス",
+  reading: ["百獣獅子王・グライアス", "ひゃくじゅうししおう・ぐらいあす"],
+  class: "ネメシス",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/百獣獅子王・グライアス.zip"
+},
+
+// ニュートラルクラス
+{
+  id: "アルティメットバハムート",
+  name: "アルティメットバハムート",
+  reading: ["アルティメットバハムート", "あるてぃめっとばはむーと"],
+  class: "ニュートラル",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/アルティメットバハムート.zip"
+},
+{
+  id: "メタトロン",
+  name: "メタトロン",
+  reading: ["メタトロン", "めたとろん"],
+  class: "ニュートラル",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/メタトロン.zip"
+},
+{
+  id: "三相の女神_バイヴカハ",
+  name: "三相の女神・バイヴカハ",
+  reading: ["三相の女神・バイヴカハ", "さんそうのめがみ・ばいゔかは"],
+  class: "ニュートラル",
+  rarity: "Legendary",
+  pack: "RGW",
+  zip: "voices/RGW/Legendary/三相の女神・バイヴカハ.zip"
+}
 ];
+

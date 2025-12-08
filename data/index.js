@@ -180,7 +180,6 @@ import { HOS_Gold } from "./HOS/Gold.js";
 import { HOS_Silver } from "./HOS/Silver.js";
 import { HOS_Bronze } from "./HOS/Bronze.js";
 
-import { Basic_Legendary } from "./Basic/Legendary.js";
 import { Basic_Gold } from "./Basic/Gold.js";
 import { Basic_Silver } from "./Basic/Silver.js";
 import { Basic_Bronze } from "./Basic/Bronze.js";
@@ -226,4 +225,5 @@ export const cards = [
 
 // グローバル公開
 window.cards = cards;
+
 

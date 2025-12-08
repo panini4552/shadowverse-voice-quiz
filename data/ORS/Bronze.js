@@ -234,7 +234,5 @@ export const ORS_Bronze = [
   }
 ];
 
-// ---- ここまで ORS Bronze ----
 
-];
 

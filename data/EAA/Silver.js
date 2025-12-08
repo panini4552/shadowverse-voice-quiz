@@ -1,4 +1,4 @@
-[
+export const EAA_Silver = [
   // === エルフ ===
   {
     id: "根際の刺客",
@@ -197,3 +197,4 @@
     zip: "voices/EAA/Silver/オウルキャットガール.zip"
   }
 ]
+

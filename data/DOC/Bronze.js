@@ -250,4 +250,5 @@ export const DOC_Bronze = [
   pack: "DOC",
   zip: "voices/DOC/Bronze/カエルの演奏家.zip"
 }
+];
 
